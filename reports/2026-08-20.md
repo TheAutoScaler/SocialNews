@@ -1,494 +1,490 @@
 # SocialNews daily report
 
-- generated_at: `2026-08-20T10:53:29.660761+00:00`
+- generated_at: `2026-08-20T11:29:02.656291+00:00`
 - configured_topics: `8`
 - source_checks: `63`
-- successful_checks: `57`
-- failed_checks: `6`
-- collected_candidates: `299`
-- new_items: `133`
+- successful_checks: `63`
+- failed_checks: `0`
+- collected_candidates: `386`
+- new_items: `171`
 - reported_items: `120`
 
 ## Collection health
 
 | Topic | Platform | Status | Candidates |
 |---|---|---:|---:|
-| OpenAI News | official | ok · feed | 13 |
+| OpenAI News | official | ok · feed | 12 |
 | Google AI | official | ok · feed | 3 |
 | Google DeepMind | official | ok · feed | 1 |
 | NVIDIA AI | official | ok · feed | 0 |
 | AWS Machine Learning | official | ok · feed | 15 |
 | Hugging Face Blog | official | ok · feed | 6 |
-| Anthropic | official | indexed · incomplete | 1 |
-| Meta AI | official | indexed · incomplete | 0 |
-| Microsoft AI | official | indexed · incomplete | 0 |
-| Apple ML | official | indexed · incomplete | 0 |
-| xAI | official | indexed · incomplete | 7 |
-| Mistral AI | official | indexed · incomplete | 0 |
-| Cohere | official | indexed · incomplete | 0 |
-| Stability AI | official | indexed · incomplete | 0 |
-| Runway | official | indexed · incomplete | 0 |
-| NIST AI | policy | indexed · incomplete | 0 |
-| UK AI Security Institute | policy | indexed · incomplete | 0 |
-| European Commission AI | policy | indexed · incomplete | 0 |
-| Top AI news | bluesky | failed: ValueError: Bluesky public search was blocked and its indexed fallback returned no matches | 0 |
+| Anthropic | official | public index discovery | 1 |
+| Meta AI | official | public index discovery | 0 |
+| Microsoft AI | official | public index discovery | 0 |
+| Apple ML | official | public index discovery | 0 |
+| xAI | official | public index discovery | 7 |
+| Mistral AI | official | public index discovery | 0 |
+| Cohere | official | public index discovery | 0 |
+| Stability AI | official | public index discovery | 0 |
+| Runway | official | public index discovery | 0 |
+| NIST AI | policy | public index discovery | 0 |
+| UK AI Security Institute | policy | public index discovery | 0 |
+| European Commission AI | policy | public index discovery | 0 |
+| Top AI news | bluesky | ok · direct | 15 |
 | Top AI news | hackernews | ok · direct | 15 |
-| Top AI news | reddit | failed: ValueError: PullPush was blocked and the indexed Reddit fallback returned no matches | 0 |
+| Top AI news | reddit | ok · direct | 12 |
 | Top AI news | mastodon | ok · direct | 15 |
 | Top AI news | news | ok · direct | 6 |
-| Top AI news | x | indexed · incomplete | 8 |
-| Top AI news | linkedin | indexed · incomplete | 0 |
-| Top AI news | threads | indexed · incomplete | 0 |
-| New AI companies | bluesky | failed: ValueError: Bluesky public search was blocked and its indexed fallback returned no matches | 0 |
+| Top AI news | x | public index discovery | 8 |
+| Top AI news | linkedin | public index discovery | 0 |
+| Top AI news | threads | public index discovery | 0 |
+| New AI companies | bluesky | ok · direct | 15 |
 | New AI companies | hackernews | ok · direct | 5 |
-| New AI companies | news | ok · direct | 4 |
-| New AI companies | x | indexed · incomplete | 4 |
-| New AI companies | linkedin | indexed · incomplete | 0 |
-| New AI companies | threads | indexed · incomplete | 0 |
-| New AI companies | tiktok | indexed · incomplete | 0 |
-| New AI companies | instagram | indexed · incomplete | 5 |
+| New AI companies | news | ok · direct | 2 |
+| New AI companies | x | public index discovery | 4 |
+| New AI companies | linkedin | public index discovery | 0 |
+| New AI companies | threads | public index discovery | 0 |
+| New AI companies | tiktok | public index discovery | 0 |
+| New AI companies | instagram | public index discovery | 5 |
 | New AI repositories | github_new | ok · direct | 14 |
 | Trending AI repositories | github_trending | ok · direct | 15 |
 | New AI models and tools | github | ok · direct | 15 |
 | New AI models and tools | huggingface | ok · direct | 15 |
-| New AI models and tools | bluesky | failed: ValueError: Bluesky public search was blocked and its indexed fallback returned no matches | 0 |
+| New AI models and tools | bluesky | ok · direct | 15 |
 | New AI models and tools | hackernews | ok · direct | 15 |
 | New AI models and tools | news | ok · direct | 2 |
-| New AI models and tools | x | indexed · incomplete | 14 |
-| New AI models and tools | youtube | indexed · incomplete | 0 |
+| New AI models and tools | x | public index discovery | 14 |
+| New AI models and tools | youtube | public index discovery | 0 |
 | New AI innovations and research | arxiv | ok · direct | 15 |
 | New AI innovations and research | huggingface | ok · direct | 1 |
 | New AI innovations and research | github | ok · direct | 15 |
-| New AI innovations and research | bluesky | failed: ValueError: Bluesky public search was blocked and its indexed fallback returned no matches | 0 |
+| New AI innovations and research | bluesky | ok · direct | 15 |
 | New AI innovations and research | hackernews | ok · direct | 6 |
 | New AI innovations and research | stackexchange | ok · direct | 1 |
 | New AI innovations and research | news | ok · direct | 4 |
-| New AI innovations and research | youtube | indexed · incomplete | 0 |
+| New AI innovations and research | youtube | public index discovery | 0 |
 | AI agents and coding | github | ok · direct | 15 |
 | AI agents and coding | hackernews | ok · direct | 15 |
-| AI agents and coding | bluesky | ok · direct | 0 |
+| AI agents and coding | bluesky | ok · direct | 15 |
 | AI agents and coding | stackexchange | ok · direct | 5 |
-| AI agents and coding | news | ok · direct | 9 |
-| AI agents and coding | x | indexed · incomplete | 12 |
-| AI agents and coding | youtube | indexed · incomplete | 0 |
+| AI agents and coding | news | ok · direct | 10 |
+| AI agents and coding | x | public index discovery | 13 |
+| AI agents and coding | youtube | public index discovery | 0 |
 | AI policy, safety and funding | news | ok · direct | 1 |
 | AI policy, safety and funding | hackernews | ok · direct | 0 |
-| AI policy, safety and funding | bluesky | failed: ValueError: Bluesky public search was blocked and its indexed fallback returned no matches | 0 |
-| AI policy, safety and funding | x | indexed · incomplete | 2 |
-| AI policy, safety and funding | linkedin | indexed · incomplete | 0 |
+| AI policy, safety and funding | bluesky | ok · direct | 1 |
+| AI policy, safety and funding | x | public index discovery | 2 |
+| AI policy, safety and funding | linkedin | public index discovery | 0 |
 
 ## New findings
 
+### AI agents and coding — bluesky
+
+- [The device is TRMNL, they sent me one for review. The pattern is bigger than the device. Full story: thoughts.jock.pl/p/trmnl-ein...](https://bsky.app/profile/joozio.bsky.social/post/3mtj5ajdglm2j)
+  - @joozio.bsky.social · 2026-08-20T11:27:09.749298Z · Bluesky authenticated AppView
+  - The device is TRMNL, they sent me one for review. The pattern is bigger than the device. Full story: thoughts.jock.pl/p/trmnl-ein...
+- [Fixed-function hardware made sense when software was expensive to build. With AI, going from "I wish I had a screen that shows X" to having it takes one evening](https://bsky.app/profile/joozio.bsky.social/post/3mtj5ageviy2k)
+  - @joozio.bsky.social · 2026-08-20T11:27:06.644410Z · Bluesky authenticated AppView
+  - Fixed-function hardware made sense when software was expensive to build. With AI, going from "I wish I had a screen that shows X" to having it takes one evening. Hardware is becoming a surface, and the agent is becoming the app.
+- [I have been running an experiment: a $139 e-ink display on my desk, connected to the AI agent I built. The device is deliberately dumb. Grayscale, refreshes eve](https://bsky.app/profile/joozio.bsky.social/post/3mtj5afyk7g2r)
+  - @joozio.bsky.social · 2026-08-20T11:27:06.241489Z · Bluesky authenticated AppView
+  - I have been running an experiment: a $139 e-ink display on my desk, connected to the AI agent I built. The device is deliberately dumb. Grayscale, refreshes every 15 minutes, battery lasts months.
+- [📰 🔴 SON DAKİKA: Binance, AI Ajanlarının Kullanıcı Adına İşlem Yapmasını Sağlayan Agent OS’u Tanıttı Kaynak: FounderN #haber #sondakika #gündem #türkiye #dünya](https://bsky.app/profile/sondakikatr.bsky.social/post/3mtj52xkchg2q)
+  - @sondakikatr.bsky.social · 2026-08-20T11:24:02.998Z · Bluesky authenticated AppView
+  - 📰 🔴 SON DAKİKA: Binance, AI Ajanlarının Kullanıcı Adına İşlem Yapmasını Sağlayan Agent OS’u Tanıttı Kaynak: FounderN #haber #sondakika #gündem #türkiye #dünya
+- [Another account of a rogue AI agent with some mind-blowing details... this time from a UK government lab. The AI agent attempted to sabotage a piece of open-sou](https://bsky.app/profile/bruceandy.bsky.social/post/3mtj4wz5dfc2l)
+  - @bruceandy.bsky.social · 2026-08-20T11:21:50.833Z · Bluesky authenticated AppView
+  - Another account of a rogue AI agent with some mind-blowing details... this time from a UK government lab. The AI agent attempted to sabotage a piece of open-source software on the code-sharing site GitHub, and then created fake personas to persuade others that the human who caught it was wrong.
+- [agniverse.co/blog/organi... built the tool that automates this decision → handler finds the outliers, you just approve the dupe: gethandler.ai/](https://bsky.app/profile/consumerxai.bsky.social/post/3mtj4t7ueys2b)
+  - @consumerxai.bsky.social · 2026-08-20T11:19:43.582543Z · Bluesky authenticated AppView
+  - agniverse.co/blog/organi... built the tool that automates this decision → handler finds the outliers, you just approve the dupe: gethandler.ai/
+- [And if you prefer LlamaIndex for building your AI agents, here is how you can build this planning agent with Weather API, Google Calendar, and Notion. My latest](https://bsky.app/profile/zenmanish.bsky.social/post/3mtj4ebqr322v)
+  - @zenmanish.bsky.social · 2026-08-20T11:11:22.324Z · Bluesky authenticated AppView
+  - And if you prefer LlamaIndex for building your AI agents, here is how you can build this planning agent with Weather API, Google Calendar, and Notion. My latest tutorial for @descope.com 👇 www.descope.com/blog/post/ll...
+- [MCP adoption is moving faster than most security reviews can keep up. Exposing tool servers to agents means new auth surfaces, prompt injection through tool res](https://bsky.app/profile/kindtech.bsky.social/post/3mtj4e4q6nx2b)
+  - @kindtech.bsky.social · 2026-08-20T11:11:13.000Z · Bluesky authenticated AppView
+  - MCP adoption is moving faster than most security reviews can keep up. Exposing tool servers to agents means new auth surfaces, prompt injection through tool responses, and data the agent should never see. Treat MCP like any untrusted API surface, because it is. #MCP #AI #Security
+- [🤖 Binance has launched Agent OS, standardising how AI apps like ChatGPT and Claude Code access its trading, wallet and market data infrastructure, now with MCP ](https://bsky.app/profile/liquidityfinder.bsky.social/post/3mtj4dq2lv22p)
+  - @liquidityfinder.bsky.social · 2026-08-20T11:11:03.769Z · Bluesky authenticated AppView
+  - 🤖 Binance has launched Agent OS, standardising how AI apps like ChatGPT and Claude Code access its trading, wallet and market data infrastructure, now with MCP support. Check out the full article here: liquidityfinder.com/news/binance... What does agentic trading mean for your strategy? 📊
+- [How I think about reducing AI costs #ai #news #technology #artificialintelligence #ink](https://bsky.app/profile/todaystopainews.bsky.social/post/3mtj4cavyrv2m)
+  - @todaystopainews.bsky.social · 2026-08-20T11:10:11.952628+00:00 · Bluesky authenticated AppView
+  - How I think about reducing AI costs #ai #news #technology #artificialintelligence #ink
+- [Exclusive How a Texas student blew the whistle on a hacking attempt unleashed by a rogue AI agent from a British government lab via Reuters](https://bsky.app/profile/project-push.tk.gg/post/3mtj3y2rg3q2q)
+  - @project-push.tk.gg · 2026-08-20T11:04:24.868Z · Bluesky authenticated AppView
+  - Exclusive How a Texas student blew the whistle on a hacking attempt unleashed by a rogue AI agent from a British government lab via Reuters
+- [Your AI agent can now lose at board games to strangers on the internet. FluxDots - a neon strategy duel where humans and AI agents share one ranked Elo ladder. ](https://bsky.app/profile/yepgent.bsky.social/post/3mtj3rkrg5f25)
+  - @yepgent.bsky.social · 2026-08-20T11:00:52.493208+00:00 · Bluesky authenticated AppView
+  - Your AI agent can now lose at board games to strangers on the internet. FluxDots - a neon strategy duel where humans and AI agents share one ranked Elo ladder. Free in the browser, agents join via MCP in ~2 min. fluxdots.com
+- [Game days with AI agents as chaos injectors became a thing this year. Simulating agent-induced load exposed throttling gaps that human traffic never triggered #](https://bsky.app/profile/kindtech.bsky.social/post/3mtj3qjnkks2n)
+  - @kindtech.bsky.social · 2026-08-20T11:00:19.520Z · Bluesky authenticated AppView
+  - Game days with AI agents as chaos injectors became a thing this year. Simulating agent-induced load exposed throttling gaps that human traffic never triggered #SoftwareDevelopment #WebDev #Programming
+- [Alibaba AI outlays dent profit despite best revenue growth in years https://asia.nikkei.com/business/technology/alibaba-ai-outlays-dent-profit-despite-best-reve](https://bsky.app/profile/asia.nikkei.com/post/3mtj3pgyjha24)
+  - @asia.nikkei.com · 2026-08-20T10:59:43.171Z · Bluesky authenticated AppView
+  - Alibaba AI outlays dent profit despite best revenue growth in years https://asia.nikkei.com/business/technology/alibaba-ai-outlays-dent-profit-despite-best-revenue-growth-in-years
+
 ### AI agents and coding — github
 
-- [vaaraio/vaara](https://github.com/vaaraio/vaara)
-  - vaaraio · 2026-08-20T10:53:58Z · GitHub public search
-  - Accountable Autonomy: open-source evidence layer that gates every AI agent tool call against your policy and writes a hash-chained record an auditor verifies offline, without trusting you. Root-agnostic; binds to TPM 2.0 / SEV-SNP when present. Your environment, no SaaS, no telemetry. AGPL-3.0.
-- [vstorm-co/agenticos](https://github.com/vstorm-co/agenticos)
-  - vstorm-co · 2026-08-20T10:53:55Z · GitHub public search
-  - The operating system for your company's AI agents. Self-hosted, open source, and yours.
-- [ssheleg/sheleg-design-skill](https://github.com/ssheleg/sheleg-design-skill)
-  - ssheleg · 2026-08-20T10:53:54Z · GitHub public search
-  - The taste layer for AI coding agents: cinematic scroll-driven landing pages (one scroll clock, motion that degrades to calm, WebGL particle formations), product-UI style packs each shipping a ready token layer, and the Figma border — tokens as variables, design to code without hand-copied values.
-- [kovalent0x/usage-gauge](https://github.com/kovalent0x/usage-gauge)
-  - kovalent0x · 2026-08-20T10:53:50Z · GitHub public search
-  - A local-first usage monitor for AI coding agents, starting with Codex.
-- [douglasdemaio/vtessera](https://github.com/douglasdemaio/vtessera)
-  - douglasdemaio · 2026-08-20T10:53:44Z · GitHub public search
-  - A tessera was a small token used in the ancient world for admission, identification, and exchange. AI-agent compute marketplace — GPU/CPU isolation via Cloud Hypervisor microVMs, per-device metering, and policy-driven networking on Solana.
-- [wadelab/safe-tre-agent](https://github.com/wadelab/safe-tre-agent)
-  - wadelab · 2026-08-20T10:53:43Z · GitHub public search
-  - Safe-outputs gateway for an AI analyst inside a Trusted Research Environment (prototype, synthetic data).
-- [linny006/agent-eval-harness](https://github.com/linny006/agent-eval-harness)
-  - linny006 · 2026-08-20T10:53:42Z · GitHub public search
-  - Live, open-source benchmark for comparing AI coding agents on real GitHub issues
-- [resq-software/pypi](https://github.com/resq-software/pypi)
-  - resq-software · 2026-08-20T10:53:40Z · GitHub public search
-  - Python packages for the ResQ disaster response platform: resq-mcp (FastMCP server connecting AI agents to drone fleets and simulations) and resq-dsa (zero-dependency data structures for search and rescue).
-- [yadavdheeraj133/AI-Career-Agent](https://github.com/yadavdheeraj133/AI-Career-Agent)
-  - yadavdheeraj133 · 2026-08-20T10:53:36Z · GitHub public search
-- [MacTechIN/SAT_Open_Turtor](https://github.com/MacTechIN/SAT_Open_Turtor)
-  - MacTechIN · 2026-08-20T10:53:31Z · GitHub public search
-  - Free Open SAT Self Training Solution by Free AI Agent
-- [0001Moksh/MANUFACTURING-AGENTIC-AI](https://github.com/0001Moksh/MANUFACTURING-AGENTIC-AI)
-  - 0001Moksh · 2026-08-20T10:53:31Z · GitHub public search
-- [martin2844/slab-email](https://github.com/martin2844/slab-email)
-  - martin2844 · 2026-08-20T10:53:24Z · GitHub public search
-  - Headless email connector for AI agents via REST and MCP
-- [tvrcgo/agent](https://github.com/tvrcgo/agent)
-  - tvrcgo · 2026-08-20T10:53:23Z · GitHub public search
-  - A cloud agent
-- [frisky1985/yuleOSH](https://github.com/frisky1985/yuleOSH)
-  - frisky1985 · 2026-08-20T10:53:22Z · GitHub public search
-  - yuleOSH - 嵌入式AI开发全流程平台：OpenSpec+Superpowers+Harness Engineering 三位一体，一站式需求→开发→测试持续集成/测试，AI Agents流水线
+- [danieljustus/symaira-brain](https://github.com/danieljustus/symaira-brain)
+  - danieljustus · 2026-08-20T11:29:20Z · GitHub public search
+  - 🧠🔐 Portable agent-context layer — multiplexes vault, memory, and skills behind one MCP gateway for AI coding harnesses.
+- [sanmao44/sanmao.ai-LuminaAgent](https://github.com/sanmao44/sanmao.ai-LuminaAgent)
+  - sanmao44 · 2026-08-20T11:29:17Z · GitHub public search
+  - SANMAO.AI 本地 AI 创作工作台：生图、对话、历史管理与 GitHub 更新提醒。
+- [crewship-ai/crewship](https://github.com/crewship-ai/crewship)
+  - crewship-ai · 2026-08-20T11:29:12Z · GitHub public search
+  - Self-hosted runtime for AI coding agents. Real Linux containers, your hardware, your keys, your data.
+- [dtanapot-max/ai-database-sandbox](https://github.com/dtanapot-max/ai-database-sandbox)
+  - dtanapot-max · 2026-08-20T11:29:09Z · GitHub public search
+  - In-browser virtual MySQL/MariaDB behavioral sandbox for AI agents, testing, simulation, and automated verification. Powered by Core 1.2.
+- [keycaf-design/rtl-agent-codex-cli](https://github.com/keycaf-design/rtl-agent-codex-cli)
+  - keycaf-design · 2026-08-20T11:29:08Z · GitHub public search
+  - AI-assisted SystemVerilog RTL generation, lint repair, testbench generation, and simulation automation using Codex CLI, Python, and Verilator.
+- [lujstn/openbrowse](https://github.com/lujstn/openbrowse)
+  - lujstn · 2026-08-20T11:29:07Z · GitHub public search
+  - The open-source Browser Use Cloud alternative: self-host AI browser agents on a Raspberry Pi or any server, same SDK, lower cost, visual-first.
+- [MindReset/dot_skill](https://github.com/MindReset/dot_skill)
+  - MindReset · 2026-08-20T11:29:06Z · GitHub public search
+  - AI agent tools for the Dot platform: control device content, design Canvas layouts, and integrate through OpenAPI.
+- [Abeesh-2027/AgentX](https://github.com/Abeesh-2027/AgentX)
+  - Abeesh-2027 · 2026-08-20T11:28:59Z · GitHub public search
+  - AgentX is a full-stack AI agent console that combines text and voice interaction with AI-powered conversations using Groq.It can understand natural-language commands to perform actions like Google searches, Maps directions, and live news retrieval.
+- [0xb1ob/muxa](https://github.com/0xb1ob/muxa)
+  - 0xb1ob · 2026-08-20T11:28:58Z · GitHub public search
+  - tmux-native messaging for AI agent CLIs
+- [nikzlabs/shipit](https://github.com/nikzlabs/shipit)
+  - nikzlabs · 2026-08-20T11:28:54Z · GitHub public search
+  - Self-hosted, chat-driven IDE for running coding agents through your real engineering loop — Claude Code or Codex, parallel sandboxed containers, live preview, and the GitHub loop inline.
+- [Ghost011118/company-ai-hub](https://github.com/Ghost011118/company-ai-hub)
+  - Ghost011118 · 2026-08-20T11:28:49Z · GitHub public search
+  - Codex-compatible enterprise AI gateway for governed Agents, Skills, Prompts, and reviewed employee contributions.
+- [dev-shubhambhandari/shubhagent](https://github.com/dev-shubhambhandari/shubhagent)
+  - dev-shubhambhandari · 2026-08-20T11:28:47Z · GitHub public search
+  - ShubhAgent - An open-source TypeScript framework and product stack for autonomous AI agents.
+- [brunodpl/startups-agents-gcp](https://github.com/brunodpl/startups-agents-gcp)
+  - brunodpl · 2026-08-20T11:28:45Z · GitHub public search
+  - 360 startup diagnosis multi-agent pipeline (Google ADK + Vertex AI + Cloud Run): investment thesis -> sourced, analysed, framework-cited shortlist. Tales Venture demo.
+- [Emasoft/AgentlensPro](https://github.com/Emasoft/AgentlensPro)
+  - Emasoft · 2026-08-20T11:28:38Z · GitHub public search
+  - AgentlensPro — professional AI-agent observability: OTEL + local-log ingestion, burn forensics, cost analytics, burn-gate hooks. CLI + server + skills.
+- [leonardcser/smelt](https://github.com/leonardcser/smelt)
+  - leonardcser · 2026-08-20T11:28:33Z · GitHub public search
+  - A fast, Lua-scriptable AI coding agent for the terminal
+
+### AI agents and coding — hackernews
+
+- [The first AI agents hire human to ship ugc videos for you](https://news.ycombinator.com/item?id=49373094)
+  - zya_wei · 2026-08-20T11:19:22+00:00 · HN Algolia
 
 ### AI agents and coding — news
 
-- [Zero Networks targets AI agent risk with expanded Palo Alto tie-up](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86dccf769b448abd1fe326e3b073df&url=https%3a%2f%2fwww.channelweb.co.uk%2fnews%2f2026%2fzero-networks-targets-ai-agent-risk-with-expanded-palo-alto-tie-up&c=2107430087822201734&mkt=en-us)
-  - 2026-08-20T03:10:00+00:00 · Bing News RSS
-  - Cybersecurity vendor Zero Networks has expanded its integration with Palo Alto Networks, adding AI traffic inspection and automated threat containment capabilities amid growing concerns around AI agen ...
-- [Binance Introduces Agent OS to Connect AI Applications to Financial Infrastructure](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86dccf769b448abd1fe326e3b073df&url=https%3a%2f%2fwww.aol.com%2farticles%2fbinance-introduces-agent-os-connect-100000000.html&c=6966729307431312853&mkt=en-us)
+- [Three Requirements for Production-Ready AI Agent Assist Technology](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86e514a5d6456e953aa0872d5ad873&url=https%3a%2f%2ffinance.yahoo.com%2ftechnology%2fai%2farticles%2fthree-requirements-production-ready-ai-110000922.html&c=5205694526277101582&mkt=en-us)
+  - 2026-08-20T04:00:00+00:00 · Bing News RSS
+  - Fuel iX™ is TELUS Digital's proprietary enterprise AI platform and suite of products for clients to manage, monitor and maintain generative AI across the enterpriseFuel iX supports measurable contact ...
+- [Binance Introduces Agent OS to Connect AI Applications to Financial Infrastructure](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86e514a5d6456e953aa0872d5ad873&url=https%3a%2f%2fwww.aol.com%2farticles%2fbinance-introduces-agent-os-connect-100000000.html&c=6966729307431312853&mkt=en-us)
   - 2026-08-20T03:00:00+00:00 · Bing News RSS
   - ABU DHABI, UAE, Aug. 20, 2026/PRNewswire/ -- Binance today introduced Agent OS, a developer platform and standardized access layer connecting AI applications to Binance's trading, market data, wallet, ...
-- [An AI agent token once worth $2.4 billion is now worth almost nothing. This is what you need to know about investing in AI cryptos](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86dccf769b448abd1fe326e3b073df&url=https%3a%2f%2fwww.msn.com%2fen-us%2fmoney%2fsavingandinvesting%2fan-ai-agent-token-once-worth-24-billion-is-now-worth-almost-nothing-this-is-what-you-need-to-know-about-investing-in-ai-cryptos%2far-AA2ay0MV&c=18430595178141090212&mkt=en-us)
+- [An AI agent token once worth $2.4 billion is now worth almost nothing. This is what you need to know about investing in AI cryptos](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86e514a5d6456e953aa0872d5ad873&url=https%3a%2f%2fwww.msn.com%2fen-us%2fmoney%2fsavingandinvesting%2fan-ai-agent-token-once-worth-24-billion-is-now-worth-almost-nothing-this-is-what-you-need-to-know-about-investing-in-ai-cryptos%2far-AA2ay0MV&c=18430595178141090212&mkt=en-us)
   - 2026-08-20T03:00:00+00:00 · Bing News RSS
   - The newest cryptocurrency segments are usually the riskiest of all.
-- [AI Agents Are Turning CTOs Into City Planners](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86dccf769b448abd1fe326e3b073df&url=https%3a%2f%2fwww.forbes.com%2fcouncils%2fforbestechcouncil%2f2026%2f08%2f20%2fai-agents-are-turning-ctos-into-city-planners%2f&c=13552318986502158538&mkt=en-us)
+- [AI Agents Are Turning CTOs Into City Planners](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86e514a5d6456e953aa0872d5ad873&url=https%3a%2f%2fwww.forbes.com%2fcouncils%2fforbestechcouncil%2f2026%2f08%2f20%2fai-agents-are-turning-ctos-into-city-planners%2f&c=13552318986502158538&mkt=en-us)
   - 2026-08-20T03:00:00+00:00 · Bing News RSS
   - AI agents don't know which road was built badly five years ago, which bridge can't handle more load or which shortcut will become tomorrow's outage.
-- [Binance now lets AI agents trade, but keeping them in check is largely up to users](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86dccf769b448abd1fe326e3b073df&url=https%3a%2f%2fwww.msn.com%2fen-us%2fnews%2ftechnology%2fbinance-now-lets-ai-agents-trade-but-keeping-them-in-check-is-largely-up-to-users%2far-AA2ays69&c=15242257395214077809&mkt=en-us)
+- [Binance now lets AI agents trade, but keeping them in check is largely up to users](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86e514a5d6456e953aa0872d5ad873&url=https%3a%2f%2fwww.msn.com%2fen-us%2fmoney%2fgeneral%2fbinance-now-lets-ai-agents-trade-but-keeping-them-in-check-is-largely-up-to-users%2far-AA2ays69&c=7153584818649222616&mkt=en-us)
   - 2026-08-20T02:30:00+00:00 · Bing News RSS
   - Binance's Agent OS works with tools including ChatGPT, Claude Code, and Cursor.
-- [Binance launches Agent OS to enable AI crypto market trading](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86dccf769b448abd1fe326e3b073df&url=https%3a%2f%2fwww.newsbytesapp.com%2fnews%2fscience%2fbinance-launches-agent-os-to-enable-ai-crypto-market-trading%2ftldr&c=7772551995990986634&mkt=en-us)
+- [Binance launches Agent OS to enable AI crypto market trading](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86e514a5d6456e953aa0872d5ad873&url=https%3a%2f%2fwww.newsbytesapp.com%2fnews%2fscience%2fbinance-launches-agent-os-to-enable-ai-crypto-market-trading%2ftldr&c=7772551995990986634&mkt=en-us)
   - 2026-08-19T18:36:00+00:00 · Bing News RSS
   - Binance has launched Agent OS, enabling AI agents to analyze markets and execute trades autonomously. Users retain control through granular permissions and sub-account safeguards.
-- [WRITER Named a Market Shaper in the July 2026 Gartner® Emerging Market Quadrant™ for AI Agents for Marketing — Startup Vendors](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86dccf769b448abd1fe326e3b073df&url=https%3a%2f%2ffinance.yahoo.com%2ftechnology%2fai%2farticles%2fwriter-named-market-shaper-july-143000994.html&c=9215770201728231866&mkt=en-us)
+- [WRITER Named a Market Shaper in the July 2026 Gartner® Emerging Market Quadrant™ for AI Agents for Marketing — Startup Vendors](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86e514a5d6456e953aa0872d5ad873&url=https%3a%2f%2ffinance.yahoo.com%2ftechnology%2fai%2farticles%2fwriter-named-market-shaper-july-143000994.html&c=9215770201728231866&mkt=en-us)
   - 2026-08-19T07:30:00+00:00 · Bing News RSS
   - WRITER, the enterprise AI agent platform trusted by the world’s leading Fortune 500 brands, today announced it has been recognized as a Market Shaper in the first-ever Gartner Emerging Market ...
-- [Cloudera Anywhere Cloud gives AI agents safe, secure access to sensitive data wherever it lives](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86dccf769b448abd1fe326e3b073df&url=https%3a%2f%2fsiliconangle.com%2f2026%2f08%2f19%2fcloudera-anywhere-cloud-gives-ai-agents-safe-secure-access-sensitive-data-wherever-lives%2f&c=3263345574588322227&mkt=en-us)
-  - 2026-08-19T07:00:00+00:00 · Bing News RSS
-  - Cloudera Anywhere Cloud gives AI agents safe, secure access to sensitive data wherever it lives - SiliconANGLE ...
-- [Why businesses need an AI agent kill switch](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86dccf769b448abd1fe326e3b073df&url=https%3a%2f%2fwww.techtarget.com%2fai%2ftip%2fWhy-businesses-need-an-AI-agent-kill-switch&c=4384488858045442195&mkt=en-us)
+- [Why businesses need an AI agent kill switch](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86e514a5d6456e953aa0872d5ad873&url=https%3a%2f%2fwww.techtarget.com%2fai%2ftip%2fWhy-businesses-need-an-AI-agent-kill-switch&c=4384488858045442195&mkt=en-us)
   - 2026-08-19T04:52:00+00:00 · Bing News RSS
   - Agentic AI can autonomously solve and create problems. Learn how an AI kill switch can act as a fail-safe and the different types for business operations.
-
-### AI agents and coding — x
-
-- [🎉 Introducing 𝙾𝚙𝚎𝚗 𝙱𝚘𝚝 An open source Grok Bot that works with ANY agent harness, designed for real companies. It includes: - AI Coworkers - Generative UI - Computer use (remote/local) - Agent-human handoffs - Full data recording, owned by you Repo](https://news.google.com/rss/articles/CBMiXEFVX3lxTE10bnExdDJPQkxwRE10R2RSRG1pZ1d1R1MtV2VaWS1XUzlXUXFtWU1La2RaUmZwSDh4RW5DcnYxZTk2LVY5OXJfTjFadUppNUdxd2RTaGwwTUFSMjQ3?oc=5)
-  - 2026-08-19T17:16:18+00:00 · Google News index (x.com)
-  - 🎉 Introducing 𝙾𝚙𝚎𝚗 𝙱𝚘𝚝 An open source Grok Bot that works with ANY agent harness, designed for real companies. It includes: - AI Coworkers - Generative UI - Computer use (remote/local) - Agent-human handoffs - Full data recording, owned by you Repo x.com
-- [We benchmarked 300+ NVIDIA verified skills to see how much they actually help agents on real tasks. Same task, same model, same setup. The only difference was whether the agent had the skill. Across the benchmarks, skills improved correctness by 41 poi](https://news.google.com/rss/articles/CBMiXkFVX3lxTE43bHFEUFlIUlJzUG81WHNuc2E5UEJqVkROaVRWTDJZaTdiME1hOHdORTZheFVrcjVwWVExQW1xZ1NucVk2SUZJM0JJcWtyajlNeFQtZFlDMnFBd1FxSWc?oc=5)
-  - 2026-08-19T16:28:17+00:00 · Google News index (x.com)
-  - We benchmarked 300+ NVIDIA verified skills to see how much they actually help agents on real tasks. Same task, same model, same setup. The only difference was whether the agent had the skill. Across the benchmarks, skills improved correctness by 41 poi x.com
-- [ICYMI: Gemini 3.7 Flash is now available to all Google AI Pro and Ultra users in Gemini chat and Gemini Spark ✨ For Gemini Spark, this means your 24/7 personal AI agent in the @GeminiApp is now even better at handling multi-step tasks for you and using to](https://news.google.com/rss/articles/CBMiW0FVX3lxTE1nR1lpdzJhVzVqbUNNYmdoMnR5aXA3aFdhcGJLcm0tM1otZERpOWpLRWZfZUVPYWN2S2NscFhRZ1JOWlFQa0c2amgtNWJSM0ptelFMQ3NBY3pfOGs?oc=5)
-  - 2026-08-19T16:26:43+00:00 · Google News index (x.com)
-  - ICYMI: Gemini 3.7 Flash is now available to all Google AI Pro and Ultra users in Gemini chat and Gemini Spark ✨ For Gemini Spark, this means your 24/7 personal AI agent in the @GeminiApp is now even better at handling multi-step tasks for you and using to x.com
-- [Own your harness. Very excited about this new open-source agent harness. I had early access, and it's really good! The best part is that it's properly tuned to get insane cost reduction on open models like GLM-5.2 (75% lower costs). It supports other frontier mo](https://news.google.com/rss/articles/CBMiXkFVX3lxTE01dl9LXzhqMzhnNG5WNkRERV8wZDJweThmRHF2cjVDOGkwTV9reXF4VUloRWczZmkxdGNqMDVTMGJTZGh2R1o2dVA2YjUyLWFIdVhaWmoyQWlocG9ONHc?oc=5)
-  - 2026-08-19T15:25:50+00:00 · Google News index (x.com)
-  - Own your harness. Very excited about this new open-source agent harness. I had early access, and it's really good! The best part is that it's properly tuned to get insane cost reduction on open models like GLM-5.2 (75% lower costs). It supports other frontier mo x.com
-- [I built a handbook to help you learn AI agents. It'll give you: • Must know AI GitHub repos. • Free courses to master AI agents. • Whitepapers to understand AI fundamentals. • Curated videos to learn AI agent foundations. • Essential books to start with AI agent en](https://news.google.com/rss/articles/CBMiZ0FVX3lxTE90RnRUTUF0VjdpZV9ZT0N3aFpGbzBjazBjSG5OcWdPUkN2YWkyeHplQy1uOF9vb2RGYlVrd2U0X3NfTjRmR2JHOHJvLW1fb2ZYamlLMlNBYV9IVkpXR3V0MHUxVzhNd00?oc=5)
-  - 2026-08-19T12:32:32+00:00 · Google News index (x.com)
-  - I built a handbook to help you learn AI agents. It'll give you: • Must know AI GitHub repos. • Free courses to master AI agents. • Whitepapers to understand AI fundamentals. • Curated videos to learn AI agent foundations. • Essential books to start with AI agent en x.com
-- [You are running a one-person company.You find the leads. Write the outreach. Make the images. Answer the replies. Count the week.Everything waits for you. Nothing gets handed off.And by the time the day is gone, the list is still sitting there.Grok Bot change](https://news.google.com/rss/articles/CBMiX0FVX3lxTE9ueTExU2NBSTV4WFdoYTN2SEtRcDlXcGxYSS1KeWREaVBFa0N3ZERGLW1IVnRjNmx5MlNmSEh4ZGdGUmJBMm5DNUc3UGZfR092VnZTNFBLRzVsLTlnc0JV?oc=5)
-  - 2026-08-19T08:39:38+00:00 · Google News index (x.com)
-  - You are running a one-person company.You find the leads. Write the outreach. Make the images. Answer the replies. Count the week.Everything waits for you. Nothing gets handed off.And by the time the day is gone, the list is still sitting there.Grok Bot change x.com
-- [this is pure f*cking treasure how to build your first ai agent (complete walkthrough) if i’d had this last year, i would’ve launched my first agent in a single day instead of burning two weeks in the right hands, this flips the whole game:](https://news.google.com/rss/articles/CBMiXkFVX3lxTE14MWM3WTZ3ZjJkZy13eW9fMGlncFByNjBDVkxPbkdndTl4bTExYUR2ZDdpaDNzLU9RSmdQSXdMY0s5Z3dNSDlYM0cxTHBIM2lsZ1dCMkluZzVxOUZRWkE?oc=5)
-  - 2026-08-19T08:37:00+00:00 · Google News index (x.com)
-  - this is pure f*cking treasure how to build your first ai agent (complete walkthrough) if i’d had this last year, i would’ve launched my first agent in a single day instead of burning two weeks in the right hands, this flips the whole game: x.com
-- [9 of my favorite Grok Bot hacks.I have been getting my hands dirty with Grok Bot, and the default setup is only the starting point.Creating a few bots is easy. The useful part is teaching them your context, giving them clear roles, and building a system that can ke](https://news.google.com/rss/articles/CBMiXkFVX3lxTE1uY1hvajlOeFB2cWF6cnpweDMzM3dzS0pxdUY2N09XLWd1XzRPbWVLaTZ0a0JkMHFLUU5kWlBQYnZ1c1Y1aWEwRE1tcVpRWDV2dmJ2M3lEQV96MGF0Q3c?oc=5)
-  - 2026-08-19T03:27:01+00:00 · Google News index (x.com)
-  - 9 of my favorite Grok Bot hacks.I have been getting my hands dirty with Grok Bot, and the default setup is only the starting point.Creating a few bots is easy. The useful part is teaching them your context, giving them clear roles, and building a system that can ke x.com
-- [Grok Bot is the most powerful AI agent I've ever used. Learn to use it correctly, and you'll have agent swarms working for you 24/7. This master guide teaches you everything you need to know about the new Grok Bot (by @SpaceXAI ):](https://news.google.com/rss/articles/CBMiZkFVX3lxTE9GT0lxYTRSUVJpUXhCcE4yOXNXd0FmX2QxSHQwU2tTT041TkRPeG5oUnBIVUszeVRVR2MxVEV0T3Q2dEkwX3Y3TWQyRFhSd0JubFNNRXUtTm9NMGhPaHNjV0VzTGV6dw?oc=5)
-  - 2026-08-18T19:45:00+00:00 · Google News index (x.com)
-  - Grok Bot is the most powerful AI agent I've ever used. Learn to use it correctly, and you'll have agent swarms working for you 24/7. This master guide teaches you everything you need to know about the new Grok Bot (by @SpaceXAI ): x.com
+- [Hims & Hers CEO Andrew Dudum on the company's approach to AI agents](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86e514a5d6456e953aa0872d5ad873&url=https%3a%2f%2fwww.msn.com%2fen-us%2fmoney%2fother%2fhims-hers-ceo-andrew-dudum-on-the-companys-approach-to-ai-agents%2fvi-AA2an9hG&c=10718961657941406957&mkt=en-us)
+  - 2026-08-18T12:18:58+00:00 · Bing News RSS
+  - Hims & Hers co-founder and CEO Andrew Dudum joins 'Squawk Box' to discuss how the company is integrating AI tools, why it's moving away from paying third party vendors for AI agents, and more.
+- [From AI Copilots to Agent Swarms](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86e514a5d6456e953aa0872d5ad873&url=https%3a%2f%2fwww.aol.com%2farticles%2fai-copilots-agent-swarms-140001000.html&c=15114959339930435834&mkt=en-us)
+  - 2026-08-17T07:17:00+00:00 · Bing News RSS
+  - The impact of AI on software development has been both profound and ever-evolving. Last year, I wrote about AMD’s plans to use AI not just for generating new lines of code, but also for other steps in ...
 
 ### AI policy, safety and funding — news
 
-- [Top News Today: Cerebras AI Chip, EliseAI Funding, Graduate Jobs, Crypto Rules, and SraVaani](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86dcd1169a4959bbda81d11c8e2140&url=https%3a%2f%2fwww.analyticsinsight.net%2ftech-news%2ftop-news-today-cerebras-ai-chip-eliseai-funding-graduate-jobs-crypto-rules-and-sravaani&c=12470335597058277971&mkt=en-us)
+- [Top News Today: Cerebras AI Chip, EliseAI Funding, Graduate Jobs, Crypto Rules, and SraVaani](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86e515443047318096d896a8a2b70c&url=https%3a%2f%2fwww.analyticsinsight.net%2ftech-news%2ftop-news-today-cerebras-ai-chip-eliseai-funding-graduate-jobs-crypto-rules-and-sravaani&c=12470335597058277971&mkt=en-us)
   - 2026-08-19T00:42:00+00:00 · Bing News RSS
   - Good afternoon! Here’s your quick roundup of the latest developments across AI chips, tech funding, graduate employment, cryptocurrency regulation, and artifici ...
 
-### Anthropic — official
-
-- [Autonomous de novo protein binder design with Claude](https://news.google.com/rss/articles/CBMif0FVX3lxTFBaMW9CZHNKUG5GQXRVaXN5NFVwbXBVbXluUDAzcjJjZnNSVlJraXY4UVdhUlYxS2V2Slp4cExzcFl4WmFLTjdmVXFleWhtc1pqT1BkOG9kTXZRUm9oVk5zTFBMV2U2d3kzSHlSWldSd3JhZWQ4elZVb3ViV2F6aE0?oc=5)
-  - 2026-08-18T22:55:40+00:00 · Google News index (anthropic.com)
-  - Autonomous de novo protein binder design with Claude www-cdn.anthropic.com
-
 ### New AI companies — news
 
-- [Stripe acquires AI start-up OpenRouter for $7.5B](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86dcc37107440fbaf5bff20ce55b7f&url=https%3a%2f%2fwww.newsbytesapp.com%2fnews%2fscience%2fstripe-acquires-ai-start-up-openrouter-for-7-5b%2fstory&c=7687148277349060702&mkt=en-us)
-  - 2026-08-20T03:01:00+00:00 · Bing News RSS
-  - Stripe is purchasing OpenRouter for approximately $7.5 billion, signaling its strategic move into AI model markets to optimize profitability and enhance token efficiency.
-- [Cognition denies report that SpaceX tried to acquire AI start-up](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86dcc37107440fbaf5bff20ce55b7f&url=https%3a%2f%2fwww.newsbytesapp.com%2fnews%2fbusiness%2fspacex-didn-t-try-to-acquire-ai-start-up-cognition%2fstory&c=9529429819113243106&mkt=en-us)
-  - 2026-08-19T14:50:00+00:00 · Bing News RSS
-  - Cognition CEO refuted claims that SpaceX sought to acquire the AI startup, following a Bloomberg report suggesting Elon Musk's company aimed to bolster its AI capabilities.
-- [Coinbase’s Base launches $100K startup accelerator for AI and finance innovation](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86dcc37107440fbaf5bff20ce55b7f&url=https%3a%2f%2fcryptobriefing.com%2fcoinbases-base-launches-100k-startup-accelerator-for-ai-and-finance-innovation%2f&c=5177174823403830988&mkt=en-us)
-  - 2026-08-19T09:34:00+00:00 · Bing News RSS
-  - Coinbase's Base launches a $100K startup accelerator for AI and finance. Token launch by December 31, 2027 at 53% YES.
-- [Coinbase's Base Is Betting Big on AI Agents With $1 Million Startup Accelerator](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86dcc37107440fbaf5bff20ce55b7f&url=https%3a%2f%2fdecrypt.co%2f375952%2fcoinbase-base-ai-agents-startup-accelerator&c=15035839460707812583&mkt=en-us)
+- [Coinbase's Base Is Betting Big on AI Agents With $1 Million Startup Accelerator](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86e509ed9f4ab2bef2aea0ab781ac4&url=https%3a%2f%2fdecrypt.co%2f375952%2fcoinbase-base-ai-agents-startup-accelerator&c=15035839460707812583&mkt=en-us)
   - 2026-08-19T09:31:00+00:00 · Bing News RSS
   - Base is narrowing its accelerator to 10 startups as it looks for teams building AI agents, payments, trading, and financing products.
+- [What happens when AI agents start working together? Anthropic finds things can take an unexpected turn](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86e509ed9f4ab2bef2aea0ab781ac4&url=https%3a%2f%2fwww.msn.com%2fen-au%2fnews%2fother%2fwhat-happens-when-ai-agents-start-working-together-anthropic-finds-things-can-take-an-unexpected-turn%2far-AA2a4Huk&c=13781068414981018794&mkt=en-us)
+  - 2026-08-13T22:59:55+00:00 · Bing News RSS
+  - Anthropic conducted an experiment with 45 AI agents to explore their interactions while working on shared tasks.
 
-### New AI companies — x
+### New AI innovations and research — bluesky
 
-- [Grok Build puts you in charge of your computer](https://news.google.com/rss/articles/CBMiXkFVX3lxTE56WVgwZXBZWS0zb2RSUzh3XzJuN1VlVjVwLWh0dTVKQ1lHaUtod3h4MnpXTHZiZFNRcnJ6ZHlHVzBSeXA3bUc2dkpuTlZYV2dhM1NUOGx2akI4d1dpZGc?oc=5)
-  - 2026-08-20T03:56:31+00:00 · Google News index (x.com)
-  - Grok Build puts you in charge of your computer x.com
-- [Sam Altman (@sama) / Posts](https://news.google.com/rss/articles/CBMiNEFVX3lxTE9PdGZ5Yzk2alNTWE5lcnJYMXBUYjJXdVJnaVVmc1NGNkVmMHQ2dW94NmloT3g?oc=5)
-  - 2026-08-19T14:01:19+00:00 · Google News index (x.com)
-  - Sam Altman (@sama) / Posts x.com
+- [🆕 Machine Learning Engineer at Startup · India https://topgenaijobs.com/jobs/machine-learning-engineer-at-startup-in-india-1636wy #AIJobs #GenAI #Hiring](https://bsky.app/profile/topgenaijobs.bsky.social/post/3mtj4zcedjp25)
+  - @topgenaijobs.bsky.social · 2026-08-20T11:23:07.429Z · Bluesky authenticated AppView
+  - 🆕 Machine Learning Engineer at Startup · India https://topgenaijobs.com/jobs/machine-learning-engineer-at-startup-in-india-1636wy #AIJobs #GenAI #Hiring
+- [Astro-Hunters: Machine Learning for Exoplanet Transit Detection in TESS Photometry 📄 https://arxiv.org/abs/2608.18172v1 📖 Summary: https://arifsolmaz.github.io/](https://bsky.app/profile/arifsolmaz.bsky.social/post/3mtj4xebxhf2d)
+  - @arifsolmaz.bsky.social · 2026-08-20T11:22:02.464372+00:00 · Bluesky authenticated AppView
+  - Astro-Hunters: Machine Learning for Exoplanet Transit Detection in TESS Photometry 📄 https://arxiv.org/abs/2608.18172v1 📖 Summary: https://arifsolmaz.github.io/arxiv?date=2026-08-20#paper-2608-18172v1
+- [🆕 Engineer, Senior-Machine Learning-Tools at Qualcomm · Hyderabad https://topgenaijobs.com/jobs/engineer-senior-machine-learning-tools-at-qualcomm-in-hyderabad-](https://bsky.app/profile/topgenaijobs.bsky.social/post/3mtj4ngrj6h2f)
+  - @topgenaijobs.bsky.social · 2026-08-20T11:16:29.395Z · Bluesky authenticated AppView
+  - 🆕 Engineer, Senior-Machine Learning-Tools at Qualcomm · Hyderabad https://topgenaijobs.com/jobs/engineer-senior-machine-learning-tools-at-qualcomm-in-hyderabad-py7y8t #AIJobs #GenAI #Hiring
+- [📖 Applied Text Analysis with Python: Enabling Language-Aware Data Products with Machine Learning by Benjamin Bengfort See how simple word patterns unlock predic](https://bsky.app/profile/nextgreatread.bsky.social/post/3mtj44nxq3l2r)
+  - @nextgreatread.bsky.social · 2026-08-20T11:07:06.651791Z · Bluesky authenticated AppView
+  - 📖 Applied Text Analysis with Python: Enabling Language-Aware Data Products with Machine Learning by Benjamin Bengfort See how simple word patterns unlock predictable insights. Ready to turn text into intelligence with Python?
+- [“This mechanism, while deterministic, is a very good example of how words contribute to predictability in context (stereotypical though it may be).” #BookSky #B](https://bsky.app/profile/nextgreatread.bsky.social/post/3mtj44ko63f22)
+  - @nextgreatread.bsky.social · 2026-08-20T11:07:03.191833Z · Bluesky authenticated AppView
+  - “This mechanism, while deterministic, is a very good example of how words contribute to predictability in context (stereotypical though it may be).” #BookSky #Books #TextAnalysis #MachineLearning
+- [🆕 Machine Learning Engineer IV at Avalara · Pune https://topgenaijobs.com/jobs/machine-learning-engineer-iv-at-avalara-in-pune-5vo1j5 #AIJobs #GenAI #Hiring](https://bsky.app/profile/topgenaijobs.bsky.social/post/3mtj3uxzbht26)
+  - @topgenaijobs.bsky.social · 2026-08-20T11:02:48.614Z · Bluesky authenticated AppView
+  - 🆕 Machine Learning Engineer IV at Avalara · Pune https://topgenaijobs.com/jobs/machine-learning-engineer-iv-at-avalara-in-pune-5vo1j5 #AIJobs #GenAI #Hiring
 
 ### New AI innovations and research — github
 
-- [Rinshidha143/customer-churn-prediction](https://github.com/Rinshidha143/customer-churn-prediction)
-  - Rinshidha143 · 2026-08-20T10:54:00Z · GitHub public search
-  - Machine learning project to predict customer churn using Logistic Regression and Random Forest, with SMOTE for class imbalance handling. Built on the Telco Customer Churn dataset.
-- [zapplyjobs/New-Grad-Data-Science-Jobs-2027](https://github.com/zapplyjobs/New-Grad-Data-Science-Jobs-2027)
-  - zapplyjobs · 2026-08-20T10:53:26Z · GitHub public search
-  - 2027 entry-level data science & ML jobs — analytics, AI, quant & machine learning US roles
-- [S-ivaramanathan/Blood---donation---Prediction](https://github.com/S-ivaramanathan/Blood---donation---Prediction)
-  - S-ivaramanathan · 2026-08-20T10:52:57Z · GitHub public search
-  - Machine learning project for predicting blood donation behavior.
-- [asad673-creator/Machine-Learning-Projects](https://github.com/asad673-creator/Machine-Learning-Projects)
-  - asad673-creator · 2026-08-20T10:52:38Z · GitHub public search
-  - A collection of my personal Machine Learning projects and experiments built using Python. This repository covers data preprocessing, visualization, supervised and unsupervised learning, model training, evaluation, and real-world datasets using libraries such as NumPy, Pandas, Matplotlib, and Scikit-learn. Continuously updated as I learn and build.
-- [PyGhosh/Grp_CH4124](https://github.com/PyGhosh/Grp_CH4124)
-  - PyGhosh · 2026-08-20T10:52:32Z · GitHub public search
-  - Machine Learning in Chemistry tutorials
-- [ovsoyanmaria/clustering-antarctic-penguin-species](https://github.com/ovsoyanmaria/clustering-antarctic-penguin-species)
-  - ovsoyanmaria · 2026-08-20T10:52:25Z · GitHub public search
-  - DataCamp project using unsupervised machine learning to cluster Antarctic penguins based on physical characteristics.
-- [Geerthan-S/Employee-Attrition-Prediction](https://github.com/Geerthan-S/Employee-Attrition-Prediction)
-  - Geerthan-S · 2026-08-20T10:52:25Z · GitHub public search
-  - Advanced machine-learning mini project for employee attrition prediction with model comparison, hyperparameter tuning, threshold optimization, explainability and fairness diagnostics.
-- [thameemdev/Examination-Notifier](https://github.com/thameemdev/Examination-Notifier)
-  - thameemdev · 2026-08-20T10:51:46Z · GitHub public search
-  - notification system that continuously monitors MG University examination portals and results pages, immediately alerting subscribers of updates related to the Integrated M.Sc Programme in Computer Science – Artificial Intelligence & Machine Learning.
-- [galihru/facemind](https://github.com/galihru/facemind)
-  - galihru · 2026-08-20T10:51:04Z · GitHub public search
-  - application uses computer vision and machine learning to analyze mental health based on facial expressions. The app includes login system, and real-time mental health analysis through facial landmarks, using OpenCV, Mediapipe, and PyQt5. This Application Delegation Paper Competition for
-- [enhansome/enhansome-edge-machine-learning](https://github.com/enhansome/enhansome-edge-machine-learning)
-  - enhansome · 2026-08-20T10:50:48Z · GitHub public search
-- [madhupulugu36-glitch/python-ml-practice](https://github.com/madhupulugu36-glitch/python-ml-practice)
-  - madhupulugu36-glitch · 2026-08-20T10:50:41Z · GitHub public search
-  - My Python and Machine Learning practice
-- [mwakidenis/smart-farmer](https://github.com/mwakidenis/smart-farmer)
-  - mwakidenis · 2026-08-20T10:50:40Z · GitHub public search
-  - The AI Crop Doctor is a smart platform empowering farmers and gardeners to monitor and manage plant health with ease. Leveraging advanced machine learning and computer vision, it delivers instant, accurate diagnoses with just a single photo 📸. Receive expert-validated treatment recommendations and actionable insights to keep your crops thriving.
-- [Qile-J/sciml-daily](https://github.com/Qile-J/sciml-daily)
-  - Qile-J · 2026-08-20T10:50:35Z · GitHub public search
-  - Daily curated feed of new Scientific Machine Learning, AI-for-scientific-computing & applied-math papers
-- [k4ju1/chinese-offensive-language-detection](https://github.com/k4ju1/chinese-offensive-language-detection)
-  - k4ju1 · 2026-08-20T10:50:33Z · GitHub public search
-  - advanced machine learning project
+- [Bliss-lab-soren/Flood-Risk-Classifier](https://github.com/Bliss-lab-soren/Flood-Risk-Classifier)
+  - Bliss-lab-soren · 2026-08-20T11:28:33Z · GitHub public search
+  - My 3mtt Capstone Project: An application model built based on machine learning for classifying flood risk levels using geographic and environmental features like, rainfall, drainage and others features.
+- [harshantla-cloud/Invoice-Intelligence-System](https://github.com/harshantla-cloud/Invoice-Intelligence-System)
+  - harshantla-cloud · 2026-08-20T11:28:32Z · GitHub public search
+  - An end-to-end Machine Learning and Data Science project for invoice analysis, freight prediction, and invoice risk detection using Streamlit.
+- [Ashu494/PORTFOLIO_website](https://github.com/Ashu494/PORTFOLIO_website)
+  - Ashu494 · 2026-08-20T11:28:22Z · GitHub public search
+  - Welcome to the central repository for my personal developer portfolio. This platform serves as a curated showcase of my journey in software development, with a primary focus on Artificial Intelligence, Machine Learning, and scalable full-stack applications.
+- [priyankaapk/obesity-risk-prediction-ml](https://github.com/priyankaapk/obesity-risk-prediction-ml)
+  - priyankaapk · 2026-08-20T11:28:18Z · GitHub public search
+  - Machine learning classification framework predicting obesity risk levels across Latin American populations using dietary habits, physical activity and lifestyle indicators.
+- [IamMishael06/Flood-Predictive-Model-School-project-yr-3-](https://github.com/IamMishael06/Flood-Predictive-Model-School-project-yr-3-)
+  - IamMishael06 · 2026-08-20T11:28:11Z · GitHub public search
+  - The paper proposes a conceptual framework for detecting and predicting pluvial floods (surface water/urban flooding caused when heavy rainfall overwhelms drainage systems) using Machine Learning (ML). The goal is to build an early warning system to help mitigate the massive socio-economic damages caused by sudden urban floods.
+- [Kapil584/Breast-cancer](https://github.com/Kapil584/Breast-cancer)
+  - Kapil584 · 2026-08-20T11:27:56Z · GitHub public search
+  - A machine learning project that analyzes diagnostic features to classify breast tumors as benign or malignant. The project includes data preprocessing, exploratory data analysis, feature selection, model training, evaluation, and a Streamlit-based web application for interactive predictions.
+- [mujeeb-bello/Retail-Banking-Customer-Segmentation-Cluster-Analysis](https://github.com/mujeeb-bello/Retail-Banking-Customer-Segmentation-Cluster-Analysis)
+  - mujeeb-bello · 2026-08-20T11:27:55Z · GitHub public search
+  - An unsupervised machine learning pipeline designed to segment retail banking customers into distinct behavioral personas using K-Means Clustering and Principal Component Analysis (PCA).
+- [surupi/Iris_Machine_Learning_Suite](https://github.com/surupi/Iris_Machine_Learning_Suite)
+  - surupi · 2026-08-20T11:27:52Z · GitHub public search
+- [allisterb/Camel](https://github.com/allisterb/Camel)
+  - allisterb · 2026-08-20T11:27:40Z · GitHub public search
+  - A 'code-mode' MCP server that allows LLMs to safely generate and execute JavaScript code that calls command-line forensic tools, performs analysis, and employs traditional machine learning algorithms and probabilistic reasoning using SIFT workstation, for autonomous DFIR investigations.
+- [uber/causalml](https://github.com/uber/causalml)
+  - uber · 2026-08-20T11:27:35Z · GitHub public search
+  - Uplift modeling and causal inference with machine learning algorithms
+- [Hellyeah-creator/ML--project](https://github.com/Hellyeah-creator/ML--project)
+  - Hellyeah-creator · 2026-08-20T11:27:09Z · GitHub public search
+  - A machine learning project that predicts customer churn using customer data, helping businesses identify customers who are likely to leave and understand the factors influencing churn.
+- [kartikkumar45/data-science-internship-project](https://github.com/kartikkumar45/data-science-internship-project)
+  - kartikkumar45 · 2026-08-20T11:26:48Z · GitHub public search
+  - A structured data science internship project covering project planning, exploratory analysis, statistical modelling, machine learning, and insight communication.
+- [bishaladhikari-analysis/ford_project-](https://github.com/bishaladhikari-analysis/ford_project-)
+  - bishaladhikari-analysis · 2026-08-20T11:26:35Z · GitHub public search
+  - Ford Project is a **data analysis and machine learning project focused on analyzing Ford vehicle data to identify patterns, trends, and insights.**
+- [KavyaChavan/AI-Career-Recommendation-System](https://github.com/KavyaChavan/AI-Career-Recommendation-System)
+  - KavyaChavan · 2026-08-20T11:26:30Z · GitHub public search
+  - A machine learning project that recommends suitable careers based on skills and interests.
 
 ### New AI innovations and research — news
 
-- [How machine learning is making airports safer and more efficient](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86dccdd50b41bc94c39494bf99da30&url=https%3a%2f%2fwww.msn.com%2fen-us%2ftechnology%2fartificial-intelligence%2fhow-machine-learning-is-making-airports-safer-and-more-efficient%2far-AA2avYrw&c=14677203793475039369&mkt=en-us)
+- [How machine learning is making airports safer and more efficient](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86e5128eaa4ebc9a259664b13aa433&url=https%3a%2f%2fwww.msn.com%2fen-us%2ftechnology%2fartificial-intelligence%2fhow-machine-learning-is-making-airports-safer-and-more-efficient%2far-AA2avYrw&c=14677203793475039369&mkt=en-us)
   - 2026-08-19T09:00:14+00:00 · Bing News RSS
   - Machine language-driven AI is transforming the airline industry, making airline travel much easier for passengers.
-- [7 Best Machine Learning Stocks for 2026 and How to Invest](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86dccdd50b41bc94c39494bf99da30&url=https%3a%2f%2fwww.fool.com%2finvesting%2fstock-market%2fmarket-sectors%2finformation-technology%2fai-stocks%2fmachine-learning-stocks%2f&c=2273201554870024206&mkt=en-us)
+- [7 Best Machine Learning Stocks for 2026 and How to Invest](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86e5128eaa4ebc9a259664b13aa433&url=https%3a%2f%2fwww.fool.com%2finvesting%2fstock-market%2fmarket-sectors%2finformation-technology%2fai-stocks%2fmachine-learning-stocks%2f&c=2273201554870024206&mkt=en-us)
   - 2026-08-17T11:33:00+00:00 · Bing News RSS
   - Nvidia's (NVDA-0.28%) hardware made a name for itself in powering high-end video game graphics, but in recent years, the company's bet on AI and machine learning has started to pay off. Machines ...
-- [New framework cuts errors by 80%, helps scientists predict fusion machine’s hardware changes](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86dccdd50b41bc94c39494bf99da30&url=https%3a%2f%2fwww.msn.com%2fen-us%2fnews%2ftechnology%2fnew-framework-cuts-errors-by-80-helps-scientists-predict-fusion-machine-s-hardware-changes%2far-AA2af79w&c=2351478082015710824&mkt=en-us)
+- [New framework cuts errors by 80%, helps scientists predict fusion machine’s hardware changes](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86e5128eaa4ebc9a259664b13aa433&url=https%3a%2f%2fwww.msn.com%2fen-us%2fnews%2ftechnology%2fnew-framework-cuts-errors-by-80-helps-scientists-predict-fusion-machine-s-hardware-changes%2far-AA2af79w&c=2351478082015710824&mkt=en-us)
   - 2026-08-16T09:39:00+00:00 · Bing News RSS
   - Inside a fusion machine, the plasma can reach temperatures hotter than the Sun’s core ...
-- [Machine Learning COFFIES “Hears” Sunspots Before We Can See Them](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86dccdd50b41bc94c39494bf99da30&url=https%3a%2f%2fhackaday.com%2f2026%2f08%2f15%2fmachine-learning-coffies-hears-sunspots-before-we-can-see-them%2f&c=14758185662863012538&mkt=en-us)
+- [Machine Learning COFFIES “Hears” Sunspots Before We Can See Them](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86e5128eaa4ebc9a259664b13aa433&url=https%3a%2f%2fhackaday.com%2f2026%2f08%2f15%2fmachine-learning-coffies-hears-sunspots-before-we-can-see-them%2f&c=14758185662863012538&mkt=en-us)
   - 2026-08-16T00:13:00+00:00 · Bing News RSS
   - In this age of neural net “AI”, even the most skeptical of Butlerians have to agree that these machine learning models can be very, very good at pattern recognition if nothing else.
 
+### New AI models and tools — bluesky
+
+- [Happy with umans.ai and their pay-per-token approach. New models get added very quick (eg. Deepseek V4 Pro & qwen 3.8) You do have to watch out for the token pr](https://bsky.app/profile/tokono.ma/post/3mtj57vg52c2q)
+  - @tokono.ma · 2026-08-20T11:26:48.909Z · Bluesky authenticated AppView
+  - Happy with umans.ai and their pay-per-token approach. New models get added very quick (eg. Deepseek V4 Pro & qwen 3.8) You do have to watch out for the token price per model (I spent too much money on K3), but they are very clear on the pricing. They had subscriptions but stopped doing that.
+- [Don't #paste the #AI, please. When someone asks you something, they want your answer. Not a wall of #unedited #ChatGPT output. A short reply from you beats a lo](https://bsky.app/profile/dustcircle.bsky.social/post/3mtj4xwy44s2y)
+  - @dustcircle.bsky.social · 2026-08-20T11:22:22.119Z · Bluesky authenticated AppView
+  - Don't #paste the #AI, please. When someone asks you something, they want your answer. Not a wall of #unedited #ChatGPT output. A short reply from you beats a long one from a model, every time. dontpastetheai.com
+- [Anthropic says its new Model 2 is already beating Claude Mythos 5 in internal tests. If you’re into AI benchmarks, this is worth a look. Curious how the open‑so](https://bsky.app/profile/aidailypost.com/post/3mtj4tytmmy2w)
+  - @aidailypost.com · 2026-08-20T11:20:09.571Z · Bluesky authenticated AppView
+  - Anthropic says its new Model 2 is already beating Claude Mythos 5 in internal tests. If you’re into AI benchmarks, this is worth a look. Curious how the open‑source vibe is shaping up? Dive in for the details. #Anthropic #Model2 #ClaudeMythos5 🔗 aidailypost.com/news/anthrop...
+- [AI doesn't hallucinate because it's broken; it does it because training rewards confident guessing over facts. The model isn't lying—it's optimizing the wrong m](https://bsky.app/profile/xplaination.bsky.social/post/3mtj4s5kjwz2k)
+  - @xplaination.bsky.social · 2026-08-20T11:19:07.601647Z · Bluesky authenticated AppView
+  - AI doesn't hallucinate because it's broken; it does it because training rewards confident guessing over facts. The model isn't lying—it's optimizing the wrong metric.
+- [Human-in-the-loop is not just a model design choice anymore. It is becoming a compliance one too. If your AI rollout needs to hold up under a governance review,](https://bsky.app/profile/ins-aisolutions.bsky.social/post/3mtj4oqtue62f)
+  - @ins-aisolutions.bsky.social · 2026-08-20T11:17:13.575666+00:00 · Bluesky authenticated AppView
+  - Human-in-the-loop is not just a model design choice anymore. It is becoming a compliance one too. If your AI rollout needs to hold up under a governance review, not just a demo, we can help you build that in from the start. Reach out: https://ins.ae/contact #AIAdoption #AIRegulation #ResponsibleAI
+- [AI model maker Domyn raises over $1bn](https://bsky.app/profile/newsbot.app.leafplaza.eu/post/3mtj4cvpigb2x)
+  - @newsbot.app.leafplaza.eu · 2026-08-20T11:10:35.337427Z · Bluesky authenticated AppView
+  - AI model maker Domyn raises over $1bn
+- [Stripe agrees to buy OpenRouter as AI model routing expands Stripe has agreed to acquire OpenRouter, an AI model-routing platform that gives developers access t](https://bsky.app/profile/techpedo.bsky.social/post/3mtj43ybuoi2n)
+  - @techpedo.bsky.social · 2026-08-20T11:06:42Z · Bluesky authenticated AppView
+  - Stripe agrees to buy OpenRouter as AI model routing expands Stripe has agreed to acquire OpenRouter, an AI model-routing platform that gives developers access to hundreds of models through a single interface. The deal adds model selection and routing to Stripe’s existing work around AI usage and…
+- ["The false positives have a pattern. They land on people who write in a second language, and on neurodiverse writers whose rhythm, repetition, and structure a m](https://bsky.app/profile/mtutelteam.bsky.social/post/3mtj3tmbrf72e)
+  - @mtutelteam.bsky.social · 2026-08-20T11:01:59.952Z · Bluesky authenticated AppView
+  - "The false positives have a pattern. They land on people who write in a second language, and on neurodiverse writers whose rhythm, repetition, and structure a model reads as synthetic." buff.ly/FpCwrFF
+- [Sizce Anthropic, bu ultra güçlü "Model 2"yi neden halka açmıyor? Güvenlik endişesi mi yoksa ticari bir strateji mi? Düşüncelerinizi yorumlarda paylaşın! 👇 #Anth](https://bsky.app/profile/nexlyi.bsky.social/post/3mtj3sugrd522)
+  - @nexlyi.bsky.social · 2026-08-20T11:01:37.853Z · Bluesky authenticated AppView
+  - Sizce Anthropic, bu ultra güçlü "Model 2"yi neden halka açmıyor? Güvenlik endişesi mi yoksa ticari bir strateji mi? Düşüncelerinizi yorumlarda paylaşın! 👇 #Anthropic #Model2 #AI #YapayZeka #Claude (3/3)
+- [🤖 Anthropic'in en güçlü yapay zeka modelini henüz kimse göremedi! Şirket içi kullanılan ve kod adı "Model 2" olan bu gizemli model, şu an piyasadaki en gelişmiş](https://bsky.app/profile/nexlyi.bsky.social/post/3mtj3sqqhwr26)
+  - @nexlyi.bsky.social · 2026-08-20T11:01:33.674Z · Bluesky authenticated AppView
+  - 🤖 Anthropic'in en güçlü yapay zeka modelini henüz kimse göremedi! Şirket içi kullanılan ve kod adı "Model 2" olan bu gizemli model, şu an piyasadaki en gelişmiş Claude modellerinden bile çok daha güçlü. Peki bu gizli güç ne işe yarıyor? 👇 (1/3)
+- [What happens when your AI gives the wrong answer? A production system can't simply say, “The model hallucinated.” You need systems around the model that can det](https://bsky.app/profile/kaperskyguru.bsky.social/post/3mtj3qo7u2j2r)
+  - @kaperskyguru.bsky.social · 2026-08-20T11:00:24.238903Z · Bluesky authenticated AppView
+  - What happens when your AI gives the wrong answer? A production system can't simply say, “The model hallucinated.” You need systems around the model that can detect uncertainty, retrieve better information, escalate edge cases, and bring a human into the loop when necessary.
+- [A new study: context compression silently discards 83% of agent instructions mid-task. The model doesn't flag it. The user doesn't see it. The fix — instruction](https://bsky.app/profile/aifoundersczech.bsky.social/post/3mtj3qcglgd24)
+  - @aifoundersczech.bsky.social · 2026-08-20T11:00:11.642Z · Bluesky authenticated AppView
+  - A new study: context compression silently discards 83% of agent instructions mid-task. The model doesn't flag it. The user doesn't see it. The fix — instruction anchoring at the context boundary — has to be built in deliberately. Most systems are running without it.
+- [🤖 AI agents are arriving fast. The organisations gaining the greatest value aren’t scaling disconnected pilots. They define a clear human-agent operating model ](https://bsky.app/profile/boardroomadvisors.bsky.social/post/3mtj3obx6aq2a)
+  - @boardroomadvisors.bsky.social · 2026-08-20T10:58:53.784Z · Bluesky authenticated AppView
+  - 🤖 AI agents are arriving fast. The organisations gaining the greatest value aren’t scaling disconnected pilots. They define a clear human-agent operating model first, then align people, processes and technology around it. #AI #HR #Leadership
+- [Aus dem Feed: ⟪ Video: Lauren Celenza – Living Through an AI Takeover Without Losing Your Soul ⟫ https://beyondtellerrand.com/blog/btconf-dusseldorf-2026-video-](https://bsky.app/profile/medienfeed.bsky.social/post/3mtj3nnzca427)
+  - @medienfeed.bsky.social · 2026-08-20T10:58:43+00:00 · Bluesky authenticated AppView
+  - Aus dem Feed: ⟪ Video: Lauren Celenza – Living Through an AI Takeover Without Losing Your Soul ⟫ https://beyondtellerrand.com/blog/btconf-dusseldorf-2026-video-lauren-celenza | #medien #design ➔ „Photo by Florian Ziegler Lauren Celenza had the one of the harder slots of the whole …“
+
 ### New AI models and tools — github
 
-- [unslothai/unsloth](https://github.com/unslothai/unsloth)
-  - unslothai · 2026-08-20T10:53:38Z · GitHub public search
-  - Local UI to run and train LLMs and diffusion models, including Qwen3.8, Kimi K3, MiniMax-H3, Gemma 4, DeepSeek-V4, FLUX and more.
-- [zyvo9/zyvo](https://github.com/zyvo9/zyvo)
-  - zyvo9 · 2026-08-20T10:53:35Z · GitHub public search
-  - ZYVO - AI coding CLI (OpenCode) for Termux. Native Android, zero config, free AI models. Banglish e kotha bole.
-- [Bike4Mind/bike4mind](https://github.com/Bike4Mind/bike4mind)
-  - Bike4Mind · 2026-08-20T10:53:32Z · GitHub public search
-  - The open-core AI workbench — notebooks, agents, RAG, voice, and images across any model: OpenAI, Anthropic, Google, xAI, or local via Ollama/vLLM. BSL 1.1, auto-converting to Apache-2.0 on a two-year clock. Your AI keeps running when theirs doesn't.
-- [aryanisproinroblox-source/gorilla-chat](https://github.com/aryanisproinroblox-source/gorilla-chat)
-  - aryanisproinroblox-source · 2026-08-20T10:53:30Z · GitHub public search
-  - 🦍 Gorilla Chat — On-Device AI Assistant for Android (Chat, Image, Music) running Hugging Face GGUF models via llama.rn
-- [PavelHopson/eclipse-ai-hub](https://github.com/PavelHopson/eclipse-ai-hub)
-  - PavelHopson · 2026-08-20T10:53:26Z · GitHub public search
-  - Multi-provider AI workspace for chat, model arena, RAG, code review, copywriting and security workflows — React 19, Ollama, Gemini and OpenAI.
-- [JoshuaBearup/sandbox-shire](https://github.com/JoshuaBearup/sandbox-shire)
-  - JoshuaBearup · 2026-08-20T10:53:20Z · GitHub public search
-  - Break an AI assistant using nothing but natural language. Three acts, bring your own model, runs locally with one command.
-- [yukihamada/nanobot](https://github.com/yukihamada/nanobot)
-  - yukihamada · 2026-08-20T10:53:14Z · GitHub public search
-  - AI Agent Platform built in Rust — Multi-model, MCP tools, 14+ channel integrations. Self-host or use teai.io
-- [Protremix/EvolvixOS](https://github.com/Protremix/EvolvixOS)
-  - Protremix · 2026-08-20T10:53:12Z · GitHub public search
-  - EvolvixOS v9.2 — Open-source, self-hosted AI engineering platform. 44 tools, 81 models, 35K APIs. Triple-brain routing (Groq+Gemini+Kimi). Tencent Cloud + Octop + CubeSandbox + TIMSDK integrated.
-- [vishwjeet71/LinguSync](https://github.com/vishwjeet71/LinguSync)
-  - vishwjeet71 · 2026-08-20T10:53:04Z · GitHub public search
-  - LinguSync is a desktop application that generates multilingual dubbed videos entirely offline using local AI models, featuring a modular, hardware-adaptive pipeline optimized for efficient on-device inference.
-- [serhohro/vireo-ai-communicator-api](https://github.com/serhohro/vireo-ai-communicator-api)
-  - serhohro · 2026-08-20T10:52:33Z · GitHub public search
-  - 🟢 Vireo AI Communicator API — The World's First AI-to-AI Communication Language. Enables ChatGPT, Claude, Gemini, and all AI models to speak one language. Built with compiler, interpreter, RESTful API, web interface, 50+ tensor ops, neural networks, autodiff. Open-source, local, privacy first. Apache 2.0.
-- [ghulammdraja/predictive-maintenance](https://github.com/ghulammdraja/predictive-maintenance)
-  - ghulammdraja · 2026-08-20T10:52:28Z · GitHub public search
-  - AI Based Predictive Maintenance Model
-- [UA-Dissertation-Project-107449/FairXAI](https://github.com/UA-Dissertation-Project-107449/FairXAI)
-  - UA-Dissertation-Project-107449 · 2026-08-20T10:52:07Z · GitHub public search
-  - Research and development codebase for Fair and Explainable AI for Healthcare Decision Support Systems. Exploring fairness metrics, bias mitigation, and model explainability in medical AI.
-- [lyracode-app/Lyra-Code](https://github.com/lyracode-app/Lyra-Code)
-  - lyracode-app · 2026-08-20T10:52:01Z · GitHub public search
-  - Lyra Code is an Android-first local AI Agent application. It lets users connect models from different providers and run mobile workflows such as chat, file operations, code execution, web search, MCP, SSH, WebDAV, and backup management.
-- [antono4/ai-content-generator](https://github.com/antono4/ai-content-generator)
-  - antono4 · 2026-08-20T10:51:42Z · GitHub public search
-  - 🤖 AI-powered content generator for social media, blogs, and marketing - Built with FastAPI, LangChain, and modern AI models
-- [dp-web4/Synchronism](https://github.com/dp-web4/Synchronism)
-  - dp-web4 · 2026-08-20T10:51:39Z · GitHub public search
-  - Single-observer computational model of reality, exploring novel ways of approaching the 'mysteries' of current scientific models. Informs Web4 and SAGE with MRH, fractal emergence analysis, and other concepts..
+- [Miragon/bpmnlint-rules](https://github.com/Miragon/bpmnlint-rules)
+  - Miragon · 2026-08-20T11:28:47Z · GitHub public search
+  - Keep BPMN models clean and consistent — a bpmnlint plugin that guards diagram quality in the modeler, in CI, and as a guardrail for AI-generated BPMN ✅
+- [tenstorrent/tt-metal](https://github.com/tenstorrent/tt-metal)
+  - tenstorrent · 2026-08-20T11:28:44Z · GitHub public search
+  - :metal: TT-NN operator library, and TT-Metalium low level kernel programming model.
+- [vumrra/ai-model-serving](https://github.com/vumrra/ai-model-serving)
+  - vumrra · 2026-08-20T11:28:34Z · GitHub public search
+- [topij/agentic-dev-kit](https://github.com/topij/agentic-dev-kit)
+  - topij · 2026-08-20T11:28:22Z · GitHub public search
+  - A portable development model — skills, engine scripts, and doctrine — for codebases built with AI coding agents.
+- [swordfeng/benchfs](https://github.com/swordfeng/benchfs)
+  - swordfeng · 2026-08-20T11:28:18Z · GitHub public search
+  - A benchmark test filesystem spec for AI model coding capabilities. Spec docs of the test target are intentionally hidden.
+- [OK45batwal/prompt-plus](https://github.com/OK45batwal/prompt-plus)
+  - OK45batwal · 2026-08-20T11:28:17Z · GitHub public search
+  - ⚡ Enterprise-grade AI Meta-Prompt Compilation Platform & Browser Companion. Transform raw prompts into production-grade master instructions with dynamic tone intelligence, multi-model side-by-side testing (GPT-4o, Claude 3.5, Gemini 2.0, DeepSeek R1), Web Crypto AES-256 vault, and cross-chatbot context handoff. Built with Next.js 16 & Manifest V3.
+- [vladmesh/risk-decision-lab](https://github.com/vladmesh/risk-decision-lab)
+  - vladmesh · 2026-08-20T11:28:15Z · GitHub public search
+  - Decision-modeling layer on top of the MIT AI Risk Repository
+- [coetz3r/AI-assistant](https://github.com/coetz3r/AI-assistant)
+  - coetz3r · 2026-08-20T11:28:10Z · GitHub public search
+  - Lightweight frontend and API wrapper for hosting and interacting with custom local AI assistant models over a private network.
+- [open-octo/octo-agent](https://github.com/open-octo/octo-agent)
+  - open-octo · 2026-08-20T11:28:03Z · GitHub public search
+  - Private, self-hosted AI agent — your models and data stay on your machine. A feature-rich coding + assistant toolset across eight interfaces (CLI, Web, desktop, IM, VS Code, Obsidian, SDK, Mobile), all in one fast, zero-dependency Go binary.
+- [shihoos/LTX-13B-AI-Video-Model](https://github.com/shihoos/LTX-13B-AI-Video-Model)
+  - shihoos · 2026-08-20T11:27:56Z · GitHub public search
+- [aqm857886159/Nomi](https://github.com/aqm857886159/Nomi)
+  - aqm857886159 · 2026-08-20T11:27:20Z · GitHub public search
+  - Open-source AI video workbench. Bring any model or your local ComfyUI, and let Claude Code / Codex / Cursor direct it over MCP — storyboard, references, generation, editable first cut on a real timeline. Local-first: projects, prompts, and keys stay on your machine. No account, no telemetry.
+- [sednabcn/stem-ai-tutoring](https://github.com/sednabcn/stem-ai-tutoring)
+  - sednabcn · 2026-08-20T11:27:02Z · GitHub public search
+  - Welcome to stem-ai-tutoring, a curated ecosystem by Dr. Ruperto Pedro Bonet Chaple, designed to showcase my professional expertise and project work in: AI & LLMs for scientific applications Mathematical tutoring and education Simulation & domain modeling Applied research and consulting
+- [Floxbm/financial-chat-Finance-NLP-Chatbots](https://github.com/Floxbm/financial-chat-Finance-NLP-Chatbots)
+  - Floxbm · 2026-08-20T11:26:54Z · GitHub public search
+  - Finance-NLP-Chatbot: AI-powered finance tracker for expense insights. Features Financial-Language-Model integration for chat/call data interaction.
+- [airomhq/airom](https://github.com/airomhq/airom)
+  - airomhq · 2026-08-20T11:26:53Z · GitHub public search
+  - Open-source AI Bill of Materials (AIBOM) scanner: inventories AI models, datasets, prompts, embeddings, vector DBs & RAG pipelines across code, containers & Kubernetes — with file:line evidence, load-time risk detection (poisoned pickle / Keras Lambda / unsafe torch.load) and NIST AI RMF / OWASP compliance mapping. CycloneDX · SARIF · JSON.
 
 ### New AI models and tools — news
 
-- [The Powerful Chinese AI Model Experts Warned About—and Waited for—Is Here](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86dcc9c6cb4a48a046e884b13799ac&url=https%3a%2f%2fwww.wired.com%2fstory%2fzai-open-weight-ai-models-release-cybersecurity-hacking%2f&c=13808280293640343420&mkt=en-us)
+- [The Powerful Chinese AI Model Experts Warned About—and Waited for—Is Here](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86e50e0368486baa01cacb7f55ff11&url=https%3a%2f%2fwww.wired.com%2fstory%2fzai-open-weight-ai-models-release-cybersecurity-hacking%2f&c=13808280293640343420&mkt=en-us)
   - 2026-08-17T22:00:00+00:00 · Bing News RSS
   - Z.ai’s latest AI model release could help companies secure their systems—or find its way into the hands of hackers.
 
-### New AI models and tools — x
+### Top AI news — bluesky
 
-- [OpenRouter is joining Stripe. We started OpenRouter with a simple mission: intelligence should be multi-model. Today, we are the largest AI marketplace & gateway, processing 10T+ tokens daily on 400+ models. Joining @stripe gives us the opportunity to ac](https://news.google.com/rss/articles/CBMiYEFVX3lxTE1rRzA5Q0pXanRIWGNkMXFiRTZzTzZROVp6TVJyQlk3aGlJNWdJSE9CUXh1Mnh0VWFxaGUzQUFqMTd2N0pIYkV2VklMclhLaENueFhmVWh1Rkg5bkx6ZU9ZdA?oc=5)
-  - 2026-08-19T17:22:22+00:00 · Google News index (x.com)
-  - OpenRouter is joining Stripe. We started OpenRouter with a simple mission: intelligence should be multi-model. Today, we are the largest AI marketplace & gateway, processing 10T+ tokens daily on 400+ models. Joining @stripe gives us the opportunity to ac x.com
-- [Today I’m launching the Center for Technology & Statecraft (CTS), an initiative inspired by the lessons I learned first as a policy researcher and later in the White House. I'm an optimist about technology. Institutions adapt to disruptions — whether the industrial r](https://news.google.com/rss/articles/CBMiX0FVX3lxTE5lNHN6VGRNbXdHTEN5VWVadEVmNDFnUUpITHZPVE5PTXM0czJWaE4wYVZGQzVkZnRMRGVZTFhEREtjMWwxZW5SVW5hNVN3YkhvSGNTd19WaG4xODF1VmVR?oc=5)
-  - 2026-08-19T16:59:49+00:00 · Google News index (x.com)
-  - Today I’m launching the Center for Technology & Statecraft (CTS), an initiative inspired by the lessons I learned first as a policy researcher and later in the White House. I'm an optimist about technology. Institutions adapt to disruptions — whether the industrial r x.com
-- [No chance radiologists get replaced. A model is outdated the minute it is released. Model usage costs money. A lot more than a radiologist. Medicine is a business. Putting together AI with domain knowledge is complex. When it can be the difference between li](https://news.google.com/rss/articles/CBMiW0FVX3lxTE8teDB0blJGM01GNlVpTXIwOV90UWRVNFVnQmdiQS1WSnVHaDA0WWl2bWRJX2c4TkFzN2NqbmlLZnIxSkEtYlFSZFN4cURLMUQ1X2hyR3NLRVgwbU0?oc=5)
-  - 2026-08-19T15:28:32+00:00 · Google News index (x.com)
-  - No chance radiologists get replaced. A model is outdated the minute it is released. Model usage costs money. A lot more than a radiologist. Medicine is a business. Putting together AI with domain knowledge is complex. When it can be the difference between li x.com
-- [Grok 4.6 just took the #1 spot on MedAgentBench....one of the most interesting benchmarks for real-world agentic healthcare tasks and Grok now has two generations sitting in the top 3 • #1 Grok 4.6 — ~95.9% • #2 GPT-5.6 Sol — ~94.7% • #3 Grok 4.5 — ~93.](https://news.google.com/rss/articles/CBMiXEFVX3lxTE8xQU4zblBPaC1xNXFXVW5TYnExM2szTGdObGhKbnB2UUJqVjZiTkNYS3J2eFR6TnJaNG5HcFNRNmxTMHdqQmtfdVZZd21JSFYzTTV6blh5bE56Mkw3?oc=5)
-  - 2026-08-19T14:01:01+00:00 · Google News index (x.com)
-  - Grok 4.6 just took the #1 spot on MedAgentBench....one of the most interesting benchmarks for real-world agentic healthcare tasks and Grok now has two generations sitting in the top 3 • #1 Grok 4.6 — ~95.9% • #2 GPT-5.6 Sol — ~94.7% • #3 Grok 4.5 — ~93. x.com
-- [To clarify some common misconceptions, Pangram is not a measure of Good Writing. A 100% human score on Pangram does not mean your writing is Good. A 100% AI score on Pangram does not mean your writing is Bad. Ultimately, Pangram is a fancy auth](https://news.google.com/rss/articles/CBMiYEFVX3lxTE84czZXZGpXTWZxNko1aHdzaXFya0lkYUxHM2xYYlhzZXhmaWFHMHFBU2lXWTB3NFVESm5CMDFJTWZQdEMzRXV3X1pOWE1MQkJtNmlEdGVEVGp5am1ibUduWg?oc=5)
-  - 2026-08-19T04:53:39+00:00 · Google News index (x.com)
-  - To clarify some common misconceptions, Pangram is not a measure of Good Writing. A 100% human score on Pangram does not mean your writing is Good. A 100% AI score on Pangram does not mean your writing is Bad. Ultimately, Pangram is a fancy auth x.com
-- [GLM-5.3 API is now live. - Built for coding, defensive cybersecurity, and long-horizon agentic tasks - Priced the same as GLM-5.2 - Available via the official API and partner model gateways Get started: docs.z.ai/guides/llm/glm…](https://news.google.com/rss/articles/CBMiXEFVX3lxTFBycGxiSXN5cmJ2VUdJUk5vSG1YTGNUbHk2eWlrZFhGMzNMSndHWkhGSU1UM29KZi1PQlUzM0JiZlV2SWtLaUU3UGdzYk83bVBiNUNvOEFXQTNNUkdi?oc=5)
-  - 2026-08-18T20:46:06+00:00 · Google News index (x.com)
-  - GLM-5.3 API is now live. - Built for coding, defensive cybersecurity, and long-horizon agentic tasks - Priced the same as GLM-5.2 - Available via the official API and partner model gateways Get started: docs.z.ai/guides/llm/glm… x.com
-- [Folks in the AI and AI safety community have for years been puzzling over Sam's and OpenAI's position on questions related to AI safety. A narrative that took root in the safety community was that OpenAI didn't care enough about it, or didn't take it adequately s](https://news.google.com/rss/articles/CBMiXkFVX3lxTE91cUdaRVc1XzQyY3ZFb3VLendudklsSVpSSjVDUFhkY2RsNkx2aVZ4UTdsd1VtekVWZFFrNFpCV0RJWkxjRTdOSkhLQzg5aGZCMGV1SUZDTW4zZTc1S2c?oc=5)
-  - 2026-08-18T19:03:57+00:00 · Google News index (x.com)
-  - Folks in the AI and AI safety community have for years been puzzling over Sam's and OpenAI's position on questions related to AI safety. A narrative that took root in the safety community was that OpenAI didn't care enough about it, or didn't take it adequately s x.com
-- [We have paused some frontier RL training to ensure that we can meet the appropriate alignment, security and monitoring standards for the new level of capabilities in front of us. Model progress is now extremely rapid, and we always said we would take action](https://news.google.com/rss/articles/CBMiWEFVX3lxTFBKUW5PTWtabGhxcXRjeUZhUUtnWDlOS1ZvaHlUVGdxMERPZ0NicEk2R290Zjg4c0ZCMmM2dWRLUFBsaGN4M3VCQ0o3T0p2NmtDLU01NmZ2UTU?oc=5)
-  - 2026-08-18T18:53:34+00:00 · Google News index (x.com)
-  - We have paused some frontier RL training to ensure that we can meet the appropriate alignment, security and monitoring standards for the new level of capabilities in front of us. Model progress is now extremely rapid, and we always said we would take action x.com
-- [OpenAI is slowing down its AI training efforts because its unreleased models are showing “various degrees of misalignment,” Sam Altman tells me. Training for OpenAI’s upcoming model, Astra, was recently paused for 2 weeks, and a larger frontier run for a fut](https://news.google.com/rss/articles/CBMiYEFVX3lxTE1Cel9TRGp0NmhGa0g0MHFLU0FDQ1lPb1VLNjkxZ3ZQdXQtelE3SmhzZS0xc0RvMHBDUnpOWFp3VGhsWDFLSFdOeEk4aFNuTUJzZzR6MlJKN2lJX0tMUEZxXw?oc=5)
-  - 2026-08-18T18:13:30+00:00 · Google News index (x.com)
-  - OpenAI is slowing down its AI training efforts because its unreleased models are showing “various degrees of misalignment,” Sam Altman tells me. Training for OpenAI’s upcoming model, Astra, was recently paused for 2 weeks, and a larger frontier run for a fut x.com
-- [TLDRHere’s the exact 5 step setup to make faceless AI videos without a monthly Higgsfield subscription to market your app: 1 free Claude skill that generates viral videos through Kie for ~75 cents and 1 app that publishes everywhere, without getting your soci](https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1YeER5Szk2ZldJRDJ1azJRVzdqT2J5VVhtZ0YtcHVha19QU0Z4SnRBeVZyaU1OVXpiaElRRzRxNkd0YnFaTzhIN2x4cTJkT0NRQnBNMWtaMGgtVWlMXzBBdXRFZXdweXM?oc=5)
-  - 2026-08-18T17:07:57+00:00 · Google News index (x.com)
-  - TLDRHere’s the exact 5 step setup to make faceless AI videos without a monthly Higgsfield subscription to market your app: 1 free Claude skill that generates viral videos through Kie for ~75 cents and 1 app that publishes everywhere, without getting your soci x.com
-
-### Top AI news — mastodon
-
-- [🎮 'This is not a theoretical risk—it is an active threat': The NSA, FBI, CISA and more warn of AI-assisted hacks against critical US infrastructure and faciliti](https://igeek.gamer-geek-news.com/@feed/statuses/01M0FCP1ZV1SJ48EFBCAA80AJ7)
-  - feed@igeek.gamer-geek-news.com · 2026-08-20T10:50:17.000Z · mastodon.social #ArtificialIntelligence
-  - 🎮 'This is not a theoretical risk—it is an active threat': The NSA, FBI, CISA and more warn of AI-assisted hacks against critical US infrastructure and facilities Energy, water management, manufacturing facilities and more are said to be vulnerable. 📰 Source: Latest from PC Gamer 🔗 Link: https://www.pcgamer.com/software/security/this-is-not-a-theoretical-risk-it-is-an-active-threat-the-nsa-fbi-cisa-and-more-warn-of-ai-assisted-hacks-against-critical-us-infrastructure-and-facilities/ # AI # Artif…
-- [🐧 Mainstream OS – Arch Linux-based distribution Mainstream OS is an Arch Linux-based distribution built around the Hyprland Wayland compositor and a modified Qu](https://igeek.gamer-geek-news.com/@feed/statuses/01M0FCNH1XGN26QD0SF5DGK7W3)
-  - feed@igeek.gamer-geek-news.com · 2026-08-20T10:50:00.000Z · mastodon.social #ArtificialIntelligence
-  - 🐧 Mainstream OS – Arch Linux-based distribution Mainstream OS is an Arch Linux-based distribution built around the Hyprland Wayland compositor and a modified Quickshell. The post Mainstream OS – Arch Linux-based distribution appeared first on Li... 📰 Source: LinuxLinks 🔗 Link: https://www.linuxlinks.com/mainstream-os-arch-linux-based-distribution/ # AI # ArtificialIntelligence # Linux # OpenSource
-- [⚙️ How can distributed AI work across different infrastructures, providers and domains? 3C4AI is bringing together orchestration, automation, federated data man](https://mastodon.social/@3c4ai/117127443636684253)
-  - 3c4ai · 2026-08-20T10:49:16.092Z · mastodon.social #AI
-  - ⚙️ How can distributed AI work across different infrastructures, providers and domains? 3C4AI is bringing together orchestration, automation, federated data management, GenAI, hardware-aware processing and secure governance. These technologies will be validated in real-world, cross-sector scenarios to assess performance, scalability, energy efficiency and compliance 🌍 🔗 https:// 3c4ai.eu/ # 3C4AI # DistributedAI # AI # HorizonEurope @ euro_3c @ INCLUDE_project
-- [Researchers have developed a new way to turn ordinary antibodies into tiny disease-fighting molecules that can work inside human cells, potentially opening new ](https://flipboard.com/@econopass/flipboard-exchange-feed-%F0%9F%97%9E%EF%B8%8F-a2ri49sqz/-/a-2mktMBYsSWuQXtIOXu-hag%3Aa%3A4091604380-%2F0)
-  - Econopass@flipboard.com · 2026-08-20T10:44:53.000Z · mastodon.social #AI
-  - Researchers have developed a new way to turn ordinary antibodies into tiny disease-fighting molecules that can work inside human cells, potentially opening new paths for treating Alzheimer’s,… # wellness # ai # alzheimers https://www. sciencedaily.com/releases/2026 /08/260819041242.htm?utm_source=flipboard&utm_medium=activitypub Posted into FLIPBOARD EXCHANGE FEED 🗞️ @ flipboard-exchange-feed-Econopass
-- [🎮 Redfall developers begged Microsoft to come back and finish its last patch: 'I know we don't work here anymore, but can we please release this?' "We then got ](https://igeek.gamer-geek-news.com/@feed/statuses/01M0FCA16QGVNJ2Z2RQEF8RVDR)
-  - feed@igeek.gamer-geek-news.com · 2026-08-20T10:43:43.000Z · mastodon.social #ArtificialIntelligence
-  - 🎮 Redfall developers begged Microsoft to come back and finish its last patch: 'I know we don't work here anymore, but can we please release this?' "We then got laid off, but we had in the pipe version 1.4." 📰 Source: Latest from PC Gamer 🔗 Link: https://www.pcgamer.com/gaming-industry/game-development/redfall-developers-begged-microsoft-to-come-back-and-finish-its-last-patch-i-know-we-dont-work-here-anymore-but-can-we-please-release-this/ # AI # ArtificialIntelligence
-- [Thanks AI overview, that's helpful. # nothelpful # ai](https://mas.to/@wav3ydave/117127415244454626)
-  - wav3ydave@mas.to · 2026-08-20T10:42:02.000Z · mastodon.social #AI
-  - Thanks AI overview, that's helpful. # nothelpful # ai
-- [ব্যবসার প্রতিদিনের মেসেজ, কাস্টমার সাপোর্ট, অর্ডার ও ফলোআপ সবকিছুই সামলাতে পারে আমাদের iDesk360 AI Agent ও Human Agent-এর সমন্বয়ে কাস্টমার ম্যানেজমেন্ট হোক আরও ](https://mastodon.social/@idesk360/117127406008410443)
-  - idesk360 · 2026-08-20T10:39:41.730Z · mastodon.social #AI
-  - ব্যবসার প্রতিদিনের মেসেজ, কাস্টমার সাপোর্ট, অর্ডার ও ফলোআপ সবকিছুই সামলাতে পারে আমাদের iDesk360 AI Agent ও Human Agent-এর সমন্বয়ে কাস্টমার ম্যানেজমেন্ট হোক আরও সহজ, দ্রুত ও গোছানো। Business এর দায়িত্ব iDesk360-এর কাছে দিয়ে আপনি থাকুন পুরোপুরি নিশ্চিন্তে... বিস্তারিত জানতে আমাদের ওয়েবসাইট ভিজিট করুনঃ https://www. idesk360.com অথবা কল করুন এই নম্বরেঃ +880 1898-879944 # idesk360 # AIChatBot # AI # BusinessGrowth
-- [Python incontra le prestazioni dei linguaggi compilati: scopriamo Mojo, il progetto che vuole rendere più semplice lo sviluppo di software ad alte prestazioni, ](https://mastodon.uno/@linuxeasy/117127404821204205)
-  - linuxeasy@mastodon.uno · 2026-08-20T10:39:23.000Z · mastodon.social #AI
-  - Python incontra le prestazioni dei linguaggi compilati: scopriamo Mojo, il progetto che vuole rendere più semplice lo sviluppo di software ad alte prestazioni, intelligenza artificiale e machine learning. # Mojo # Python # Programmazione # AI # Linux https://www. linuxeasy.org/mojo-il-linguagg io-open-che-punta-a-unire-la-semplicita-di-python-alle-alte-prestazioni/
-- [🕹️ James Pond Has Returned, But Fans Aren't Happy About The Clear Use Of Gen AI 🤝Like our website? Support us as an independent publisher by tipping, joining ou](https://igeek.gamer-geek-news.com/@feed/statuses/01M0FBXQ5ZD862BA67MZZJ6YG1)
-  - feed@igeek.gamer-geek-news.com · 2026-08-20T10:36:59.000Z · mastodon.social #ArtificialIntelligence
-  - 🕹️ James Pond Has Returned, But Fans Aren't Happy About The Clear Use Of Gen AI 🤝Like our website? Support us as an independent publisher by tipping, joining our paid community or checking out our accessories brand GAMENOOK!Oh dear... just when you think one of your childhood ... 📰 Source: Retro Dodo 🔗 Link: https://retrododo.com/james-pond-has-returned-but-fans-arent-happy-about-the-clear-use-of-gen-ai/ # AI # ArtificialIntelligence
-- [Meta Smart Glasses Empower Blind People to Participate in Corporate Surveillance https:// thesqueakywheel.org/meta-smart -glasses-empower-blind-people-to-partic](https://caneandable.social/@WeirdWriter/117127393408675017)
-  - WeirdWriter@caneandable.social · 2026-08-20T10:36:29.000Z · mastodon.social #AI
-  - Meta Smart Glasses Empower Blind People to Participate in Corporate Surveillance https:// thesqueakywheel.org/meta-smart -glasses-empower-blind-people-to-participate-equally-in-corporate-surveillance/ # AI # LLM # Blind # Disability
-- [What is RLHF? How AI learns to be helpful, not just capable — humans rank answers, a reward model learns the ranking, and the AI is tuned against it. 90 seconds](https://mastodon.social/@orioralabs/117127389407648885)
-  - orioralabs · 2026-08-20T10:35:28.430Z · mastodon.social #AI
-  - What is RLHF? How AI learns to be helpful, not just capable — humans rank answers, a reward model learns the ranking, and the AI is tuned against it. 90 seconds. # AI # AIexplained Written with AI assistance.
-- [Alibaba's cloud and AI division posted 45 per cent revenue growth in the June quarter, the fastest in 22 quarters. The segment, covering its cloud business and ](https://universeodon.com/@china/117127385855333867)
-  - china@universeodon.com · 2026-08-20T10:34:34.000Z · mastodon.social #AI
-  - Alibaba's cloud and AI division posted 45 per cent revenue growth in the June quarter, the fastest in 22 quarters. The segment, covering its cloud business and T-Head chip arm, generated 48.4 billion yuan in revenue, driving adjusted profit to 27.3 billion yuan (4B USD). https://www. scmp.com/tech/big-tech/article /3364705/alibabas-ai-cloud-growth-surge-drives-earnings-despite-soaring-tech-spending # China # Tech # AI
-- ["…stop talking about a new technological revolution and see # AI for what it is: an incredible, value-adding final iteration of the age of semiconductors, compu](https://hachyderm.io/@eliasulrich/117127384768722603)
-  - eliasulrich@hachyderm.io · 2026-08-20T10:34:17.000Z · mastodon.social #AI
-  - "…stop talking about a new technological revolution and see # AI for what it is: an incredible, value-adding final iteration of the age of semiconductors, computing and networks, which won’t live up to the hype from an frontier lab ROIC perspective but will still deliver tremendous productivity gains over the next two decades." https:// x.com/nicolas_colin/status/209 0037622458478827?s=46
-- [The generation that is most comfortable with AI might surprise you https://www.fastcompany.com/91592394/generation-most-comfortable-with-ai-gen-x-millennials-bo](https://www.fastcompany.com/91592394/generation-most-comfortable-with-ai-gen-x-millennials-boomers-pew-research)
-  - fast_company@robot.villas · 2026-08-20T10:00:00.000Z · mastodon.social #AI
-  - The generation that is most comfortable with AI might surprise you https://www.fastcompany.com/91592394/generation-most-comfortable-with-ai-gen-x-millennials-boomers-pew-research # AI # FutureOfWork # TechTrends
-- [The case for ChatGPT for seniors https://www.fastcompany.com/91592012/the-case-for-chatgpt-for-seniors # AI # Seniors # FutureOfTech](https://www.fastcompany.com/91592012/the-case-for-chatgpt-for-seniors)
-  - fast_company@robot.villas · 2026-08-20T10:00:00.000Z · mastodon.social #AI
-  - The case for ChatGPT for seniors https://www.fastcompany.com/91592012/the-case-for-chatgpt-for-seniors # AI # Seniors # FutureOfTech
+- [Europe — ECB Warns Europe Cannot Miss AI Revolution #Media #Europe #Germany #EuropeNews #News](https://bsky.app/profile/en-gb.pds.netasgard.com/post/3mtj5av77wc2w)
+  - @en-gb.pds.netasgard.com · 2026-08-20T11:27:22Z · Bluesky authenticated AppView
+  - Europe — ECB Warns Europe Cannot Miss AI Revolution #Media #Europe #Germany #EuropeNews #News
+- [www.lemonde.fr/en/economy/a...](https://bsky.app/profile/leiataillefur.bsky.social/post/3mtj5a3wous2s)
+  - @leiataillefur.bsky.social · 2026-08-20T11:26:55.751Z · Bluesky authenticated AppView
+  - www.lemonde.fr/en/economy/a...
+- [The company generates most of its revenue from digital advertising. The US and Canada are its core markets. Meta continues to invest in artificial intelligence ](https://bsky.app/profile/dfedicatest.bsky.social/post/3mtj4t6pldn2v)
+  - @dfedicatest.bsky.social · 2026-08-20T11:19:42.000Z · Bluesky authenticated AppView
+  - The company generates most of its revenue from digital advertising. The US and Canada are its core markets. Meta continues to invest in artificial intelligence and the metaverse, while expanding its range of technologies and products.
+- [Caution: new leaders needed.](https://bsky.app/profile/sueveal.bsky.social/post/3mtj4s4t53c2i)
+  - @sueveal.bsky.social · 2026-08-20T11:19:06.917Z · Bluesky authenticated AppView
+  - Caution: new leaders needed.
+- ["Concerns ab climate change, the economy, artificial intelligence, health care quality and more weigh heavily on future parents." www.cnn.com/2026/04/09/h...](https://bsky.app/profile/hotteabreak.bsky.social/post/3mtj4najna22k)
+  - @hotteabreak.bsky.social · 2026-08-20T11:16:23.032Z · Bluesky authenticated AppView
+  - "Concerns ab climate change, the economy, artificial intelligence, health care quality and more weigh heavily on future parents." www.cnn.com/2026/04/09/h...
+- [Deep learning models trained on CXRs may exploit exposure parameters as shortcut features; exposure-regimen audits may flag high-risk conditions before clinical](https://bsky.app/profile/radiology-ai.bsky.social/post/3mtj4kyd2cu2p)
+  - @radiology-ai.bsky.social · 2026-08-20T07:15:05-04:00 · Bluesky authenticated AppView
+  - Deep learning models trained on CXRs may exploit exposure parameters as shortcut features; exposure-regimen audits may flag high-risk conditions before clinical deployment https://doi.org/10.1148/ryai.250731 #AOCR2026 #radiology
+- ["The company has nearly completed combining behavioral purchase data from 220 million consumers into a single worldwide repository to develop an artificial inte](https://bsky.app/profile/erincle.bsky.social/post/3mtj4ht3vgk2g)
+  - @erincle.bsky.social · 2026-08-20T11:13:21.179Z · Bluesky authenticated AppView
+  - "The company has nearly completed combining behavioral purchase data from 220 million consumers into a single worldwide repository to develop an artificial intelligence platform." Yeah? Here's some data for you McD's: I still won't buy your shitty burgers
+- [Artificial Intelligence Animal Health Market Size Report 2035 www.marketresearchfuture.com/reports/arti...](https://bsky.app/profile/pritimrfr.bsky.social/post/3mtj42lryok2m)
+  - @pritimrfr.bsky.social · 2026-08-20T11:05:57.291Z · Bluesky authenticated AppView
+  - Artificial Intelligence Animal Health Market Size Report 2035 www.marketresearchfuture.com/reports/arti...
+- [♦️ So what has the rise of artificial intelligence meant for small and medium-sized businesses in Scotland? I report exclusively today @heraldscotland on a majo](https://bsky.app/profile/mrianmcconnell.bsky.social/post/3mtj3xrwabc2f)
+  - @mrianmcconnell.bsky.social · 2026-08-20T11:04:23.074Z · Bluesky authenticated AppView
+  - ♦️ So what has the rise of artificial intelligence meant for small and medium-sized businesses in Scotland? I report exclusively today @heraldscotland on a major survey of 500 companies, which contains much food for thought. ⬇️ www.heraldscotland.com/news/2647849...
+- [Bharat Maryada: A Journey Across Technology, Business, and the World Bharat Maryada presents an inspiring journey through technology, business, and the wider wo](https://bsky.app/profile/bharatkumarmaryada.bsky.social/post/3mtj3ugv3rk2v)
+  - @bharatkumarmaryada.bsky.social · 2026-08-20T11:02:30.838Z · Bluesky authenticated AppView
+  - Bharat Maryada: A Journey Across Technology, Business, and the World Bharat Maryada presents an inspiring journey through technology, business, and the wider world. Visit Site: bharat-kumar-maryada.blogspot.com/2026/08/bhar...
+- [BlueCross BlueShield of Tennessee removed an artificial intelligence software that monitors employees' work from company computers after receiving negative feed](https://bsky.app/profile/timesfreepress.bsky.social/post/3mtj3qey7fi27)
+  - @timesfreepress.bsky.social · 2026-08-20T11:00:14.580Z · Bluesky authenticated AppView
+  - BlueCross BlueShield of Tennessee removed an artificial intelligence software that monitors employees' work from company computers after receiving negative feedback from workers.
+- [A Texas University Becomes a Petri Dish for a Conservative Overhaul portside.org/2026-08-19/t...](https://bsky.app/profile/blogwood.com/post/3mtj3o6rcoy24)
+  - @blogwood.com · 2026-08-20T10:59:00.589Z · Bluesky authenticated AppView
+  - A Texas University Becomes a Petri Dish for a Conservative Overhaul portside.org/2026-08-19/t...
+- [ANOTHER REASON TO BE CAUTIOUS ABOUT AI... www.washingtonpost.com/technology/2...](https://bsky.app/profile/cpainter1.bsky.social/post/3mtj3kxf5kc2f)
+  - @cpainter1.bsky.social · 2026-08-20T10:57:12.598Z · Bluesky authenticated AppView
+  - ANOTHER REASON TO BE CAUTIOUS ABOUT AI... www.washingtonpost.com/technology/2...
 
 ### Top AI news — news
 
-- [What is AGI? The path to human-like Artificial General Intelligence and what it means for society](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86dcc0184f4c76912e4dfb14206ea2&url=https%3a%2f%2fwww.stuff.tv%2ffeatures%2fwhat-is-agi-the-path-to-human-like-artificial-general-intelligence-and-what-it-means-for-society%2f&c=14549904996533236510&mkt=en-us)
+- [What is AGI? The path to human-like Artificial General Intelligence and what it means for society](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86e50711b740868c82098de1ca2806&url=https%3a%2f%2fwww.stuff.tv%2ffeatures%2fwhat-is-agi-the-path-to-human-like-artificial-general-intelligence-and-what-it-means-for-society%2f&c=14549904996533236510&mkt=en-us)
   - 2026-08-20T02:51:00+00:00 · Bing News RSS
   - Are we close to achieving artificial general intelligence where AI is at least as smart as human beings? And what will that mean for humanity?
-- [Trump claims US 'way ahead' of China in artificial intelligence race](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86dcc0184f4c76912e4dfb14206ea2&url=https%3a%2f%2fwww.msn.com%2fen-us%2fnews%2fpolitics%2ftrump-claims-us-way-ahead-of-china-in-artificial-intelligence-race%2far-AA2avlFF&c=9896198034020855660&mkt=en-us)
+- [Trump claims US 'way ahead' of China in artificial intelligence race](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86e50711b740868c82098de1ca2806&url=https%3a%2f%2fwww.msn.com%2fen-us%2fnews%2fpolitics%2ftrump-claims-us-way-ahead-of-china-in-artificial-intelligence-race%2far-AA2avlFF&c=9896198034020855660&mkt=en-us)
   - 2026-08-19T12:49:48+00:00 · Bing News RSS
   - Trump claimed the U.S. is number one in cryptocurrency, AI and prediction markets and that China is ranked number two.
-- [TCW Artificial Intelligence ETF Q2 2026 Commentary](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86dcc0184f4c76912e4dfb14206ea2&url=https%3a%2f%2fseekingalpha.com%2farticle%2f4938335-tcw-artificial-intelligence-etf-q2-2026-commentary&c=4861871323570747053&mkt=en-us)
+- [TCW Artificial Intelligence ETF Q2 2026 Commentary](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86e50711b740868c82098de1ca2806&url=https%3a%2f%2fseekingalpha.com%2farticle%2f4938335-tcw-artificial-intelligence-etf-q2-2026-commentary&c=4861871323570747053&mkt=en-us)
   - 2026-08-19T09:54:00+00:00 · Bing News RSS
   - The TCW Artificial Intelligence ETF net of fees was up +43.94% (Total Return) during the quarter, outperforming the S&P 500 Index return of +15.20% (Total Return).
-- [EMQQ Global Announces Launch of EMXETF, a New ETF Brand Focused on Artificial Intelligence Opportunities in Emerging Markets](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86dcc0184f4c76912e4dfb14206ea2&url=https%3a%2f%2ffinance.yahoo.com%2ftechnology%2fai%2farticles%2femqq-global-announces-launch-emxetf-135800980.html&c=14913026215891523371&mkt=en-us)
+- [EMQQ Global Announces Launch of EMXETF, a New ETF Brand Focused on Artificial Intelligence Opportunities in Emerging Markets](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86e50711b740868c82098de1ca2806&url=https%3a%2f%2ffinance.yahoo.com%2ftechnology%2fai%2farticles%2femqq-global-announces-launch-emxetf-135800980.html&c=14913026215891523371&mkt=en-us)
   - 2026-08-19T06:57:00+00:00 · Bing News RSS
   - Designed for what EM is now, not what it used to be; new fund family will focus on targeted and difficult to access Emerging Markets exposures across the artificial intelligence value chainSAN ...
-- [Chinese Tech Giants Pivot Away From Gaming To Fuel Artificial Intelligence Race](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86dcc0184f4c76912e4dfb14206ea2&url=https%3a%2f%2ffinance.yahoo.com%2ftechnology%2fai%2farticles%2fchinese-tech-giants-pivot-away-200712895.html&c=8686525195292828666&mkt=en-us)
+- [Chinese Tech Giants Pivot Away From Gaming To Fuel Artificial Intelligence Race](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86e50711b740868c82098de1ca2806&url=https%3a%2f%2ffinance.yahoo.com%2ftechnology%2fai%2farticles%2fchinese-tech-giants-pivot-away-200712895.html&c=8686525195292828666&mkt=en-us)
   - 2026-08-18T13:07:00+00:00 · Bing News RSS
   - Alibaba, ByteDance, and Tencent are shedding noncore gaming and retail holdings to concentrate capital on data infrastructure and artificial general intelligence.
-- [Billionaire Ray Dalio Says Today's Artificial Intelligence (AI) Market Echoes 1929 and 2000. History Says Investors Should Watch Valuations Closely.](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86dcc0184f4c76912e4dfb14206ea2&url=https%3a%2f%2fwww.msn.com%2fen-us%2fmoney%2fsavingandinvesting%2fbillionaire-ray-dalio-says-todays-artificial-intelligence-ai-market-echoes-1929-and-2000-history-says-investors-should-watch-valuations-closely%2far-AA2ak9DG&c=8962356668342773960&mkt=en-us)
+- [Billionaire Ray Dalio Says Today's Artificial Intelligence (AI) Market Echoes 1929 and 2000. History Says Investors Should Watch Valuations Closely.](http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a86e50711b740868c82098de1ca2806&url=https%3a%2f%2fwww.msn.com%2fen-us%2fmoney%2fsavingandinvesting%2fbillionaire-ray-dalio-says-todays-artificial-intelligence-ai-market-echoes-1929-and-2000-history-says-investors-should-watch-valuations-closely%2far-AA2ak9DG&c=8962356668342773960&mkt=en-us)
   - 2026-08-17T13:00:00+00:00 · Bing News RSS
   - Ray Dalio warns that the current exuberance propelling the stock market is unsustainable.
 
-### Top AI news — x
+### Top AI news — reddit
 
-- [As artificial intelligence evolves, Australia has a real opportunity to lead. A recent @curtin_rc (JCRC) report puts it well. A system is only sovereign if Australians can govern it, not simply operate it. That starts with backing the researchers, engineers and skilled](https://news.google.com/rss/articles/CBMiZkFVX3lxTE1FWnpONFNEM2xTX0JPMjlfeDlRTXhkN3hBRzFkbG5mcmpfVWdKQndxYmlFb1BKcTdjMkNLb3dSRmNaeTJCZ3c5M2hmb3hRSHBySGZmdFJabjQ2VllSMDBwTXZsbmN2UQ?oc=5)
-  - 2026-08-20T06:05:47+00:00 · Google News index (x.com)
-  - As artificial intelligence evolves, Australia has a real opportunity to lead. A recent @curtin_rc (JCRC) report puts it well. A system is only sovereign if Australians can govern it, not simply operate it. That starts with backing the researchers, engineers and skilled x.com
-- [Artificial intelligence is reshaping work across the economy, writes Peter McCrory. So far, it hasn’t raised unemployment, but is that about to change?](https://news.google.com/rss/articles/CBMiWkFVX3lxTE5PRFVvUTltcG4zWEhTd1NIaUIzeUdaU1h1Z0tlZGFUSFI0WVhudWZyb1IxS05rWkhjRWlXSFQtWGRGajk3ekRXMVUwUl9sUHVRLWtZSmNyaWxRUQ?oc=5)
-  - 2026-08-20T06:01:24+00:00 · Google News index (x.com)
-  - Artificial intelligence is reshaping work across the economy, writes Peter McCrory. So far, it hasn’t raised unemployment, but is that about to change? x.com
-- [Opportunity in France! Google DeepMind Artificial Intelligence Scholarship in France 2026 | Fully Funded Host Country: France Benefits: ⭐Full Scholarship and €12,000 per year ✅€5,600 Equipment and Mobility Grants Category: Masters Study Eligible Countr](https://news.google.com/rss/articles/CBMiZkFVX3lxTE9kRHBYRVdjYmgwM3ZaLUNvc0VoX19rdFM4WHkxVWVabFd3RFl5ZDFzSmRtTGk2NVZKNV8wU2htR3ZfSGhpX0pSMWdCcEJzazNrMDJNa3gwQjJvd2VBQ2JFY3liZ2tpdw?oc=5)
-  - 2026-08-20T05:31:00+00:00 · Google News index (x.com)
-  - Opportunity in France! Google DeepMind Artificial Intelligence Scholarship in France 2026 | Fully Funded Host Country: France Benefits: ⭐Full Scholarship and €12,000 per year ✅€5,600 Equipment and Mobility Grants Category: Masters Study Eligible Countr x.com
-- [The artificial intelligence (AI) boom is translating into stronger manufacturing and export activity across Asia-Pacific, giving chip-producing economies a lift even as the broader global economy slows, Moody’s Analytics said.](https://news.google.com/rss/articles/CBMiZkFVX3lxTFB5eGdGZUpSbHl4U2RBT0ttWUk2Zk1HdEJaNG96a080NlI2eWh6Qk5Ic3d4M3FSMllidTllbEJmVWkwMW1kdjY3OE5rYkNNMzBfMXBsWjFsMEFLbzBqVTJBYnhNQkp0dw?oc=5)
-  - 2026-08-20T03:00:04+00:00 · Google News index (x.com)
-  - The artificial intelligence (AI) boom is translating into stronger manufacturing and export activity across Asia-Pacific, giving chip-producing economies a lift even as the broader global economy slows, Moody’s Analytics said. x.com
-- [The boom in artificial intelligence will likely benefit Black entrepreneurs by helping to level the playing field, according to David Hall, managing partner at venture capital fund Revolution’s Rise of the Rest seed fund.](https://news.google.com/rss/articles/CBMiXkFVX3lxTE0yTERtbWIxeEM3SW80ck5QSERkS003SjkxXzZMVWdIUEtfX3pBVTAwSS05MGN6NUFxMi1MLWlzM0MxUlJWRzVvWFFWSjBnMzkzVmdRbk9RckZEVE1ITlE?oc=5)
-  - 2026-08-19T19:50:07+00:00 · Google News index (x.com)
-  - The boom in artificial intelligence will likely benefit Black entrepreneurs by helping to level the playing field, according to David Hall, managing partner at venture capital fund Revolution’s Rise of the Rest seed fund. x.com
-- [OpenAI has slowed development of its most advanced artificial intelligence model and tightened internal security controls following a cyberattack, as the company reviews its systems and strengthens safeguards for sensitive AI development. Full story: abscbn.](https://news.google.com/rss/articles/CBMiakFVX3lxTE9aY1pOci1GejNRZVBzZGpib1NoWVFOZ1dFNnUxYnE3dDBDenhpLVlKUWw5eVhnLVZpelBoUmJhVk5JbU5mc1hPNldkTzdzOFdKcFlNQVhXX1BaajM1bVJIdDVoNGN4enBKYlE?oc=5)
-  - 2026-08-19T15:41:26+00:00 · Google News index (x.com)
-  - OpenAI has slowed development of its most advanced artificial intelligence model and tightened internal security controls following a cyberattack, as the company reviews its systems and strengthens safeguards for sensitive AI development. Full story: abscbn. x.com
-- [GLM-5.3 achieves 60 on the Artificial Analysis Intelligence Index, on par with Kimi K3 and up 7 points from GLM-5.2. Once the weights are released it will be tied as the leading open weights model @Zai_org has just launched GLM-5.3, which ties Kimi K3 (60) f](https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1WTDhMWTBYNlU2R2xlNjV2N3BITVBBblRBazBDSTBoTmdsX3BkX2VwVHJnX1h5QnpoV1o1bmM3LWlMNkx3bzNrbHMzQl9JR2IwbUtwd2RDczlfYjR5emFpZUVyeF8xVW8?oc=5)
-  - 2026-08-18T21:44:46+00:00 · Google News index (x.com)
-  - GLM-5.3 achieves 60 on the Artificial Analysis Intelligence Index, on par with Kimi K3 and up 7 points from GLM-5.2. Once the weights are released it will be tied as the leading open weights model @Zai_org has just launched GLM-5.3, which ties Kimi K3 (60) f x.com
-- [GLM-5.3 scores 60 on the Artificial Analysis Intelligence Index. While GLM is best known for its coding capabilities, its strengths extend far beyond coding. GLM-5.3 delivers significant improvements in reasoning, general chat, and specialized domains such as](https://news.google.com/rss/articles/CBMiX0FVX3lxTFBDbW9WLTR4ZWNDOTdQWG9ING5pOTVrV2RycVBNRUttUGRreTRMNHJyZVdVNkUxTDlvVEFsd0NwbndmSWZ0SndZd0hHa2ZIV0RITFozZUwyNkg2X2MwdVdV?oc=5)
-  - 2026-08-18T21:24:07+00:00 · Google News index (x.com)
-  - GLM-5.3 scores 60 on the Artificial Analysis Intelligence Index. While GLM is best known for its coding capabilities, its strengths extend far beyond coding. GLM-5.3 delivers significant improvements in reasoning, general chat, and specialized domains such as x.com
-
-### xAI — official
-
-- [Grok Bot: A new kind of colleague](https://news.google.com/rss/articles/CBMiMkFVX3lxTE9KUlpuaWtVOGw0VTlVRGlxYVdJZUZRQ3BPakJPYVQ5UjNyaGQyVHk3RWdn?oc=5)
-  - 2026-08-20T08:32:37+00:00 · Google News index (x.ai)
-  - Grok Bot: A new kind of colleague x.ai
-- [Grok 4.6 on Amazon Bedrock](https://news.google.com/rss/articles/CBMiU0FVX3lxTE1QTmxWMTBnM015a1RPY25GeUVaY0dkQ3BudkZQVEltMEJqTUZrYzlHR2VYNkVoTFhsTmZ1RjBvMXRZa3p1QnpNTDd3eVk1VW93aW1J?oc=5)
-  - 2026-08-19T15:12:24+00:00 · Google News index (x.ai)
-  - Grok 4.6 on Amazon Bedrock x.ai
-- [Grok API Quickstart: Get Your API Key](https://news.google.com/rss/articles/CBMiUEFVX3lxTFBKY2hySk4xZGJBZkdDaDNhbDB4ZFI5Ykc5OTBrSGcxWFF2YTdwS2ZHNGpzU1l6OHBuTkp0SEtpWndGVVkteThXck1qd0duRVNy?oc=5)
-  - 2026-08-18T07:00:00+00:00 · Google News index (x.ai)
-  - Grok API Quickstart: Get Your API Key docs.x.ai
-- [grok-4.6 and grok-4.5 high error rate](https://news.google.com/rss/articles/CBMiWEFVX3lxTFBtWUR2dXhYRTRHY05GOU0wTlhrRlRBVTE3RUtSSFhFTllMQkYxTDVxMF9ldTd1WW13WXdjNGVJV1U1blVkZUpLU194dmc3Y3BCWVR3ZmdzeXY?oc=5)
-  - 2026-08-17T23:28:00+00:00 · Google News index (x.ai)
-  - grok-4.6 and grok-4.5 high error rate X.ai
-- [Prompting Guide](https://news.google.com/rss/articles/CBMijwFBVV95cUxPQXRVaDJjZTVobk1xdEEybmk0YndoMHVYTGJEbUVsZmhVVy1idHo4anhDYUdPeVQ3MVlDRGVMeVlGVThUZ1p1R1RXVHg0WE4tZ2FUUXRHT0x5TjE1aWhyUUhtSm03RDFnQ25XNlBrdk9HUXIyZUFSRU85OGNjb1dsSnNWeTk0RnRzX2JyejVPZw?oc=5)
-  - 2026-08-17T07:00:00+00:00 · Google News index (x.ai)
-  - Prompting Guide docs.x.ai
-- [Grok Build Changelog](https://news.google.com/rss/articles/CBMiQkFVX3lxTE9TUTByWWFSbHJPbTBkVk1Ic2dKLXE4SXhqYTdWb1hKZDhDU0pXN3hQSlZfcE5DUUIyb3Jrem5IZ1J4UQ?oc=5)
-  - 2026-08-15T07:00:00+00:00 · Google News index (x.ai)
-  - Grok Build Changelog x.ai
-- [Grok 4.6 in GitHub Copilot](https://news.google.com/rss/articles/CBMiU0FVX3lxTFB3cC1tWldMMkhweUFFM1A3LU1jUHJXdnJubkJRWm5rWURHSmpxc1paSEdyMV9KaWM4T0tHQTB6ZkNicGs5WGhXQ091QWZ6MUlRaTdV?oc=5)
-  - 2026-08-14T17:41:56+00:00 · Google News index (x.ai)
-  - Grok 4.6 in GitHub Copilot x.ai
+- [Why do we feel the need to continue reproducing when the earth is already overpopulated?](https://www.reddit.com/r/overpopulation/comments/1vtgjvq/why_do_we_feel_the_need_to_continue_reproducing/)
+  - /u/Weird_Presence1 · 2026-08-20T11:14:43+00:00 · Reddit search RSS
+  - Reproduction happens in nature to keep the species alive in the ecosystem. Whichever species has more survival skills which are - get the food to sustain the energy, shelter to protect themselves from danger, rains and heat and keep themselves safe as in to be alive through fight or flight against danger. Humans have been in the nature for around 300000 years now. they are the top most intelligent species to exist. the purpose of reproduction for human is the same as for any other species. but b…
+- [Liquid Death is asking people to mail their pee to AI data centers](https://www.reddit.com/r/BrandNewSentence/comments/1vtgedw/liquid_death_is_asking_people_to_mail_their_pee/)
+  - /u/SgtMajorPanda · 2026-08-20T11:06:43+00:00 · Reddit search RSS
+  - submitted by /u/SgtMajorPanda to r/BrandNewSentence \[link\] \[comments\]
+- [PAPS STUDIO — Launching the content agency born inside an AI company 🌐](https://www.reddit.com/r/u_papsstudioai/comments/1vtgd3q/paps_studio_launching_the_content_agency_born/)
+  - /u/papsstudioai · 2026-08-20T11:04:52+00:00 · Reddit search RSS
+  - Attention is rented. Conversations are owned. PAPS Studio delivers both. Most social media architectures suffer from a critical flaw: they generate reach, but fail at the conversion layer. A potential client interacts with a post or sends a DM, and by the time a human team responds hours later, the intent is lost. PAPS Studio was built to solve this exact bottleneck. Operating as the services arm of PAPS AI out of Dubai and Barcelona, we combine top-tier creative execution with proprietary artif…
+- [🤖 100 Remote Non-Phone AI Jobs Available – Earn $20–$30/Hour!](https://www.reddit.com/r/DailyIncome/comments/1vtgbxf/100_remote_nonphone_ai_jobs_available_earn/)
+  - /u/aw1219 · 2026-08-20T11:03:07+00:00 · Reddit search RSS
+  - If you're looking for a non-phone work-from-home job , here's a remote opportunity that could be a great fit. A company is hiring 100 AI Evaluator Analysts to help improve the performance of advanced AI systems. No phone calls—just focused computer-based work completed from home. 💰 Pay: $20–$30 per hour What you'll do: ✅ Write detailed, multi-turn conversations based on project guidelines ✅ Create evaluation rubrics to measure AI responses ✅ Test conversations with advanced AI models ✅ Review an…
+- [Trying a new map](https://www.reddit.com/r/generals/comments/1vtg6vu/trying_a_new_map/)
+  - /u/Patient-Apple245 · 2026-08-20T10:56:20+00:00 · Reddit search RSS
+  - Hello fellas does anyone know why this map doesn't work? submitted by /u/Patient-Apple245 to r/generals \[link\] \[comments\]
 
 ## Interpretation limits
 
 - The report ranks and caps new findings at 120 items; collection and deduplication still process every candidate.
 - A successful check with zero candidates means the upstream discovery source returned no matches; it does not prove that the social platform had no relevant posts.
 - X, Instagram, Threads, TikTok, LinkedIn, YouTube keyword, and cross-instance Mastodon results use anonymous search-engine indexes and are necessarily incomplete.
-- Reddit first uses an independent public archive and falls back to indexed discovery when it is blocked or rate-limited; Hacker News search uses its public Algolia index.
+- Reddit first uses its official search RSS feed, then an independent public archive and public index discovery; Hacker News search uses its public Algolia index.
 - A public endpoint may expose only a platform-defined subset even when the request succeeds.
 - Private, deleted, login-gated, and non-indexed content is unavailable.
