@@ -1,0 +1,8 @@
+{
+  "queries": [],
+  "max_results_per_source": 20,
+  "lookback_days": 7,
+  "request_timeout_seconds": 20,
+  "seen_retention_days": 180,
+  "user_agent": "SocialNews/1.0 (+https://github.com/TheAutoScaler/SocialNews)"
+}
