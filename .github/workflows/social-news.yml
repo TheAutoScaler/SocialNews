@@ -2,7 +2,7 @@ name: Social News
 
 on:
   schedule:
-    - cron: "0 5 * * *"
+    - cron: "0 5 * * 1"
   workflow_dispatch:
 
 permissions:
@@ -47,5 +47,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/seen.json reports/
-          git commit -m "chore(social-news): daily report [skip ci]"
+          git commit -m "chore(social-news): weekly report [skip ci]"
           git push

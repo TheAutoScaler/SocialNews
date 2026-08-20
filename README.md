@@ -1,6 +1,6 @@
 # SocialNews
 
-SocialNews is an account-free social-discovery pipeline designed to run entirely in GitHub Actions. It searches configured topics on a daily cron, writes a durable Markdown report into this repository, and keeps compact history so later runs show only newly discovered links.
+SocialNews is a social-discovery pipeline designed to run entirely in GitHub Actions. It searches configured topics every Monday, writes a durable Markdown report into this repository, and keeps compact history so later runs show only newly discovered links.
 
 The second half is a native ChatGPT scheduled task. GitHub Actions performs network collection; ChatGPT reads `reports/latest.md` after the Action finishes and presents it alongside the rest of your scheduled items. Nothing depends on a Mac remaining powered on.
 
@@ -13,8 +13,8 @@ The second half is a native ChatGPT scheduled task. GitHub Actions performs netw
 - Stable ChatGPT input: `reports/latest.md`
 - Historical reports: `reports/YYYY-MM-DD.md`
 - Tests: `tests/test_socialnews.py`
-- Default collection schedule: `05:00 UTC` daily
-- ChatGPT briefing schedule: `06:00 Europe/London` daily
+- Default collection schedule: Monday at `05:00 UTC`
+- ChatGPT briefing schedule: Monday at `06:00 Europe/London`
 
 The collector uses only Python's standard library. This keeps runs inexpensive, auditable, and resistant to dependency abandonment.
 
@@ -23,7 +23,7 @@ GitHub Actions are pinned to immutable commit SHAs. A separate weekly workflow c
 ## Architecture
 
 ```text
-GitHub Actions cron (05:00 UTC)
+GitHub Actions cron (Monday 05:00 UTC)
         |
         v
 Python collector
@@ -147,16 +147,16 @@ Open **Actions** → **Social News** → **Run workflow**. Inspect the log and `
 
 The Action only commits when generated files change. Its commit message includes `[skip ci]` to avoid a generated-commit workflow loop.
 
-### 4. Create the native ChatGPT scheduled task
+### 5. Create the native ChatGPT scheduled task
 
 After making the repository public, create a web scheduled task using this prompt. No GitHub connection is required:
 
 ```text
-Every day after the SocialNews GitHub Action has completed, read
+Every Monday after the SocialNews GitHub Action has completed, read
 https://raw.githubusercontent.com/TheAutoScaler/SocialNews/main/reports/latest.md
 using ordinary web access. Do not use or request a GitHub account connection.
 
-Create a concise daily AI intelligence briefing focused on: top AI news,
+Create a concise weekly AI intelligence briefing focused on: top AI news,
 new AI companies, newly created repositories, new models and tools, and
 meaningful innovations or research.
 
@@ -178,7 +178,7 @@ that an empty source means there were no posts; distinguish zero findings
 from collection failure.
 ```
 
-Schedule it for `06:00 Europe/London`. The native task and GitHub cron are independent; if you change one, review the other.
+Schedule it for Monday at `06:00 Europe/London`. The native task and GitHub cron are independent; if you change one, review the other.
 
 ## Schedule and time zones
 
@@ -186,10 +186,10 @@ The workflow contains:
 
 ```yaml
 schedule:
-  - cron: "0 5 * * *"
+  - cron: "0 5 * * 1"
 ```
 
-GitHub cron uses UTC. `05:00 UTC` is `06:00` in the UK during British Summer Time and `05:00` during Greenwich Mean Time. The ChatGPT task is fixed at `06:00 Europe/London`. Consequently, the schedules coincide during British Summer Time and have a one-hour gap during Greenwich Mean Time. GitHub may also start scheduled workflows late during high load, so the ChatGPT task's stale-report warning remains important.
+GitHub cron uses UTC. The collector runs every Monday at `05:00 UTC`, which is `06:00` in the UK during British Summer Time and `05:00` during Greenwich Mean Time. The ChatGPT task runs every Monday at `06:00 Europe/London`. Consequently, the schedules coincide during British Summer Time and have a one-hour gap during Greenwich Mean Time. GitHub may also start scheduled workflows late during high load, so the ChatGPT task's stale-report warning remains important.
 
 GitHub may start scheduled workflows late during high load. The workflow also supports `workflow_dispatch` for manual runs.
 
@@ -318,6 +318,12 @@ Commit it and run the workflow manually. Git history makes the reset reversible.
 - Created the dedicated `socialnews-ai.bsky.social` automation account and selected only Tech, Science, News and Software Dev interests; no accounts were followed and no posts were made.
 - Created the `SocialNews-GHA` Bluesky app password with direct-message access disabled and stored only its handle and app password in encrypted GitHub Actions secrets.
 - Added authenticated Bluesky session/search support. The main account password, recovery email and date of birth are not stored in the repository or GitHub Actions.
+
+### 2026-08-20 — Weekly delivery schedule
+
+- Changed the SocialNews collector from daily to every Monday at `05:00 UTC`.
+- Changed the native ChatGPT briefing from daily to every Monday at `06:00 Europe/London`.
+- Preserved `workflow_dispatch` so the collector can still be run manually between scheduled runs.
 
 ## References
 
