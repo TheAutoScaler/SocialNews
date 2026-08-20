@@ -74,11 +74,11 @@ GitHub, Hugging Face, arXiv and Stack Exchange use public read endpoints. Hacker
 
 ### Feeds and official sites
 
-The generic RSS/Atom adapter covers official lab blogs, newsletters, podcasts, YouTube channel feeds and public forums. The shipped AI configuration includes live feeds from OpenAI, Google AI, Google DeepMind, NVIDIA, AWS Machine Learning and Hugging Face. Vendors without stable feeds are monitored through domain-restricted indexed discovery, including Anthropic, Meta AI, Microsoft AI, Apple ML, xAI, Mistral, Cohere, Stability AI and Runway. The same mechanism monitors NIST, the UK AI Security Institute and the European Commission.
+The generic RSS/Atom adapter covers official lab blogs, newsletters, podcasts, YouTube channel feeds and public forums. The shipped AI configuration includes live feeds from OpenAI, Google AI, Google DeepMind, NVIDIA, AWS Machine Learning and Hugging Face. Vendors without stable feeds are monitored through Google News RSS domain discovery validated against each item's declared source, including Anthropic, Meta AI, Microsoft AI, Apple ML, xAI, Mistral, Cohere, Stability AI and Runway. The same mechanism monitors NIST, the UK AI Security Institute and the European Commission. Indexed checks are labelled `indexed · incomplete`, never plain `ok`.
 
 ### Restricted social networks
 
-X, Instagram, Threads, TikTok and LinkedIn aggressively restrict anonymous automated access. YouTube keyword discovery and cross-instance Mastodon discovery also lack a single complete anonymous endpoint. SocialNews uses Bing RSS with strict hostname checks for these sources. Results are incomplete, may be delayed, and may legitimately be empty.
+X, Instagram, Threads, TikTok and LinkedIn aggressively restrict anonymous automated access. YouTube keyword discovery also lacks a complete anonymous endpoint. SocialNews uses Google News RSS and validates its `<source>` domain for these sources. Links pass through Google News and coverage remains incomplete. Mastodon uses native public hashtag timelines. Results may be delayed and may legitimately be empty.
 
 The collector does not bypass login walls, CAPTCHAs, access controls, or anti-bot protections. If comprehensive X or Instagram coverage becomes important, replace the discovery adapter with an approved provider or official API and document its credentials and costs.
 
@@ -215,7 +215,7 @@ Individual source failures do not fail the entire command because partial report
 - an ISO-8601 `generated_at` timestamp;
 - counts for topics, checks, candidates, failures, and new items;
 - the number of ranked findings included after the report cap;
-- health for every attempted topic/platform pair;
+- health and collection method for every attempted topic/platform pair (`direct`, `feed`, `indexed · incomplete`, `degraded fallback`, or `failed`);
 - results grouped by topic and platform;
 - explicit interpretation limits.
 

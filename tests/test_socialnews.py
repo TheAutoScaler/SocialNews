@@ -36,8 +36,8 @@ class ConfigTests(unittest.TestCase):
 class SearchTests(unittest.TestCase):
     def test_bing_results_are_restricted_to_platform_hostname(self):
         rss = b"""<rss><channel>
-        <item><title>Wrong</title><link>https://example.com/post</link></item>
-        <item><title>Right</title><link>https://x.com/user/status/1</link></item>
+        <item><title>Wrong</title><link>https://news.google.com/wrong</link><source>example.com</source></item>
+        <item><title>Right - x.com</title><link>https://news.google.com/right</link><source>x.com</source></item>
         </channel></rss>"""
         original = socialnews.fetch_bytes
         socialnews.fetch_bytes = lambda *args, **kwargs: rss
@@ -47,7 +47,8 @@ class SearchTests(unittest.TestCase):
             )
         finally:
             socialnews.fetch_bytes = original
-        self.assertEqual(["https://x.com/user/status/1"], [item.url for item in items])
+        self.assertEqual(["https://news.google.com/right"], [item.url for item in items])
+        self.assertEqual("Right", items[0].title)
 
     def test_reddit_rate_limit_uses_indexed_fallback(self):
         original_fetch, original_fallback = socialnews.fetch_bytes, socialnews.search_site_rss
@@ -64,8 +65,8 @@ class SearchTests(unittest.TestCase):
 
     def test_site_search_accepts_subdomains(self):
         rss = b"""<rss><channel>
-        <item><title>Right</title><link>https://blogs.microsoft.com/ai/post</link></item>
-        <item><title>Wrong</title><link>https://notmicrosoft.com/post</link></item>
+        <item><title>Right</title><link>https://news.google.com/right</link><source>blogs.microsoft.com</source></item>
+        <item><title>Wrong</title><link>https://news.google.com/wrong</link><source>notmicrosoft.com</source></item>
         </channel></rss>"""
         original = socialnews.fetch_bytes
         socialnews.fetch_bytes = lambda *args, **kwargs: rss
@@ -76,7 +77,7 @@ class SearchTests(unittest.TestCase):
             )
         finally:
             socialnews.fetch_bytes = original
-        self.assertEqual(["https://blogs.microsoft.com/ai/post"], [item.url for item in items])
+        self.assertEqual(["https://news.google.com/right"], [item.url for item in items])
 
     def test_new_github_search_uses_created_qualifier(self):
         captured = {}
@@ -175,6 +176,17 @@ class StateTests(unittest.TestCase):
 
 
 class ReportTests(unittest.TestCase):
+    def test_report_distinguishes_indexed_and_failed_checks(self):
+        report = socialnews.render_report(
+            now=dt.datetime(2026, 8, 20, tzinfo=dt.timezone.utc), configured_queries=1,
+            collected_count=0, new_items=[], health=[
+                socialnews.Health("X", "x", True, method="indexed"),
+                socialnews.Health("Reddit", "reddit", False, error="blocked"),
+            ],
+        )
+        self.assertIn("indexed · incomplete", report)
+        self.assertIn("failed: blocked", report)
+
     def test_empty_configuration_report_has_guidance(self):
         report = socialnews.render_report(
             now=dt.datetime(2026, 8, 20, tzinfo=dt.timezone.utc), configured_queries=0,
