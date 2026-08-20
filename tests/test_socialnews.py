@@ -1,6 +1,8 @@
 import datetime as dt
+import io
 import tempfile
 import unittest
+import urllib.error
 from pathlib import Path
 import sys
 
@@ -18,7 +20,7 @@ class ConfigTests(unittest.TestCase):
     def test_unknown_platform_is_rejected(self):
         with self.assertRaisesRegex(ValueError, "unsupported platforms"):
             socialnews.validate_config({
-                "queries": [{"name": "topic", "query": "words", "platforms": ["tiktok"]}],
+                "queries": [{"name": "topic", "query": "words", "platforms": ["facebook"]}],
                 "max_results_per_source": 20, "request_timeout_seconds": 10,
                 "lookback_days": 7, "seen_retention_days": 180,
             })
@@ -47,6 +49,35 @@ class SearchTests(unittest.TestCase):
             socialnews.fetch_bytes = original
         self.assertEqual(["https://x.com/user/status/1"], [item.url for item in items])
 
+    def test_reddit_rate_limit_uses_indexed_fallback(self):
+        original_fetch, original_fallback = socialnews.fetch_bytes, socialnews.search_site_rss
+        socialnews.fetch_bytes = lambda *args, **kwargs: (_ for _ in ()).throw(
+            urllib.error.HTTPError("url", 429, "limited", {}, io.BytesIO())
+        )
+        expected = [socialnews.Item("T", "reddit", "Fallback", "https://reddit.com/r/a/1")]
+        socialnews.search_site_rss = lambda *args, **kwargs: expected
+        try:
+            actual = socialnews.search_reddit("T", "AI", limit=10, after=0, timeout=1, user_agent="test")
+        finally:
+            socialnews.fetch_bytes, socialnews.search_site_rss = original_fetch, original_fallback
+        self.assertEqual(expected, actual)
+
+    def test_site_search_accepts_subdomains(self):
+        rss = b"""<rss><channel>
+        <item><title>Right</title><link>https://blogs.microsoft.com/ai/post</link></item>
+        <item><title>Wrong</title><link>https://notmicrosoft.com/post</link></item>
+        </channel></rss>"""
+        original = socialnews.fetch_bytes
+        socialnews.fetch_bytes = lambda *args, **kwargs: rss
+        try:
+            items = socialnews.search_site_rss(
+                "Microsoft", "AI", "microsoft.com", "official",
+                limit=10, timeout=1, user_agent="test",
+            )
+        finally:
+            socialnews.fetch_bytes = original
+        self.assertEqual(["https://blogs.microsoft.com/ai/post"], [item.url for item in items])
+
 
 class UrlTests(unittest.TestCase):
     def test_canonicalization_removes_tracking_and_fragment(self):
@@ -68,6 +99,22 @@ class RssTests(unittest.TestCase):
         self.assertEqual("Example & result", items[0].title)
         self.assertEqual("Useful text", items[0].summary)
         self.assertEqual("2026-08-19T12:00:00+00:00", items[0].published_at)
+
+    def test_parse_atom(self):
+        data = b"""<feed xmlns='http://www.w3.org/2005/Atom'><entry>
+        <title>New model</title><link href='https://example.com/model'/>
+        <published>2026-08-19T12:00:00Z</published><summary>Details</summary>
+        <author><name>Researcher</name></author></entry></feed>"""
+        items = socialnews.parse_rss(data, topic="AI", platform="research", source="fixture")
+        self.assertEqual(1, len(items))
+        self.assertEqual("Researcher", items[0].author)
+        self.assertEqual("https://example.com/model", items[0].url)
+
+    def test_parsed_time_accepts_zulu_iso(self):
+        self.assertEqual(
+            dt.datetime(2026, 8, 19, 12, tzinfo=dt.timezone.utc),
+            socialnews.parsed_time("2026-08-19T12:00:00Z"),
+        )
 
 
 class StateTests(unittest.TestCase):
@@ -100,6 +147,19 @@ class ReportTests(unittest.TestCase):
         )
         self.assertIn("No searches are configured", report)
         self.assertIn("generated_at", report)
+
+    def test_report_ranks_and_caps_items(self):
+        items = [
+            socialnews.Item("T", "x", "Indexed", "https://x.com/a/1"),
+            socialnews.Item("T", "official", "Primary", "https://example.com/primary"),
+        ]
+        report = socialnews.render_report(
+            now=dt.datetime(2026, 8, 20, tzinfo=dt.timezone.utc), configured_queries=1,
+            collected_count=2, new_items=items, health=[], max_report_items=1,
+        )
+        self.assertIn("Primary", report)
+        self.assertNotIn("Indexed", report)
+        self.assertIn("reported_items: `1`", report)
 
     def test_write_outputs_writes_latest_and_dated_report(self):
         now = dt.datetime(2026, 8, 20, tzinfo=dt.timezone.utc)

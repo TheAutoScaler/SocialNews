@@ -1,6 +1,55 @@
 {
-  "queries": [],
-  "max_results_per_source": 20,
+  "queries": [
+    {
+      "name": "AI models and releases",
+      "query": "AI model",
+      "platforms": ["bluesky", "github", "hackernews", "huggingface", "arxiv", "stackexchange", "mastodon", "news", "x", "instagram", "threads", "tiktok", "linkedin"]
+    },
+    {
+      "name": "AI agents and coding",
+      "query": "AI agent",
+      "platforms": ["bluesky", "github", "hackernews", "huggingface", "arxiv", "stackexchange", "mastodon", "news", "x", "youtube"]
+    },
+    {
+      "name": "AI research",
+      "query": "machine learning",
+      "platforms": ["bluesky", "github", "hackernews", "huggingface", "arxiv", "stackexchange", "news"]
+    },
+    {
+      "name": "AI policy and business",
+      "query": "artificial intelligence",
+      "platforms": ["bluesky", "hackernews", "mastodon", "news", "x", "linkedin"]
+    },
+    {
+      "name": "AI community on Reddit",
+      "query": "AI",
+      "platforms": ["reddit"]
+    }
+  ],
+  "feeds": [
+    {"name": "OpenAI News", "category": "official", "url": "https://openai.com/news/rss.xml"},
+    {"name": "Google AI", "category": "official", "url": "https://blog.google/technology/ai/rss/"},
+    {"name": "Google DeepMind", "category": "official", "url": "https://deepmind.google/blog/rss.xml"},
+    {"name": "NVIDIA AI", "category": "official", "url": "https://blogs.nvidia.com/blog/category/deep-learning/feed/"},
+    {"name": "AWS Machine Learning", "category": "official", "url": "https://aws.amazon.com/blogs/machine-learning/feed/"},
+    {"name": "Hugging Face Blog", "category": "official", "url": "https://huggingface.co/blog/feed.xml"}
+  ],
+  "sites": [
+    {"name": "Anthropic", "category": "official", "domain": "anthropic.com", "query": "AI OR model OR research"},
+    {"name": "Meta AI", "category": "official", "domain": "ai.meta.com", "query": "model OR research OR release"},
+    {"name": "Microsoft AI", "category": "official", "domain": "microsoft.com", "query": "AI model announcement"},
+    {"name": "Apple ML", "category": "official", "domain": "machinelearning.apple.com", "query": "machine learning"},
+    {"name": "xAI", "category": "official", "domain": "x.ai", "query": "model OR Grok OR research"},
+    {"name": "Mistral AI", "category": "official", "domain": "mistral.ai", "query": "model OR release"},
+    {"name": "Cohere", "category": "official", "domain": "cohere.com", "query": "model OR research"},
+    {"name": "Stability AI", "category": "official", "domain": "stability.ai", "query": "model OR release"},
+    {"name": "Runway", "category": "official", "domain": "runwayml.com", "query": "AI model OR release"},
+    {"name": "NIST AI", "category": "policy", "domain": "nist.gov", "query": "artificial intelligence"},
+    {"name": "UK AI Security Institute", "category": "policy", "domain": "aisi.gov.uk", "query": "AI safety OR research"},
+    {"name": "European Commission AI", "category": "policy", "domain": "digital-strategy.ec.europa.eu", "query": "artificial intelligence"}
+  ],
+  "max_results_per_source": 15,
+  "max_report_items": 100,
   "lookback_days": 7,
   "request_timeout_seconds": 20,
   "seen_retention_days": 180,

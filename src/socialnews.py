@@ -12,6 +12,7 @@ import html
 import json
 import re
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -19,7 +20,15 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 from typing import Any
 
-SUPPORTED_PLATFORMS = {"reddit", "x", "instagram"}
+SUPPORTED_PLATFORMS = {
+    "arxiv", "bluesky", "github", "hackernews", "huggingface", "instagram",
+    "linkedin", "mastodon", "news", "reddit", "stackexchange", "threads",
+    "tiktok", "x", "youtube",
+}
+INDEXED_DOMAINS = {
+    "x": "x.com", "instagram": "instagram.com", "threads": "threads.net",
+    "tiktok": "tiktok.com", "linkedin": "linkedin.com", "youtube": "youtube.com",
+}
 TRACKING_PARAMS = {
     "fbclid", "gclid", "mc_cid", "mc_eid", "ref", "source",
     "utm_campaign", "utm_content", "utm_medium", "utm_source", "utm_term",
@@ -82,6 +91,22 @@ def validate_config(config: dict[str, Any]) -> None:
         value = config.get(field)
         if not isinstance(value, int) or isinstance(value, bool) or value < 1:
             raise ValueError(f"config.{field} must be an integer >= 1")
+    if not isinstance(config.get("max_report_items", 100), int) or config.get("max_report_items", 100) < 1:
+        raise ValueError("config.max_report_items must be an integer >= 1")
+    feeds = config.get("feeds", [])
+    if not isinstance(feeds, list):
+        raise ValueError("config.feeds must be an array")
+    for index, feed in enumerate(feeds):
+        if not isinstance(feed, dict) or not all(isinstance(feed.get(key), str) and feed[key].strip() for key in ("name", "url", "category")):
+            raise ValueError(f"feeds[{index}] must contain non-empty name, url, and category strings")
+        if urllib.parse.urlsplit(feed["url"]).scheme not in {"http", "https"}:
+            raise ValueError(f"feeds[{index}].url must be HTTP(S)")
+    sites = config.get("sites", [])
+    if not isinstance(sites, list):
+        raise ValueError("config.sites must be an array")
+    for index, site in enumerate(sites):
+        if not isinstance(site, dict) or not all(isinstance(site.get(key), str) and site[key].strip() for key in ("name", "domain", "category")):
+            raise ValueError(f"sites[{index}] must contain non-empty name, domain, and category strings")
 
 
 def fetch_bytes(url: str, *, timeout: int, user_agent: str) -> bytes:
@@ -93,8 +118,21 @@ def fetch_bytes(url: str, *, timeout: int, user_agent: str) -> bytes:
         },
         method="GET",
     )
-    with urllib.request.urlopen(request, timeout=timeout) as response:
-        return response.read()
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(request, timeout=timeout) as response:
+                return response.read()
+        except urllib.error.HTTPError as exc:
+            if exc.code not in {429, 500, 502, 503, 504} or attempt == 2:
+                raise
+            retry_after = exc.headers.get("Retry-After")
+            delay = min(int(retry_after), 10) if retry_after and retry_after.isdigit() else 2 ** attempt
+            time.sleep(delay)
+    raise RuntimeError("unreachable")
+
+
+def fetch_json(url: str, *, timeout: int, user_agent: str) -> Any:
+    return json.loads(fetch_bytes(url, timeout=timeout, user_agent=user_agent))
 
 
 def canonicalize_url(url: str) -> str:
@@ -146,7 +184,12 @@ def search_reddit(
         {"q": query, "size": limit, "after": after, "sort": "desc", "sort_type": "created_utc"}
     )
     url = f"https://api.pullpush.io/reddit/search/submission/?{params}"
-    payload = json.loads(fetch_bytes(url, timeout=timeout, user_agent=user_agent))
+    try:
+        payload = json.loads(fetch_bytes(url, timeout=timeout, user_agent=user_agent))
+    except urllib.error.HTTPError as exc:
+        if exc.code not in {403, 429}:
+            raise
+        return search_site_rss(topic, query, "reddit.com", "reddit", limit=limit, timeout=timeout, user_agent=user_agent, source="Bing RSS (Reddit fallback)")
     rows = payload.get("data", [])
     if not isinstance(rows, list):
         raise ValueError("PullPush response did not contain a data array")
@@ -179,6 +222,14 @@ def search_reddit(
     return results
 
 
+def xml_text(node: ET.Element, *names: str) -> str | None:
+    for name in names:
+        found = node.find(name)
+        if found is not None and found.text:
+            return found.text
+    return None
+
+
 def parse_rss(data: bytes, *, topic: str, platform: str, source: str) -> list[Item]:
     root = ET.fromstring(data)
     results: list[Item] = []
@@ -198,13 +249,29 @@ def parse_rss(data: bytes, *, topic: str, platform: str, source: str) -> list[It
                 source=source,
             )
         )
+    atom_ns = "{http://www.w3.org/2005/Atom}"
+    for node in root.findall(f".//{atom_ns}entry"):
+        link = node.find(f"{atom_ns}link")
+        url = (link.get("href", "") if link is not None else "").strip()
+        if not url:
+            continue
+        author_node = node.find(f"{atom_ns}author/{atom_ns}name")
+        results.append(Item(
+            topic=topic, platform=platform,
+            title=clean_text(xml_text(node, f"{atom_ns}title")) or "Untitled result",
+            url=url,
+            published_at=iso_timestamp(xml_text(node, f"{atom_ns}published", f"{atom_ns}updated")) or xml_text(node, f"{atom_ns}published", f"{atom_ns}updated"),
+            author=clean_text(author_node.text if author_node is not None else None),
+            summary=clean_text(xml_text(node, f"{atom_ns}summary", f"{atom_ns}content")),
+            source=source,
+        ))
     return results
 
 
 def search_bing_rss(
     topic: str, query: str, platform: str, *, limit: int, timeout: int, user_agent: str
 ) -> list[Item]:
-    domain = {"x": "x.com", "instagram": "instagram.com"}[platform]
+    domain = INDEXED_DOMAINS[platform]
     params = urllib.parse.urlencode({"q": f"({query}) site:{domain}", "format": "rss", "count": limit})
     url = f"https://www.bing.com/search?{params}"
     results = parse_rss(
@@ -220,13 +287,125 @@ def search_bing_rss(
     ][:limit]
 
 
+def search_news(topic: str, query: str, *, limit: int, timeout: int, user_agent: str) -> list[Item]:
+    params = urllib.parse.urlencode({"q": query, "format": "rss", "count": limit})
+    return parse_rss(fetch_bytes(f"https://www.bing.com/news/search?{params}", timeout=timeout, user_agent=user_agent), topic=topic, platform="news", source="Bing News RSS")[:limit]
+
+
+def search_site_rss(topic: str, query: str, domain: str, platform: str, *, limit: int, timeout: int, user_agent: str, source: str = "Bing RSS") -> list[Item]:
+    params = urllib.parse.urlencode({"q": f"({query}) site:{domain}", "format": "rss", "count": limit})
+    results = parse_rss(fetch_bytes(f"https://www.bing.com/search?{params}", timeout=timeout, user_agent=user_agent), topic=topic, platform=platform, source=source)
+    expected = domain.lower().removeprefix("www.")
+    return [
+        item for item in results
+        if (lambda host: host == expected or host.endswith("." + expected))(
+            (urllib.parse.urlsplit(item.url).hostname or "").lower().removeprefix("www.")
+        )
+    ][:limit]
+
+
+def search_bluesky(topic: str, query: str, *, limit: int, timeout: int, user_agent: str) -> list[Item]:
+    params = urllib.parse.urlencode({"q": query, "limit": min(limit, 100), "sort": "latest"})
+    try:
+        payload = fetch_json(f"https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts?{params}", timeout=timeout, user_agent=user_agent)
+    except urllib.error.HTTPError as exc:
+        if exc.code != 403:
+            raise
+        return search_site_rss(topic, query, "bsky.app", "bluesky", limit=limit, timeout=timeout, user_agent=user_agent, source="Bing RSS (Bluesky fallback)")
+    results = []
+    for row in payload.get("posts", []):
+        record, author = row.get("record", {}), row.get("author", {})
+        uri = str(row.get("uri", ""))
+        rkey = uri.rsplit("/", 1)[-1]
+        handle = str(author.get("handle", ""))
+        if not handle or not rkey:
+            continue
+        text = clean_text(str(record.get("text", ""))) or "Bluesky post"
+        results.append(Item(topic, "bluesky", text[:160], f"https://bsky.app/profile/{handle}/post/{rkey}", record.get("createdAt"), f"@{handle}", text, "Bluesky public AppView"))
+    return results
+
+
+def search_hackernews(topic: str, query: str, *, limit: int, after: int, timeout: int, user_agent: str) -> list[Item]:
+    params = urllib.parse.urlencode({"query": query, "tags": "story", "numericFilters": f"created_at_i>{after}", "hitsPerPage": limit})
+    payload = fetch_json(f"https://hn.algolia.com/api/v1/search_by_date?{params}", timeout=timeout, user_agent=user_agent)
+    return [Item(topic, "hackernews", clean_text(row.get("title")) or "Hacker News story", f"https://news.ycombinator.com/item?id={row['objectID']}", iso_timestamp(row.get("created_at_i")), row.get("author"), clean_text(row.get("story_text")), "HN Algolia") for row in payload.get("hits", []) if row.get("objectID")]
+
+
+def search_github(topic: str, query: str, *, limit: int, cutoff: dt.datetime, timeout: int, user_agent: str) -> list[Item]:
+    since = cutoff.date().isoformat()
+    params = urllib.parse.urlencode({"q": f"{query} pushed:>={since}", "sort": "updated", "order": "desc", "per_page": min(limit, 100)})
+    payload = fetch_json(f"https://api.github.com/search/repositories?{params}", timeout=timeout, user_agent=user_agent)
+    return [Item(topic, "github", row.get("full_name", "GitHub repository"), row.get("html_url", ""), row.get("pushed_at"), row.get("owner", {}).get("login"), clean_text(row.get("description")), "GitHub public search") for row in payload.get("items", []) if row.get("html_url")]
+
+
+def search_huggingface(topic: str, query: str, *, limit: int, timeout: int, user_agent: str) -> list[Item]:
+    params = urllib.parse.urlencode({"search": query, "sort": "lastModified", "direction": "-1", "limit": limit})
+    rows = fetch_json(f"https://huggingface.co/api/models?{params}", timeout=timeout, user_agent=user_agent)
+    return [Item(topic, "huggingface", row.get("id", "Hugging Face model"), f"https://huggingface.co/{row['id']}", row.get("lastModified"), row.get("author"), f"downloads: {row.get('downloads', 0)} · likes: {row.get('likes', 0)}", "Hugging Face Hub") for row in rows if row.get("id")]
+
+
+def search_arxiv(topic: str, query: str, *, limit: int, timeout: int, user_agent: str) -> list[Item]:
+    simple = " ".join(re.findall(r"[A-Za-z0-9-]+", query)[:12])
+    params = urllib.parse.urlencode({"search_query": f'all:"{simple}"', "start": 0, "max_results": limit, "sortBy": "submittedDate", "sortOrder": "descending"})
+    return parse_rss(fetch_bytes(f"https://export.arxiv.org/api/query?{params}", timeout=timeout, user_agent=user_agent), topic=topic, platform="arxiv", source="arXiv")
+
+
+def search_stackexchange(topic: str, query: str, *, limit: int, after: int, timeout: int, user_agent: str) -> list[Item]:
+    params = urllib.parse.urlencode({"site": "stackoverflow", "q": query, "fromdate": after, "pagesize": min(limit, 100), "order": "desc", "sort": "creation", "filter": "default"})
+    payload = fetch_json(f"https://api.stackexchange.com/2.3/search/advanced?{params}", timeout=timeout, user_agent=user_agent)
+    return [Item(topic, "stackexchange", clean_text(row.get("title")) or "Stack Overflow question", row.get("link", ""), iso_timestamp(row.get("creation_date")), row.get("owner", {}).get("display_name"), f"score: {row.get('score', 0)} · answers: {row.get('answer_count', 0)}", "Stack Exchange") for row in payload.get("items", []) if row.get("link")]
+
+
+def search_mastodon(topic: str, query: str, *, limit: int, timeout: int, user_agent: str) -> list[Item]:
+    params = urllib.parse.urlencode({"q": f"({query}) (site:mastodon.social OR site:hachyderm.io OR site:fosstodon.org)", "format": "rss", "count": limit})
+    return parse_rss(fetch_bytes(f"https://www.bing.com/search?{params}", timeout=timeout, user_agent=user_agent), topic=topic, platform="mastodon", source="Bing RSS (public Mastodon)")[:limit]
+
+
+def collect_feeds(config: dict[str, Any], *, cutoff: dt.datetime) -> tuple[list[Item], list[Health]]:
+    timeout, user_agent = config["request_timeout_seconds"], config.get("user_agent", "SocialNews/1.0")
+    limit = config["max_results_per_source"]
+    items, health = [], []
+    for feed in config.get("feeds", []):
+        try:
+            found = parse_rss(fetch_bytes(feed["url"], timeout=timeout, user_agent=user_agent), topic=feed["name"], platform=feed["category"], source=feed["name"])
+            recent = [item for item in found if not item.published_at or parsed_time(item.published_at) is None or parsed_time(item.published_at) >= cutoff][:limit]
+            items.extend(recent)
+            health.append(Health(feed["name"], feed["category"], True, len(recent)))
+        except (OSError, ValueError, ET.ParseError, urllib.error.URLError) as exc:
+            health.append(Health(feed["name"], feed["category"], False, error=f"{type(exc).__name__}: {exc}"))
+    return items, health
+
+
+def collect_sites(config: dict[str, Any]) -> tuple[list[Item], list[Health]]:
+    timeout, user_agent = config["request_timeout_seconds"], config.get("user_agent", "SocialNews/1.0")
+    limit, items, health = config["max_results_per_source"], [], []
+    for site in config.get("sites", []):
+        try:
+            found = search_site_rss(site["name"], site.get("query", "AI"), site["domain"], site["category"], limit=limit, timeout=timeout, user_agent=user_agent, source=f"Bing RSS ({site['domain']})")
+            items.extend(found)
+            health.append(Health(site["name"], site["category"], True, len(found)))
+        except (OSError, ValueError, ET.ParseError, urllib.error.URLError) as exc:
+            health.append(Health(site["name"], site["category"], False, error=f"{type(exc).__name__}: {exc}"))
+    return items, health
+
+
+def parsed_time(value: str) -> dt.datetime | None:
+    try:
+        parsed = dt.datetime.fromisoformat(value.replace("Z", "+00:00"))
+        return parsed.replace(tzinfo=dt.timezone.utc) if parsed.tzinfo is None else parsed.astimezone(dt.timezone.utc)
+    except ValueError:
+        return None
+
+
 def collect(config: dict[str, Any]) -> tuple[list[Item], list[Health]]:
     limit = config["max_results_per_source"]
     timeout = config["request_timeout_seconds"]
     user_agent = config.get("user_agent", "SocialNews/1.0")
     cutoff = utc_now() - dt.timedelta(days=config["lookback_days"])
-    items: list[Item] = []
-    health: list[Health] = []
+    items, health = collect_feeds(config, cutoff=cutoff)
+    site_items, site_health = collect_sites(config)
+    items.extend(site_items)
+    health.extend(site_health)
     for entry in config["queries"]:
         topic = entry["name"].strip()
         query = entry["query"].strip()
@@ -237,17 +416,27 @@ def collect(config: dict[str, Any]) -> tuple[list[Item], list[Health]]:
                         topic, query, limit=limit, after=int(cutoff.timestamp()),
                         timeout=timeout, user_agent=user_agent,
                     )
-                else:
+                elif platform in INDEXED_DOMAINS:
                     found = search_bing_rss(
                         topic, query, platform, limit=limit, timeout=timeout, user_agent=user_agent
                     )
+                elif platform == "news": found = search_news(topic, query, limit=limit, timeout=timeout, user_agent=user_agent)
+                elif platform == "bluesky": found = search_bluesky(topic, query, limit=limit, timeout=timeout, user_agent=user_agent)
+                elif platform == "hackernews": found = search_hackernews(topic, query, limit=limit, after=int(cutoff.timestamp()), timeout=timeout, user_agent=user_agent)
+                elif platform == "github": found = search_github(topic, query, limit=limit, cutoff=cutoff, timeout=timeout, user_agent=user_agent)
+                elif platform == "huggingface": found = search_huggingface(topic, query, limit=limit, timeout=timeout, user_agent=user_agent)
+                elif platform == "arxiv": found = search_arxiv(topic, query, limit=limit, timeout=timeout, user_agent=user_agent)
+                elif platform == "stackexchange": found = search_stackexchange(topic, query, limit=limit, after=int(cutoff.timestamp()), timeout=timeout, user_agent=user_agent)
+                elif platform == "mastodon": found = search_mastodon(topic, query, limit=limit, timeout=timeout, user_agent=user_agent)
+                else: raise ValueError(f"No adapter for {platform}")
                 recent = []
                 for item in found:
                     if not item.published_at:
                         recent.append(item)
                         continue
                     try:
-                        if dt.datetime.fromisoformat(item.published_at) >= cutoff:
+                        parsed = parsed_time(item.published_at)
+                        if parsed is None or parsed >= cutoff:
                             recent.append(item)
                     except ValueError:
                         recent.append(item)
@@ -307,17 +496,32 @@ def md_escape(value: str) -> str:
     return value.replace("\\", "\\\\").replace("[", "\\[").replace("]", "\\]")
 
 
+def rank_items(items: list[Item], limit: int) -> list[Item]:
+    priority = {
+        "official": 100, "policy": 90, "news": 80, "hackernews": 75,
+        "github": 70, "huggingface": 70, "arxiv": 65, "bluesky": 60,
+        "reddit": 60, "stackexchange": 55, "mastodon": 50, "youtube": 50,
+        "x": 45, "linkedin": 40, "threads": 35, "instagram": 35, "tiktok": 35,
+    }
+    def key(item: Item) -> tuple[int, float, str]:
+        published = parsed_time(item.published_at) if item.published_at else None
+        return (priority.get(item.platform, 0), published.timestamp() if published else 0, item.title.lower())
+    return sorted(items, key=key, reverse=True)[:limit]
+
+
 def render_report(
     *, now: dt.datetime, configured_queries: int, collected_count: int,
-    new_items: list[Item], health: list[Health]
+    new_items: list[Item], health: list[Health], max_report_items: int = 100
 ) -> str:
+    report_items = rank_items(new_items, max_report_items)
     successful = sum(1 for entry in health if entry.ok)
     failed = len(health) - successful
     lines = [
         "# SocialNews daily report", "", f"- generated_at: `{now.isoformat()}`",
         f"- configured_topics: `{configured_queries}`", f"- source_checks: `{len(health)}`",
         f"- successful_checks: `{successful}`", f"- failed_checks: `{failed}`",
-        f"- collected_candidates: `{collected_count}`", f"- new_items: `{len(new_items)}`", "",
+        f"- collected_candidates: `{collected_count}`", f"- new_items: `{len(new_items)}`",
+        f"- reported_items: `{len(report_items)}`", "",
     ]
     if configured_queries == 0:
         lines.extend([
@@ -334,11 +538,11 @@ def render_report(
             lines.append(f"| {md_escape(entry.topic)} | {entry.platform} | {md_escape(status)} | {entry.found} |")
         lines.append("")
     lines.extend(["## New findings", ""])
-    if not new_items:
+    if not report_items:
         lines.extend(["No new links were discovered during this run.", ""])
     else:
         groups: dict[tuple[str, str], list[Item]] = {}
-        for item in new_items:
+        for item in report_items:
             groups.setdefault((item.topic, item.platform), []).append(item)
         for (topic, platform), grouped_items in sorted(groups.items()):
             lines.extend([f"### {topic} — {platform}", ""])
@@ -353,9 +557,11 @@ def render_report(
             lines.append("")
     lines.extend([
         "## Interpretation limits", "",
+        f"- The report ranks and caps new findings at {len(report_items)} items; collection and deduplication still process every candidate.",
         "- A successful check with zero candidates means the upstream discovery source returned no matches; it does not prove that the social platform had no relevant posts.",
-        "- X and Instagram results come from anonymously accessible search-engine indexes and are necessarily incomplete.",
-        "- Reddit results come from an independent public archive and may lag Reddit.",
+        "- X, Instagram, Threads, TikTok, LinkedIn, YouTube keyword, and cross-instance Mastodon results use anonymous search-engine indexes and are necessarily incomplete.",
+        "- Reddit first uses an independent public archive and falls back to indexed discovery when it is blocked or rate-limited; Hacker News search uses its public Algolia index.",
+        "- A public endpoint may expose only a platform-defined subset even when the request succeeds.",
         "- Private, deleted, login-gated, and non-indexed content is unavailable.", "",
     ])
     return "\n".join(lines)
@@ -392,7 +598,7 @@ def main(argv: list[str] | None = None) -> int:
         )
         report = render_report(
             now=now, configured_queries=len(config["queries"]), collected_count=len(items),
-            new_items=new_items, health=health,
+            new_items=new_items, health=health, max_report_items=config.get("max_report_items", 100),
         )
         write_outputs(
             state_path=args.state, output_dir=args.output_dir, state=updated_state, report=report, now=now

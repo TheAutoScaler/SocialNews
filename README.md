@@ -27,9 +27,11 @@ GitHub Actions cron (05:00 UTC)
         |
         v
 Python collector
-  |-- Reddit: PullPush public endpoint
-  |-- X: anonymous Bing RSS discovery for site:x.com
-  |-- Instagram: anonymous Bing RSS discovery for site:instagram.com
+  |-- Direct public search: GitHub, Hugging Face, arXiv, Stack Exchange
+  |-- Public social search: Bluesky, Hacker News, Reddit
+  |-- RSS/Atom: official labs, blogs, channels, podcasts, forums
+  |-- News and official-site discovery: Bing RSS
+  |-- Indexed social discovery: X, Instagram, Threads, TikTok, LinkedIn, YouTube, Mastodon
         |
         v
 Normalize + deduplicate against data/seen.json
@@ -66,13 +68,17 @@ The briefing cannot read the raw URL while the repository is private. Disabling 
 
 This project deliberately avoids social-network accounts and official social-network API credentials.
 
-### Reddit
+### Direct and public endpoints
 
-Reddit discovery uses the public PullPush endpoint. It normally provides structured post data without authentication. PullPush is an independent archival service, not Reddit itself, so it may lag, rate-limit, or become unavailable. A failed source is recorded in the report rather than treated as an empty result.
+GitHub, Hugging Face, arXiv and Stack Exchange use public read endpoints. Hacker News uses its public Algolia index. Bluesky first uses the public AppView search endpoint and falls back to indexed discovery if that endpoint rejects the runner. Reddit first uses PullPush, an independent public archive, then falls back to indexed discovery when PullPush blocks or rate-limits the runner. Every unrecovered failure is recorded rather than converted into a false zero-result success.
 
-### X and Instagram
+### Feeds and official sites
 
-X and Instagram aggressively restrict anonymous automated access. SocialNews therefore uses Bing RSS search output with a `site:` restriction. This can find indexed public pages, but it is not complete, real-time, or guaranteed. It cannot see private posts, login-gated material, or content the search engine has not indexed.
+The generic RSS/Atom adapter covers official lab blogs, newsletters, podcasts, YouTube channel feeds and public forums. The shipped AI configuration includes live feeds from OpenAI, Google AI, Google DeepMind, NVIDIA, AWS Machine Learning and Hugging Face. Vendors without stable feeds are monitored through domain-restricted indexed discovery, including Anthropic, Meta AI, Microsoft AI, Apple ML, xAI, Mistral, Cohere, Stability AI and Runway. The same mechanism monitors NIST, the UK AI Security Institute and the European Commission.
+
+### Restricted social networks
+
+X, Instagram, Threads, TikTok and LinkedIn aggressively restrict anonymous automated access. YouTube keyword discovery and cross-instance Mastodon discovery also lack a single complete anonymous endpoint. SocialNews uses Bing RSS with strict hostname checks for these sources. Results are incomplete, may be delayed, and may legitimately be empty.
 
 The collector does not bypass login walls, CAPTCHAs, access controls, or anti-bot protections. If comprehensive X or Instagram coverage becomes important, replace the discovery adapter with an approved provider or official API and document its credentials and costs.
 
@@ -80,23 +86,25 @@ The collector does not bypass login walls, CAPTCHAs, access controls, or anti-bo
 
 ### 1. Configure searches
 
-Edit `config/searches.json`. The repository ships with no topics so it does not invent your interests. Add one object per topic:
+Edit `config/searches.json`. The repository ships with a seven-day AI radar covering models, agents, research, policy and business. Each query selects only the adapters relevant to that topic. `feeds` contains stable RSS/Atom sources; `sites` contains official domains that lack stable feeds.
 
 ```json
 {
   "queries": [
     {
-      "name": "Example product mentions",
-      "query": "\"Example Product\" OR exampleproduct",
-      "platforms": ["reddit", "x", "instagram"]
-    },
-    {
-      "name": "A focused Reddit topic",
-      "query": "agentic coding",
-      "platforms": ["reddit"]
+      "name": "AI agents and coding",
+      "query": "AI agent",
+      "platforms": ["bluesky", "github", "hackernews", "huggingface", "arxiv", "stackexchange", "mastodon", "news", "x", "youtube"]
     }
   ],
-  "max_results_per_source": 20,
+  "feeds": [
+    {"name": "OpenAI News", "category": "official", "url": "https://openai.com/news/rss.xml"}
+  ],
+  "sites": [
+    {"name": "Anthropic", "category": "official", "domain": "anthropic.com", "query": "AI OR model OR research"}
+  ],
+  "max_results_per_source": 15,
+  "max_report_items": 100,
   "lookback_days": 7,
   "request_timeout_seconds": 20,
   "seen_retention_days": 180,
@@ -104,9 +112,9 @@ Edit `config/searches.json`. The repository ships with no topics so it does not 
 }
 ```
 
-Supported platforms are `reddit`, `x`, and `instagram`. Query names become report headings. Keep queries focused; anonymous search-engine discovery deteriorates with large Boolean expressions.
+Supported query platforms are `arxiv`, `bluesky`, `github`, `hackernews`, `huggingface`, `instagram`, `linkedin`, `mastodon`, `news`, `reddit`, `stackexchange`, `threads`, `tiktok`, `x`, and `youtube`. Query names become report headings. Keep queries short because syntax differs between upstream services.
 
-`lookback_days` limits dated results to a recent window and is also sent to PullPush as its `after` boundary. Results without a parseable publication time are retained because dropping them would silently hide potentially current posts. X and Instagram discovery additionally rejects any search result whose final hostname is not the requested platform; this prevents search engines that ignore `site:` from contaminating the report with ordinary web pages.
+`lookback_days` limits dated results and is sent to sources that support a lower time boundary. Results without a parseable publication time are retained because silently dropping them could hide current material. `max_report_items` caps the ranked briefing while collection and deduplication still process every candidate. Indexed platform discovery rejects results outside the requested hostname.
 
 ### 2. Enable GitHub Actions write access
 
@@ -193,6 +201,7 @@ Individual source failures do not fail the entire command because partial report
 
 - an ISO-8601 `generated_at` timestamp;
 - counts for topics, checks, candidates, failures, and new items;
+- the number of ranked findings included after the report cap;
 - health for every attempted topic/platform pair;
 - results grouped by topic and platform;
 - explicit interpretation limits.
@@ -260,6 +269,14 @@ Commit it and run the workflow manually. Git history makes the reset reversible.
 - Chose committed reports/state so GitHub Actions and ChatGPT share durable results without a local machine.
 - Chose a separate native ChatGPT scheduled task as the app-visible presentation layer.
 - Updated GitHub's official checkout and Python setup Actions to their Node 24-compatible v7 majors after the first hosted run exposed deprecation warnings.
+
+### 2026-08-20 — Weekly AI radar expansion
+
+- Added account-free adapters for Bluesky, Hacker News, GitHub, Hugging Face, arXiv and Stack Exchange.
+- Added generic RSS/Atom parsing for labs, blogs, YouTube channels, podcasts and public forums.
+- Added official-domain, policy, news, Mastodon and restricted-social indexed discovery.
+- Added transient HTTP retry handling, Bluesky fallback, per-source health and ranked report caps.
+- Shipped focused seven-day searches for AI models, agents, research, policy, business and Reddit discussion.
 
 ## References
 
