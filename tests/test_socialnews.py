@@ -78,6 +78,41 @@ class SearchTests(unittest.TestCase):
             socialnews.fetch_bytes = original
         self.assertEqual(["https://blogs.microsoft.com/ai/post"], [item.url for item in items])
 
+    def test_new_github_search_uses_created_qualifier(self):
+        captured = {}
+        original = socialnews.fetch_json
+        def fake(url, **kwargs):
+            captured["url"] = url
+            return {"items": []}
+        socialnews.fetch_json = fake
+        try:
+            socialnews.search_github(
+                "New repos", "AI", limit=10,
+                cutoff=dt.datetime(2026, 8, 13, tzinfo=dt.timezone.utc),
+                timeout=1, user_agent="test", newly_created=True,
+            )
+        finally:
+            socialnews.fetch_json = original
+        self.assertIn("created%3A%3E%3D2026-08-13", captured["url"])
+        self.assertIn("sort=stars", captured["url"])
+
+    def test_trending_github_search_uses_activity_and_star_floor(self):
+        captured = {}
+        original = socialnews.fetch_json
+        socialnews.fetch_json = lambda url, **kwargs: captured.setdefault("payload", {"url": url, "items": []})
+        try:
+            socialnews.search_github(
+                "Trending repos", "AI", limit=10,
+                cutoff=dt.datetime(2026, 8, 13, tzinfo=dt.timezone.utc),
+                timeout=1, user_agent="test", trending=True,
+            )
+        finally:
+            socialnews.fetch_json = original
+        url = captured["payload"]["url"]
+        self.assertIn("pushed%3A%3E%3D2026-08-13", url)
+        self.assertIn("stars%3A%3E%3D25", url)
+        self.assertIn("sort=stars", url)
+
 
 class UrlTests(unittest.TestCase):
     def test_canonicalization_removes_tracking_and_fragment(self):

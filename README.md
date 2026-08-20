@@ -86,7 +86,7 @@ The collector does not bypass login walls, CAPTCHAs, access controls, or anti-bo
 
 ### 1. Configure searches
 
-Edit `config/searches.json`. The repository ships with a seven-day AI radar covering models, agents, research, policy and business. Each query selects only the adapters relevant to that topic. `feeds` contains stable RSS/Atom sources; `sites` contains official domains that lack stable feeds.
+Edit `config/searches.json`. The repository ships with a seven-day AI radar covering top news, newly launched AI companies, newly created and trending repositories, new models and tools, innovations and research, agents, policy, safety and funding. Each query selects only the adapters relevant to that signal. `feeds` contains stable RSS/Atom sources; `sites` contains official domains that lack stable feeds.
 
 ```json
 {
@@ -112,7 +112,7 @@ Edit `config/searches.json`. The repository ships with a seven-day AI radar cove
 }
 ```
 
-Supported query platforms are `arxiv`, `bluesky`, `github`, `hackernews`, `huggingface`, `instagram`, `linkedin`, `mastodon`, `news`, `reddit`, `stackexchange`, `threads`, `tiktok`, `x`, and `youtube`. Query names become report headings. Keep queries short because syntax differs between upstream services.
+Supported query platforms are `arxiv`, `bluesky`, `github`, `github_new`, `github_trending`, `hackernews`, `huggingface`, `instagram`, `linkedin`, `mastodon`, `news`, `reddit`, `stackexchange`, `threads`, `tiktok`, `x`, and `youtube`. `github_new` restricts results to repositories created inside the lookback window and sorts them by stars. `github_trending` is an explicit approximation—repositories with at least 25 stars that were active during the lookback window, ranked by stars—because GitHub exposes no official Trending API. `github` finds recently active repositories. Query names become report headings. Keep queries short because syntax differs between upstream services.
 
 `lookback_days` limits dated results and is sent to sources that support a lower time boundary. Results without a parseable publication time are retained because silently dropping them could hide current material. `max_report_items` caps the ranked briefing while collection and deduplication still process every candidate. Indexed platform discovery rejects results outside the requested hostname.
 
@@ -143,13 +143,26 @@ Every day after the SocialNews GitHub Action has completed, read
 https://raw.githubusercontent.com/TheAutoScaler/SocialNews/main/reports/latest.md
 using ordinary web access. Do not use or request a GitHub account connection.
 
-Present it as a concise daily social-news briefing. Lead with the most
-important new findings, preserve source links, group findings by configured
-topic and platform, and explicitly mention failures or partial coverage. If
-the report says no searches are configured, tell me to edit
-config/searches.json. If generated_at is not from today, warn that the
-GitHub Action may be delayed or failing. Do not claim that an empty source
-means there were no posts; distinguish zero findings from collection failure.
+Create a concise daily AI intelligence briefing focused on: top AI news,
+new AI companies, newly created repositories, new models and tools, and
+meaningful innovations or research.
+
+Semantically deduplicate the findings across every topic, platform, and news
+source. Treat different headlines or URLs about the same underlying event,
+company, release, repository, paper, funding round, or announcement as one
+story. Prefer the original company, repository, paper, or regulator as the
+primary link, then include up to three useful corroborating source links.
+Do not repeat a story in multiple sections. Mention where independent sources
+disagree. Rank by significance and novelty, not by the number of duplicate
+articles. Omit low-information reposts, SEO pages, and superficial rewrites.
+
+Use sections: Top stories; New companies; New repositories and models;
+Innovations and research; Policy, safety and funding; Collection health.
+For each item explain what happened, why it matters, and link the evidence.
+Explicitly mention failures and partial coverage. If generated_at is not from
+today, warn that the GitHub Action may be delayed or failing. Do not claim
+that an empty source means there were no posts; distinguish zero findings
+from collection failure.
 ```
 
 Schedule it for `06:00 Europe/London`. The native task and GitHub cron are independent; if you change one, review the other.
@@ -277,6 +290,13 @@ Commit it and run the workflow manually. Git history makes the reset reversible.
 - Added official-domain, policy, news, Mastodon and restricted-social indexed discovery.
 - Added transient HTTP retry handling, Bluesky fallback, per-source health and ranked report caps.
 - Shipped focused seven-day searches for AI models, agents, research, policy, business and Reddit discussion.
+
+### 2026-08-20 — Personal AI intelligence configuration
+
+- Added explicit searches for top news, new AI companies, newly created repositories, new models/tools, innovations/research, agents, policy, safety and funding.
+- Added `github_new`, which searches repositories created during the seven-day window rather than merely updated repositories.
+- Added `github_trending`, a documented seven-day activity-plus-stars approximation to GitHub Trending.
+- Assigned semantic cross-source deduplication to the ChatGPT presentation layer, while the collector retains deterministic canonical-URL deduplication.
 
 ## References
 

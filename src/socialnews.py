@@ -21,7 +21,7 @@ from pathlib import Path
 from typing import Any
 
 SUPPORTED_PLATFORMS = {
-    "arxiv", "bluesky", "github", "hackernews", "huggingface", "instagram",
+    "arxiv", "bluesky", "github", "github_new", "github_trending", "hackernews", "huggingface", "instagram",
     "linkedin", "mastodon", "news", "reddit", "stackexchange", "threads",
     "tiktok", "x", "youtube",
 }
@@ -331,11 +331,15 @@ def search_hackernews(topic: str, query: str, *, limit: int, after: int, timeout
     return [Item(topic, "hackernews", clean_text(row.get("title")) or "Hacker News story", f"https://news.ycombinator.com/item?id={row['objectID']}", iso_timestamp(row.get("created_at_i")), row.get("author"), clean_text(row.get("story_text")), "HN Algolia") for row in payload.get("hits", []) if row.get("objectID")]
 
 
-def search_github(topic: str, query: str, *, limit: int, cutoff: dt.datetime, timeout: int, user_agent: str) -> list[Item]:
+def search_github(topic: str, query: str, *, limit: int, cutoff: dt.datetime, timeout: int, user_agent: str, newly_created: bool = False, trending: bool = False) -> list[Item]:
     since = cutoff.date().isoformat()
-    params = urllib.parse.urlencode({"q": f"{query} pushed:>={since}", "sort": "updated", "order": "desc", "per_page": min(limit, 100)})
+    qualifier = "created" if newly_created else "pushed"
+    sort = "stars" if newly_created or trending else "updated"
+    stars = " stars:>=25" if trending else ""
+    params = urllib.parse.urlencode({"q": f"{query} {qualifier}:>={since}{stars}", "sort": sort, "order": "desc", "per_page": min(limit, 100)})
     payload = fetch_json(f"https://api.github.com/search/repositories?{params}", timeout=timeout, user_agent=user_agent)
-    return [Item(topic, "github", row.get("full_name", "GitHub repository"), row.get("html_url", ""), row.get("pushed_at"), row.get("owner", {}).get("login"), clean_text(row.get("description")), "GitHub public search") for row in payload.get("items", []) if row.get("html_url")]
+    platform = "github_new" if newly_created else "github_trending" if trending else "github"
+    return [Item(topic, platform, row.get("full_name", "GitHub repository"), row.get("html_url", ""), row.get("created_at") if newly_created else row.get("pushed_at"), row.get("owner", {}).get("login"), clean_text(row.get("description")), "GitHub public search") for row in payload.get("items", []) if row.get("html_url")]
 
 
 def search_huggingface(topic: str, query: str, *, limit: int, timeout: int, user_agent: str) -> list[Item]:
@@ -423,7 +427,7 @@ def collect(config: dict[str, Any]) -> tuple[list[Item], list[Health]]:
                 elif platform == "news": found = search_news(topic, query, limit=limit, timeout=timeout, user_agent=user_agent)
                 elif platform == "bluesky": found = search_bluesky(topic, query, limit=limit, timeout=timeout, user_agent=user_agent)
                 elif platform == "hackernews": found = search_hackernews(topic, query, limit=limit, after=int(cutoff.timestamp()), timeout=timeout, user_agent=user_agent)
-                elif platform == "github": found = search_github(topic, query, limit=limit, cutoff=cutoff, timeout=timeout, user_agent=user_agent)
+                elif platform in {"github", "github_new", "github_trending"}: found = search_github(topic, query, limit=limit, cutoff=cutoff, timeout=timeout, user_agent=user_agent, newly_created=platform == "github_new", trending=platform == "github_trending")
                 elif platform == "huggingface": found = search_huggingface(topic, query, limit=limit, timeout=timeout, user_agent=user_agent)
                 elif platform == "arxiv": found = search_arxiv(topic, query, limit=limit, timeout=timeout, user_agent=user_agent)
                 elif platform == "stackexchange": found = search_stackexchange(topic, query, limit=limit, after=int(cutoff.timestamp()), timeout=timeout, user_agent=user_agent)
@@ -499,7 +503,7 @@ def md_escape(value: str) -> str:
 def rank_items(items: list[Item], limit: int) -> list[Item]:
     priority = {
         "official": 100, "policy": 90, "news": 80, "hackernews": 75,
-        "github": 70, "huggingface": 70, "arxiv": 65, "bluesky": 60,
+        "github": 70, "github_new": 80, "github_trending": 85, "huggingface": 70, "arxiv": 65, "bluesky": 60,
         "reddit": 60, "stackexchange": 55, "mastodon": 50, "youtube": 50,
         "x": 45, "linkedin": 40, "threads": 35, "instagram": 35, "tiktok": 35,
     }

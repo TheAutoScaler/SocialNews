@@ -1,29 +1,44 @@
 {
   "queries": [
     {
-      "name": "AI models and releases",
+      "name": "Top AI news",
+      "query": "artificial intelligence",
+      "platforms": ["bluesky", "hackernews", "reddit", "mastodon", "news", "x", "linkedin", "threads"]
+    },
+    {
+      "name": "New AI companies",
+      "query": "AI startup launch",
+      "platforms": ["bluesky", "hackernews", "news", "x", "linkedin", "threads", "tiktok", "instagram"]
+    },
+    {
+      "name": "New AI repositories",
+      "query": "AI",
+      "platforms": ["github_new"]
+    },
+    {
+      "name": "Trending AI repositories",
+      "query": "AI",
+      "platforms": ["github_trending"]
+    },
+    {
+      "name": "New AI models and tools",
       "query": "AI model",
-      "platforms": ["bluesky", "github", "hackernews", "huggingface", "arxiv", "stackexchange", "mastodon", "news", "x", "instagram", "threads", "tiktok", "linkedin"]
+      "platforms": ["github", "huggingface", "bluesky", "hackernews", "news", "x", "youtube"]
+    },
+    {
+      "name": "New AI innovations and research",
+      "query": "machine learning",
+      "platforms": ["arxiv", "huggingface", "github", "bluesky", "hackernews", "stackexchange", "news", "youtube"]
     },
     {
       "name": "AI agents and coding",
       "query": "AI agent",
-      "platforms": ["bluesky", "github", "hackernews", "huggingface", "arxiv", "stackexchange", "mastodon", "news", "x", "youtube"]
+      "platforms": ["github", "hackernews", "bluesky", "stackexchange", "news", "x", "youtube"]
     },
     {
-      "name": "AI research",
-      "query": "machine learning",
-      "platforms": ["bluesky", "github", "hackernews", "huggingface", "arxiv", "stackexchange", "news"]
-    },
-    {
-      "name": "AI policy and business",
-      "query": "artificial intelligence",
-      "platforms": ["bluesky", "hackernews", "mastodon", "news", "x", "linkedin"]
-    },
-    {
-      "name": "AI community on Reddit",
-      "query": "AI",
-      "platforms": ["reddit"]
+      "name": "AI policy, safety and funding",
+      "query": "artificial intelligence regulation funding",
+      "platforms": ["news", "hackernews", "bluesky", "x", "linkedin"]
     }
   ],
   "feeds": [
@@ -49,7 +64,7 @@
     {"name": "European Commission AI", "category": "policy", "domain": "digital-strategy.ec.europa.eu", "query": "artificial intelligence"}
   ],
   "max_results_per_source": 15,
-  "max_report_items": 100,
+  "max_report_items": 120,
   "lookback_days": 7,
   "request_timeout_seconds": 20,
   "seen_retention_days": 180,
