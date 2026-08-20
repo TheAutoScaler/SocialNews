@@ -10,6 +10,7 @@ import email.utils
 import hashlib
 import html
 import json
+import os
 import re
 import sys
 import time
@@ -110,13 +111,15 @@ def validate_config(config: dict[str, Any]) -> None:
             raise ValueError(f"sites[{index}] must contain non-empty name, domain, and category strings")
 
 
-def fetch_bytes(url: str, *, timeout: int, user_agent: str) -> bytes:
+def fetch_bytes(url: str, *, timeout: int, user_agent: str, headers: dict[str, str] | None = None) -> bytes:
+    request_headers = {
+        "User-Agent": user_agent,
+        "Accept": "application/json, application/rss+xml, application/xml, text/xml;q=0.9, */*;q=0.1",
+    }
+    request_headers.update(headers or {})
     request = urllib.request.Request(
         url,
-        headers={
-            "User-Agent": user_agent,
-            "Accept": "application/json, application/rss+xml, application/xml, text/xml;q=0.9, */*;q=0.1",
-        },
+        headers=request_headers,
         method="GET",
     )
     for attempt in range(3):
@@ -134,6 +137,17 @@ def fetch_bytes(url: str, *, timeout: int, user_agent: str) -> bytes:
 
 def fetch_json(url: str, *, timeout: int, user_agent: str) -> Any:
     return json.loads(fetch_bytes(url, timeout=timeout, user_agent=user_agent))
+
+
+def post_json(url: str, payload: dict[str, Any], *, timeout: int, user_agent: str) -> Any:
+    request = urllib.request.Request(
+        url,
+        data=json.dumps(payload).encode("utf-8"),
+        headers={"User-Agent": user_agent, "Accept": "application/json", "Content-Type": "application/json"},
+        method="POST",
+    )
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+        return json.loads(response.read())
 
 
 def canonicalize_url(url: str) -> str:
@@ -181,6 +195,25 @@ def iso_timestamp(value: Any) -> str | None:
 def search_reddit(
     topic: str, query: str, *, limit: int, after: int, timeout: int, user_agent: str
 ) -> list[Item]:
+    rss_params = urllib.parse.urlencode(
+        {"q": query, "sort": "new", "t": "week", "limit": min(limit, 100)}
+    )
+    try:
+        direct = parse_rss(
+            fetch_bytes(
+                f"https://www.reddit.com/search.rss?{rss_params}",
+                timeout=timeout,
+                user_agent=user_agent,
+            ),
+            topic=topic,
+            platform="reddit",
+            source="Reddit search RSS",
+        )
+        if direct:
+            return direct[:limit]
+    except (OSError, ValueError, ET.ParseError, urllib.error.URLError):
+        pass
+
     params = urllib.parse.urlencode(
         {"q": query, "size": limit, "after": after, "sort": "desc", "sort_type": "created_utc"}
     )
@@ -220,10 +253,15 @@ def search_reddit(
                 published_at=iso_timestamp(row.get("created_utc")),
                 author=clean_text(str(row.get("author", ""))),
                 summary=clean_text(str(row.get("selftext", ""))),
-                source="PullPush",
+                source="PullPush fallback",
             )
         )
-    return results
+    if results:
+        return results
+    fallback = search_site_rss(topic, query, "reddit.com", "reddit", limit=limit, timeout=timeout, user_agent=user_agent, source="Google News index (Reddit fallback)")
+    if not fallback:
+        raise ValueError("Reddit RSS and archive returned no posts, and public index discovery found no matches")
+    return fallback
 
 
 def xml_text(node: ET.Element, *names: str) -> str | None:
@@ -306,8 +344,29 @@ def search_site_rss(topic: str, query: str, domain: str, platform: str, *, limit
 
 def search_bluesky(topic: str, query: str, *, limit: int, timeout: int, user_agent: str) -> list[Item]:
     params = urllib.parse.urlencode({"q": query, "limit": min(limit, 100), "sort": "latest"})
+    handle = os.environ.get("BLUESKY_HANDLE", "").strip()
+    app_password = os.environ.get("BLUESKY_APP_PASSWORD", "").strip()
     try:
-        payload = fetch_json(f"https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts?{params}", timeout=timeout, user_agent=user_agent)
+        if handle and app_password:
+            session = post_json(
+                "https://bsky.social/xrpc/com.atproto.server.createSession",
+                {"identifier": handle, "password": app_password},
+                timeout=timeout,
+                user_agent=user_agent,
+            )
+            access_jwt = str(session.get("accessJwt", ""))
+            if not access_jwt:
+                raise ValueError("Bluesky authentication response did not contain an access token")
+            payload = json.loads(fetch_bytes(
+                f"https://bsky.social/xrpc/app.bsky.feed.searchPosts?{params}",
+                timeout=timeout,
+                user_agent=user_agent,
+                headers={"Authorization": f"Bearer {access_jwt}"},
+            ))
+            source = "Bluesky authenticated AppView"
+        else:
+            payload = fetch_json(f"https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts?{params}", timeout=timeout, user_agent=user_agent)
+            source = "Bluesky public AppView"
     except urllib.error.HTTPError as exc:
         if exc.code != 403:
             raise
@@ -324,7 +383,7 @@ def search_bluesky(topic: str, query: str, *, limit: int, timeout: int, user_age
         if not handle or not rkey:
             continue
         text = clean_text(str(record.get("text", ""))) or "Bluesky post"
-        results.append(Item(topic, "bluesky", text[:160], f"https://bsky.app/profile/{handle}/post/{rkey}", record.get("createdAt"), f"@{handle}", text, "Bluesky public AppView"))
+        results.append(Item(topic, "bluesky", text[:160], f"https://bsky.app/profile/{handle}/post/{rkey}", record.get("createdAt"), f"@{handle}", text, source))
     return results
 
 
@@ -564,9 +623,9 @@ def render_report(
             elif entry.method == "feed":
                 status = "ok · feed"
             elif entry.method == "indexed":
-                status = "indexed · incomplete"
+                status = "public index discovery"
             else:
-                status = "degraded · indexed fallback"
+                status = "public index fallback"
             lines.append(f"| {md_escape(entry.topic)} | {entry.platform} | {md_escape(status)} | {entry.found} |")
         lines.append("")
     lines.extend(["## New findings", ""])
@@ -592,7 +651,7 @@ def render_report(
         f"- The report ranks and caps new findings at {len(report_items)} items; collection and deduplication still process every candidate.",
         "- A successful check with zero candidates means the upstream discovery source returned no matches; it does not prove that the social platform had no relevant posts.",
         "- X, Instagram, Threads, TikTok, LinkedIn, YouTube keyword, and cross-instance Mastodon results use anonymous search-engine indexes and are necessarily incomplete.",
-        "- Reddit first uses an independent public archive and falls back to indexed discovery when it is blocked or rate-limited; Hacker News search uses its public Algolia index.",
+        "- Reddit first uses its official search RSS feed, then an independent public archive and public index discovery; Hacker News search uses its public Algolia index.",
         "- A public endpoint may expose only a platform-defined subset even when the request succeeds.",
         "- Private, deleted, login-gated, and non-indexed content is unavailable.", "",
     ])

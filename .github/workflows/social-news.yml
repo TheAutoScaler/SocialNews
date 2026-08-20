@@ -33,6 +33,9 @@ jobs:
         run: python -m unittest discover -s tests -v
 
       - name: Collect social news
+        env:
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
         run: python src/socialnews.py
 
       - name: Commit reports and state

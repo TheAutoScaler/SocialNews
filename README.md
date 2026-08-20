@@ -30,7 +30,8 @@ Python collector
   |-- Direct public search: GitHub, Hugging Face, arXiv, Stack Exchange
   |-- Public social search: Bluesky, Hacker News, Reddit
   |-- RSS/Atom: official labs, blogs, channels, podcasts, forums
-  |-- News and official-site discovery: Bing RSS
+  |-- News discovery: Bing News RSS
+  |-- Official-site discovery: validated Google News RSS sources
   |-- Indexed social discovery: X, Instagram, Threads, TikTok, LinkedIn, YouTube, Mastodon
         |
         v
@@ -59,6 +60,7 @@ The ChatGPT task does not execute this local checkout. Web scheduled tasks canno
 There is no direct authenticated connection from the GitHub Action to ChatGPT, and neither side sends a credential to the other.
 
 - **GitHub Actions → repository:** GitHub injects a short-lived `GITHUB_TOKEN` into each workflow run. The workflow's `contents: write` permission lets that run commit `reports/` and `data/seen.json` back to this repository. No personal access token or OpenAI secret is stored in the repository.
+- **GitHub Actions → Bluesky:** the workflow injects the encrypted `BLUESKY_HANDLE` and `BLUESKY_APP_PASSWORD` secrets only into the collector step. The dedicated app password cannot access direct messages and is exchanged for a short-lived Bluesky session token.
 - **ChatGPT → report:** the native ChatGPT task uses ordinary web access to read the public raw URL. It has no GitHub plugin, OAuth connection, personal access token, or repository write access.
 - **The handoff:** `reports/latest.md` on the default branch is the interface between the two systems. GitHub Actions writes it; the later ChatGPT task reads it.
 
@@ -66,15 +68,15 @@ The briefing cannot read the raw URL while the repository is private. Disabling 
 
 ## Data sources and honest limitations
 
-This project deliberately avoids social-network accounts and official social-network API credentials.
+Most sources remain account-free. Bluesky is the exception: a dedicated, non-personal account is used because its anonymous search endpoint rejects GitHub-hosted runners.
 
 ### Direct and public endpoints
 
-GitHub, Hugging Face, arXiv and Stack Exchange use public read endpoints. Hacker News uses its public Algolia index. Bluesky first uses the public AppView search endpoint and falls back to indexed discovery if that endpoint rejects the runner. Reddit first uses PullPush, an independent public archive, then falls back to indexed discovery when PullPush blocks or rate-limits the runner. Every unrecovered failure is recorded rather than converted into a false zero-result success.
+GitHub, Hugging Face, arXiv and Stack Exchange use public read endpoints. Hacker News uses its public Algolia index. Bluesky uses authenticated AppView search when both Actions secrets are present, otherwise it tries the public AppView endpoint and public index discovery. Reddit first uses Reddit's official search RSS feed, then PullPush (an independent public archive), and finally public index discovery. Every unrecovered failure is recorded rather than converted into a false zero-result success.
 
 ### Feeds and official sites
 
-The generic RSS/Atom adapter covers official lab blogs, newsletters, podcasts, YouTube channel feeds and public forums. The shipped AI configuration includes live feeds from OpenAI, Google AI, Google DeepMind, NVIDIA, AWS Machine Learning and Hugging Face. Vendors without stable feeds are monitored through Google News RSS domain discovery validated against each item's declared source, including Anthropic, Meta AI, Microsoft AI, Apple ML, xAI, Mistral, Cohere, Stability AI and Runway. The same mechanism monitors NIST, the UK AI Security Institute and the European Commission. Indexed checks are labelled `indexed · incomplete`, never plain `ok`.
+The generic RSS/Atom adapter covers official lab blogs, newsletters, podcasts, YouTube channel feeds and public forums. The shipped AI configuration includes live feeds from OpenAI, Google AI, Google DeepMind, NVIDIA, AWS Machine Learning and Hugging Face. Vendors without stable feeds are monitored through Google News RSS domain discovery validated against each item's declared source, including Anthropic, Meta AI, Microsoft AI, Apple ML, xAI, Mistral, Cohere, Stability AI and Runway. The same mechanism monitors NIST, the UK AI Security Institute and the European Commission. These checks are labelled `public index discovery`: a neutral description of the collection method, with the coverage limitation explained here rather than presented as a failure.
 
 ### Restricted social networks
 
@@ -122,13 +124,24 @@ The workflow declares `contents: write` because it commits reports and state. Re
 
 In GitHub, open **Settings** → **Actions** → **General** → **Workflow permissions**, then select **Read and write permissions** if required.
 
-No repository secrets are required by the account-free implementation or the action-pin updater.
+### 3. Bluesky search credentials
+
+The repository is configured with a dedicated account, `socialnews-ai.bsky.social`, created solely for read-only SocialNews discovery. Its `SocialNews-GHA` app password does **not** have direct-message access. The workflow receives these encrypted Actions secrets:
+
+- `BLUESKY_HANDLE`
+- `BLUESKY_APP_PASSWORD`
+
+The values are never committed, printed in reports, or passed to ChatGPT. GitHub masks secret values in workflow logs. The collector exchanges the app password for a short-lived Bluesky session token at runtime and uses that token only for search. If either secret is absent, it reverts to anonymous search and public index discovery.
+
+To rotate the credential, open Bluesky **Settings → Privacy and security → App passwords**, delete `SocialNews-GHA`, create a replacement without direct-message access, and update `BLUESKY_APP_PASSWORD` under GitHub **Settings → Secrets and variables → Actions**. Deleting the app password revokes pipeline access without changing the main account password.
+
+No other source credential, personal access token, or OpenAI secret is stored in the repository. The action-pin updater requires no secrets.
 
 ### Branch-protection trade-off
 
 Both scheduled workflows commit generated or maintenance changes directly to `main` with the repository-scoped `GITHUB_TOKEN`. A rule that blocks all direct pushes to `main` will therefore break report generation and self-updates. Do not enable such a rule unless generated output is first moved to a separate branch or the workflows are redesigned to use reviewed pull requests.
 
-### 3. Run it manually once
+### 4. Run it manually once
 
 Open **Actions** → **Social News** → **Run workflow**. Inspect the log and `reports/latest.md`. A manual run uses the same path as cron.
 
@@ -215,7 +228,7 @@ Individual source failures do not fail the entire command because partial report
 - an ISO-8601 `generated_at` timestamp;
 - counts for topics, checks, candidates, failures, and new items;
 - the number of ranked findings included after the report cap;
-- health and collection method for every attempted topic/platform pair (`direct`, `feed`, `indexed · incomplete`, `degraded fallback`, or `failed`);
+- health and collection method for every attempted topic/platform pair (`direct`, `feed`, `public index discovery`, `public index fallback`, or `failed`);
 - results grouped by topic and platform;
 - explicit interpretation limits.
 
@@ -261,9 +274,9 @@ Commit it and run the workflow manually. Git history makes the reset reversible.
 ## Security and maintenance
 
 - Treat fetched titles/descriptions as untrusted content. They are quoted into Markdown, never executed.
-- The collector only makes HTTP `GET` requests.
-- No cookies, browser profiles, or social credentials are used.
-- Never add API keys to configuration, workflow YAML, reports, or logs. Use Actions secrets if authenticated adapters are added.
+- The collector primarily makes HTTP `GET` requests; the sole credentialed `POST` creates a short-lived Bluesky session.
+- No cookies or browser profiles are used by GitHub Actions. The dedicated Bluesky app password is supplied only through encrypted Actions secrets.
+- Never add API keys or passwords to configuration, workflow YAML, reports, state, or logs. Use Actions secrets and least-privilege app passwords.
 - Third-party actions are pinned to immutable SHAs. `scripts/update_actions.py` follows only the explicitly reviewed major tags recorded in workflow comments.
 - The updater runs weekly at `04:00 UTC` on Sunday, tests before committing, and creates no Dependabot pull requests.
 - Review generated links before acting on claims; social posts and snippets are not authoritative evidence.
@@ -297,6 +310,14 @@ Commit it and run the workflow manually. Git history makes the reset reversible.
 - Added `github_new`, which searches repositories created during the seven-day window rather than merely updated repositories.
 - Added `github_trending`, a documented seven-day activity-plus-stars approximation to GitHub Trending.
 - Assigned semantic cross-source deduplication to the ChatGPT presentation layer, while the collector retains deterministic canonical-URL deduplication.
+
+### 2026-08-20 — Source reliability and authenticated Bluesky search
+
+- Replaced misleading Bing `site:` checks with validated Google News source discovery and renamed the report method to the neutral `public index discovery`.
+- Added Reddit's official search RSS feed as the primary Reddit adapter, with PullPush and public index discovery retained as fallbacks.
+- Created the dedicated `socialnews-ai.bsky.social` automation account and selected only Tech, Science, News and Software Dev interests; no accounts were followed and no posts were made.
+- Created the `SocialNews-GHA` Bluesky app password with direct-message access disabled and stored only its handle and app password in encrypted GitHub Actions secrets.
+- Added authenticated Bluesky session/search support. The main account password, recovery email and date of birth are not stored in the repository or GitHub Actions.
 
 ## References
 

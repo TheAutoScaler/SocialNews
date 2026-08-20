@@ -1,5 +1,6 @@
 import datetime as dt
 import io
+import os
 import tempfile
 import unittest
 import urllib.error
@@ -34,6 +35,48 @@ class ConfigTests(unittest.TestCase):
 
 
 class SearchTests(unittest.TestCase):
+    def test_bluesky_uses_credentials_when_configured(self):
+        original_post, original_fetch = socialnews.post_json, socialnews.fetch_bytes
+        previous_handle = os.environ.get("BLUESKY_HANDLE")
+        previous_password = os.environ.get("BLUESKY_APP_PASSWORD")
+        captured = {}
+        os.environ["BLUESKY_HANDLE"] = "collector.bsky.social"
+        os.environ["BLUESKY_APP_PASSWORD"] = "app-password"
+        socialnews.post_json = lambda *args, **kwargs: {"accessJwt": "token"}
+        def fake_fetch(url, **kwargs):
+            captured.update(url=url, headers=kwargs.get("headers"))
+            return b'{"posts": []}'
+        socialnews.fetch_bytes = fake_fetch
+        try:
+            socialnews.search_bluesky("T", "AI", limit=10, timeout=1, user_agent="test")
+        finally:
+            socialnews.post_json, socialnews.fetch_bytes = original_post, original_fetch
+            if previous_handle is None:
+                os.environ.pop("BLUESKY_HANDLE", None)
+            else:
+                os.environ["BLUESKY_HANDLE"] = previous_handle
+            if previous_password is None:
+                os.environ.pop("BLUESKY_APP_PASSWORD", None)
+            else:
+                os.environ["BLUESKY_APP_PASSWORD"] = previous_password
+        self.assertEqual({"Authorization": "Bearer token"}, captured["headers"])
+        self.assertIn("bsky.social/xrpc/app.bsky.feed.searchPosts", captured["url"])
+
+    def test_reddit_prefers_official_search_rss(self):
+        rss = b"""<feed xmlns='http://www.w3.org/2005/Atom'><entry>
+        <title>Current AI discussion</title>
+        <link href='https://www.reddit.com/r/artificial/comments/example/current_ai_discussion/'/>
+        <updated>2026-08-20T10:00:00Z</updated>
+        <author><name>/u/example</name></author></entry></feed>"""
+        original = socialnews.fetch_bytes
+        socialnews.fetch_bytes = lambda *args, **kwargs: rss
+        try:
+            items = socialnews.search_reddit("T", "AI", limit=10, after=0, timeout=1, user_agent="test")
+        finally:
+            socialnews.fetch_bytes = original
+        self.assertEqual(1, len(items))
+        self.assertEqual("Reddit search RSS", items[0].source)
+
     def test_bing_results_are_restricted_to_platform_hostname(self):
         rss = b"""<rss><channel>
         <item><title>Wrong</title><link>https://news.google.com/wrong</link><source>example.com</source></item>
@@ -184,7 +227,7 @@ class ReportTests(unittest.TestCase):
                 socialnews.Health("Reddit", "reddit", False, error="blocked"),
             ],
         )
-        self.assertIn("indexed · incomplete", report)
+        self.assertIn("public index discovery", report)
         self.assertIn("failed: blocked", report)
 
     def test_empty_configuration_report_has_guidance(self):
