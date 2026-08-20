@@ -1,6 +1,6 @@
 # SocialNews
 
-SocialNews is a social-discovery pipeline designed to run entirely in GitHub Actions. It searches configured topics every Monday, writes a durable Markdown report into this repository, and keeps compact history so later runs show only newly discovered links.
+SocialNews is a vibe-coded AI news aggregator that pulls signals from across the web. It runs as a scheduled GitHub Action, writes the latest collection to [`reports/latest.md`](reports/latest.md), and is designed to hand that report to an AI such as ChatGPT on a separate schedule for deduplication and summarisation. I built it for personal use, but you are welcome to fork it and make it your own.
 
 The second half is a native ChatGPT scheduled task. GitHub Actions performs network collection; ChatGPT reads `reports/latest.md` after the Action finishes and presents it alongside the rest of your scheduled items. Nothing depends on a Mac remaining powered on.
 
@@ -13,6 +13,7 @@ The second half is a native ChatGPT scheduled task. GitHub Actions performs netw
 - Stable ChatGPT input: `reports/latest.md`
 - Historical reports: `reports/YYYY-MM-DD.md`
 - Tests: `tests/test_socialnews.py`
+- License: Apache License 2.0
 - Default collection schedule: Monday at `05:00 UTC`
 - ChatGPT briefing schedule: Monday at `06:00 Europe/London`
 
@@ -331,3 +332,7 @@ Commit it and run the workflow manually. Git history makes the reset reversible.
 - [Codex GitHub Action](https://learn.chatgpt.com/docs/github-action)
 - [GitHub scheduled events](https://docs.github.com/actions/using-workflows/events-that-trigger-workflows#schedule)
 - [Makerskills social-fetch](https://github.com/coreyhaines31/makerskills/blob/main/skills/social-fetch/SKILL.md)
+
+## License
+
+Licensed under the [Apache License 2.0](LICENSE).
