@@ -1,5 +1,11 @@
 {
   "items": {
+    "005fd6edb5b0273312990704713b19297c62c0d6d1a316bff982e58de1fcdb85": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "news",
+      "topic": "AI policy, safety and funding",
+      "url": "http://bing.com/news/apiclick.aspx?aid=&c=12470335597058277971&mkt=en-us&tid=6a86dcd1169a4959bbda81d11c8e2140&url=https%3A%2F%2Fwww.analyticsinsight.net%2Ftech-news%2Ftop-news-today-cerebras-ai-chip-eliseai-funding-graduate-jobs-crypto-rules-and-sravaani"
+    },
     "009996db65d7f9250e01f6dd05916be2431151522c95431987ba3c6792ccded1": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "github",
@@ -48,11 +54,29 @@
       "topic": "New AI innovations and research",
       "url": "https://github.com/parastoomehrabzadeh-creator/Biomedical-Signal-Feature-Classification-with-SVM-and-Random-Forest"
     },
+    "056d2283b69ad4a57d4dc1da7b8d1e2ecf77b50b7decffdcf1e5dab6b8929269": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "mastodon",
+      "topic": "Top AI news",
+      "url": "https://igeek.gamer-geek-news.com/@feed/statuses/01M0FBXQ5ZD862BA67MZZJ6YG1"
+    },
+    "05e2831e79a9d380a23eaba6b91d73288f00276d5466cf7596765e7a177ab85a": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "New AI innovations and research",
+      "url": "https://github.com/S-ivaramanathan/Blood---donation---Prediction"
+    },
     "065128c9b49a6c53724f65d207a67239c1272d0d4fda1f0f82d4455a7ee0254c": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "github",
       "topic": "AI agents and coding",
       "url": "https://github.com/tinosval/Bsp-ai-agent"
+    },
+    "0750306fe198f6dd2c58f983e19851f4a44fec4952acf000bbdb4ba35394fa71": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "New AI models and tools",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1vZ21kTlN4dzdMOEQ3clZxUVJ5TG1fSWhMMUp1SEo5d3NBMC1wZVdSREk5SnVBNEgyWlBWb0p1d1VCNDU4UjJqSzZ0cHVlenBaVHI0UEM0Uk9ld25aYk9qSUNmS1l1dw?oc=5"
     },
     "078d515e3604343f311f18ef06fea65acfc57bed060a3e7995fe20bc1d5bff2b": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -72,11 +96,41 @@
       "topic": "AI agents and coding",
       "url": "https://github.com/GuillaumeDebreu/companies_ai_agent"
     },
+    "092842ca96cdb77be3b8a604b9042a6f3c0670d922f10e4ac3ad88e0a03b523f": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "Top AI news",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE0yTERtbWIxeEM3SW80ck5QSERkS003SjkxXzZMVWdIUEtfX3pBVTAwSS05MGN6NUFxMi1MLWlzM0MxUlJWRzVvWFFWSjBnMzkzVmdRbk9RckZEVE1ITlE?oc=5"
+    },
+    "094329644c8cbb339bec718962373fc2402f63e229f5b6d8a5c49db63e494ff0": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "AI agents and coding",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE01dl9LXzhqMzhnNG5WNkRERV8wZDJweThmRHF2cjVDOGkwTV9reXF4VUloRWczZmkxdGNqMDVTMGJTZGh2R1o2dVA2YjUyLWFIdVhaWmoyQWlocG9ONHc?oc=5"
+    },
+    "09785f364be78c50951273156d987bcff999f15b9e9dde564cdc684b54972c69": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "New AI models and tools",
+      "url": "https://github.com/Protremix/EvolvixOS"
+    },
     "0a77575449f2ffefcab36608799301afea5c6798f80cd13e00b8d99669621457": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "github_trending",
       "topic": "Trending AI repositories",
       "url": "https://github.com/openclaw/openclaw"
+    },
+    "0b25360cc9238c2760517b35e64bbf80ab20049cb807341aaa53d06ce6d08e4b": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "news",
+      "topic": "AI agents and coding",
+      "url": "http://bing.com/news/apiclick.aspx?aid=&c=4384488858045442195&mkt=en-us&tid=6a86dccf769b448abd1fe326e3b073df&url=https%3A%2F%2Fwww.techtarget.com%2Fai%2Ftip%2FWhy-businesses-need-an-AI-agent-kill-switch"
+    },
+    "0bd220814e2e9f4035182db37fa44d783ba9c51d4ffb4713b86261df4c2b3115": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "New AI innovations and research",
+      "url": "https://github.com/ovsoyanmaria/clustering-antarctic-penguin-species"
     },
     "0d50d65cf89599c7b490044e5613ee869dfd0270cce757d17d7e9de0f20181b4": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -90,17 +144,65 @@
       "topic": "AI agents and coding",
       "url": "https://github.com/4nur4gmishr4/4nur4gmishr4"
     },
+    "0fedf3142d041152866c11761367b58d3375c005ec87c5c2a66b8fae38874bfe": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "Top AI news",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1FWnpONFNEM2xTX0JPMjlfeDlRTXhkN3hBRzFkbG5mcmpfVWdKQndxYmlFb1BKcTdjMkNLb3dSRmNaeTJCZ3c5M2hmb3hRSHBySGZmdFJabjQ2VllSMDBwTXZsbmN2UQ?oc=5"
+    },
+    "107fb769f2189e77099039a0d5822236f373d660a8e561818d53832bdf286bd8": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "New AI models and tools",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5lNHN6VGRNbXdHTEN5VWVadEVmNDFnUUpITHZPVE5PTXM0czJWaE4wYVZGQzVkZnRMRGVZTFhEREtjMWwxZW5SVW5hNVN3YkhvSGNTd19WaG4xODF1VmVR?oc=5"
+    },
     "1170dc6e54059499ca7df6c3fa3af56dcdb86ee741c19dd4cfa05df7a06f47fe": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "hackernews",
       "topic": "AI agents and coding",
       "url": "https://news.ycombinator.com/item?id=49371211"
     },
+    "1298b959d9f6f5801a5cbe1d395b954ac6e3d59554a6f538a8c6eef4aba1e024": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "New AI innovations and research",
+      "url": "https://github.com/Geerthan-S/Employee-Attrition-Prediction"
+    },
+    "12cb19000d248c6fa8e291580ae61fa8446b30a78b0ad48d286164b53c0d38bd": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "AI agents and coding",
+      "url": "https://github.com/0001Moksh/MANUFACTURING-AGENTIC-AI"
+    },
+    "1387e468d15fbc733dbd38f62bb3a8f256a3f28e9986c0c10208b290733dabd0": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "Top AI news",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBDbW9WLTR4ZWNDOTdQWG9ING5pOTVrV2RycVBNRUttUGRreTRMNHJyZVdVNkUxTDlvVEFsd0NwbndmSWZ0SndZd0hHa2ZIV0RITFozZUwyNkg2X2MwdVdV?oc=5"
+    },
+    "14f2cd44b60f1ac1bb24110845b6ca5840d94343ef40f2404bf4e7ed8faa0068": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "New AI models and tools",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE91cUdaRVc1XzQyY3ZFb3VLendudklsSVpSSjVDUFhkY2RsNkx2aVZ4UTdsd1VtekVWZFFrNFpCV0RJWkxjRTdOSkhLQzg5aGZCMGV1SUZDTW4zZTc1S2c?oc=5"
+    },
+    "1544125e5cd22b708d45b11e31b214f215e94c85017fa6390fc7125216784831": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "New AI models and tools",
+      "url": "https://github.com/aryanisproinroblox-source/gorilla-chat"
+    },
     "15b310cc8210c10fdd8df579c5790e5f12ded4f147ea9da61b0a175396cf9553": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "hackernews",
       "topic": "AI agents and coding",
       "url": "https://news.ycombinator.com/item?id=49366373"
+    },
+    "16e780de9b76438a7968beee4f8ef5fe1330a497f2c67137e437eaebb688c060": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "news",
+      "topic": "New AI innovations and research",
+      "url": "http://bing.com/news/apiclick.aspx?aid=&c=2351478082015710824&mkt=en-us&tid=6a86dccdd50b41bc94c39494bf99da30&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fnews%2Ftechnology%2Fnew-framework-cuts-errors-by-80-helps-scientists-predict-fusion-machine-s-hardware-changes%2Far-AA2af79w"
     },
     "1769abe7bd42f7231d85c8ca14eaa4a2ae38e45491d5df88d96a729e8343608c": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -113,6 +215,18 @@
       "platform": "github_new",
       "topic": "New AI repositories",
       "url": "https://github.com/CopilotKit/openbot"
+    },
+    "1810cc5eca712a7c457dc677b8bce621bc48c368473472431d582a23a91282ee": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "AI agents and coding",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE13eGpVN0ZKZ09mYVJsWGptYXJmVmxlbkVPZUlsWlhmMThYZFVjWWFYQ1lJMlBCQ29MS0otWTZ4bDBsTjhCS3p0cTRPN3czR0QyVWI1eTl4Zk1ldmVp?oc=5"
+    },
+    "1938024ba4679e87f0f47e04c9f5ec30014386f3057b09ae9170d332dea7294e": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "mastodon",
+      "topic": "Top AI news",
+      "url": "https://mastodon.social/@orioralabs/117127389407648885"
     },
     "194231802e84098e59aa1fdaca6a410cf254824e5452781de3466dede1dc0567": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -131,6 +245,12 @@
       "platform": "github_trending",
       "topic": "Trending AI repositories",
       "url": "https://github.com/langflow-ai/langflow"
+    },
+    "1bc0cee06086a2957819af62829b8516ceb2a74609e090ede45cb26e742c2b4e": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "mastodon",
+      "topic": "Top AI news",
+      "url": "https://hachyderm.io/@eliasulrich/117127384768722603"
     },
     "1bfbf53fa393ca2af14878d7615465425a0284e21b357137d0336e5359bfb777": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -156,6 +276,12 @@
       "topic": "AI agents and coding",
       "url": "https://news.ycombinator.com/item?id=49371484"
     },
+    "1d5a590826ee5dbc42c1872d1ce6183d4c8455ba7a25744165aabba022c0d4fc": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "AI agents and coding",
+      "url": "https://github.com/douglasdemaio/vtessera"
+    },
     "1e00d0e0e0365c8c74811cb391ed2af2a32d8f75fffcb2ef8f496e9e88ced955": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "github",
@@ -168,17 +294,53 @@
       "topic": "New AI innovations and research",
       "url": "https://github.com/Shreyalambat12/Diabetes_Prediction"
     },
+    "1fa254b1f6bef25c64ee3e890d4378301abe88342e3af8303676043351eeb696": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "news",
+      "topic": "New AI companies",
+      "url": "http://bing.com/news/apiclick.aspx?aid=&c=5177174823403830988&mkt=en-us&tid=6a86dcc37107440fbaf5bff20ce55b7f&url=https%3A%2F%2Fcryptobriefing.com%2Fcoinbases-base-launches-100k-startup-accelerator-for-ai-and-finance-innovation%2F"
+    },
     "20801ae94b70c533a74343dbd142b5e146f0292c58da940a4906f405bc4a2570": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "github",
       "topic": "New AI innovations and research",
       "url": "https://github.com/Riyyanzaffar/Customer-Fraud-Detection-Binary-Classification"
     },
+    "20af1fa6db36de2a94962df9b316e16ab2c70ee2e97f5a2a8396b0fd506b7d21": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "New AI innovations and research",
+      "url": "https://github.com/enhansome/enhansome-edge-machine-learning"
+    },
     "210cf13dc6011ee4ff181377067f597074ee9965fd7b0c8cf23d96dfad6304c2": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "github_new",
       "topic": "New AI repositories",
       "url": "https://github.com/vibeinging/deepseek-harness-desktop-app"
+    },
+    "2161d820ed74e808d0862d10d4e8b97824ea660e5b530d7cac74ea3e815c301e": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "New AI models and tools",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE8teDB0blJGM01GNlVpTXIwOV90UWRVNFVnQmdiQS1WSnVHaDA0WWl2bWRJX2c4TkFzN2NqbmlLZnIxSkEtYlFSZFN4cURLMUQ1X2hyR3NLRVgwbU0?oc=5"
+    },
+    "21c138998a56970005257ce49dc34dde2742dcae6636929998e4174e6d1feac4": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "news",
+      "topic": "Top AI news",
+      "url": "http://bing.com/news/apiclick.aspx?aid=&c=9896198034020855660&mkt=en-us&tid=6a86dcc0184f4c76912e4dfb14206ea2&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fnews%2Fpolitics%2Ftrump-claims-us-way-ahead-of-china-in-artificial-intelligence-race%2Far-AA2avlFF"
+    },
+    "21d7965aae1c50f45cb071920aefc325729327ac0a126c8937507ba77e8bc2d2": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "New AI models and tools",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE52eTE4NjVIU1RWV0EwUm5hWktuS0s5SmtsVGFoMDJBNzhfLVlwNm1SbUtFYnJMR212LV9xWThDZllERTByOHgzMFNqVWVNRlpMUzJvVHlWRmx3dE1iMGhj?oc=5"
+    },
+    "21e09efd4520bc509af0e0231feef330fb6671e44ecf991fe650a85e71d06989": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "New AI innovations and research",
+      "url": "https://github.com/k4ju1/chinese-offensive-language-detection"
     },
     "228a166e20b0891332d94bf39f40ad8ca3b85a526d2b9c9bd72ed44f7902d37c": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -191,6 +353,12 @@
       "platform": "github_trending",
       "topic": "Trending AI repositories",
       "url": "https://github.com/obra/superpowers"
+    },
+    "2582c4bf213e04101ecf570469751284ef7b3709c4c85d8ef97df614cb7a8c5c": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "New AI models and tools",
+      "url": "https://github.com/PavelHopson/eclipse-ai-hub"
     },
     "26210155e80d5229ecb98dc2988be160da33c62da2ebe1ed9c991f9536caf621": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -216,17 +384,47 @@
       "topic": "AI agents and coding",
       "url": "https://news.ycombinator.com/item?id=49369982"
     },
+    "28797311a01dcf6df1df7e68c21ccd489c544aa1914c2ce076d7a6d6efc73087": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "news",
+      "topic": "AI agents and coding",
+      "url": "http://bing.com/news/apiclick.aspx?aid=&c=2107430087822201734&mkt=en-us&tid=6a86dccf769b448abd1fe326e3b073df&url=https%3A%2F%2Fwww.channelweb.co.uk%2Fnews%2F2026%2Fzero-networks-targets-ai-agent-risk-with-expanded-palo-alto-tie-up"
+    },
     "28ec5ac8183b4e78cccbf458a032a1fb5df71d0a26f165a183d889de55d0f6e2": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "arxiv",
       "topic": "New AI innovations and research",
       "url": "https://arxiv.org/abs/2608.19134v1"
     },
+    "29357cee4c69378439b85e88e831fd254adad219186f552331d6a81ccb3c57b9": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "AI agents and coding",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9GT0lxYTRSUVJpUXhCcE4yOXNXd0FmX2QxSHQwU2tTT041TkRPeG5oUnBIVUszeVRVR2MxVEV0T3Q2dEkwX3Y3TWQyRFhSd0JubFNNRXUtTm9NMGhPaHNjV0VzTGV6dw?oc=5"
+    },
+    "298e6d365083150971f23d0ae2f6265eee62cdeb4f2ecb65ec8212bc6662a32e": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "AI agents and coding",
+      "url": "https://github.com/kovalent0x/usage-gauge"
+    },
+    "2a0c7b1bf3a569fe0d865a9defe6561aba23cc9704e7a540db144aa4b0f5dcb1": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "AI agents and coding",
+      "url": "https://github.com/ssheleg/sheleg-design-skill"
+    },
     "2b9d7129194555f37a4a49610e13034a1c6a8dd917d02525b9de405c41148bcc": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "huggingface",
       "topic": "New AI models and tools",
       "url": "https://huggingface.co/VizorZ0042/Perfected-AI-Sampler-Parameters_All-Models-All-Cases"
+    },
+    "2ba9c69ca80e25b96dea54779f91c389e1335701987f724386764098e5d2451e": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "New AI models and tools",
+      "url": "https://github.com/vishwjeet71/LinguSync"
     },
     "2bb2af624aa4affdfb67b76d7c7a62d56b372c952fc5fb67de22992522b6d307": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -246,6 +444,12 @@
       "topic": "AI agents and coding",
       "url": "https://news.ycombinator.com/item?id=49367151"
     },
+    "3192f01a910bab53a22c625cec815f3c2b609f911ac82cf63b1ad7bbf1e7e310": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "New AI models and tools",
+      "url": "https://github.com/JoshuaBearup/sandbox-shire"
+    },
     "31aa0b500019f9a265b621d33a1c6f7a13b6a9eae470c37523db34afe256384f": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "arxiv",
@@ -257,6 +461,12 @@
       "platform": "hackernews",
       "topic": "New AI models and tools",
       "url": "https://news.ycombinator.com/item?id=49362094"
+    },
+    "34725843ede74a27e20badd4ea19ffed0e1a2d59bbe705d256ad027ed06abdc1": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "news",
+      "topic": "Top AI news",
+      "url": "http://bing.com/news/apiclick.aspx?aid=&c=14913026215891523371&mkt=en-us&tid=6a86dcc0184f4c76912e4dfb14206ea2&url=https%3A%2F%2Ffinance.yahoo.com%2Ftechnology%2Fai%2Farticles%2Femqq-global-announces-launch-emxetf-135800980.html"
     },
     "364500cd3c50e5c3e17b848bbf3d42f1357b73d4845e53aa202af8412f63fc65": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -270,11 +480,23 @@
       "topic": "New AI innovations and research",
       "url": "https://arxiv.org/abs/2608.19115v1"
     },
+    "3769f00d42dad1a73e844f71821209cc5f016ca82a66579ae72fd5c33cf1b75e": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "New AI models and tools",
+      "url": "https://github.com/zyvo9/zyvo"
+    },
     "39340c272c80299ebb2da50a7e7c2586823a545bfedc3d31f1a05fce386f9147": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "mastodon",
       "topic": "Top AI news",
       "url": "https://openai.com/"
+    },
+    "39dbb5df65b17c93b5dbf47bf607a04306a46783929107c1ed8b1fb7af990686": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "mastodon",
+      "topic": "Top AI news",
+      "url": "https://universeodon.com/@china/117127385855333867"
     },
     "3a5d1bd7087a880ede953279a8bbee3d90e20ce217a76e2eefcd0a3fe4708151": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -318,6 +540,12 @@
       "topic": "Top AI news",
       "url": "https://news.ycombinator.com/item?id=49330950"
     },
+    "3ef3878a985471b98df83ae942fa40e5498ee2c2273abc93296f55c86fb36084": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "news",
+      "topic": "New AI companies",
+      "url": "http://bing.com/news/apiclick.aspx?aid=&c=7687148277349060702&mkt=en-us&tid=6a86dcc37107440fbaf5bff20ce55b7f&url=https%3A%2F%2Fwww.newsbytesapp.com%2Fnews%2Fscience%2Fstripe-acquires-ai-start-up-openrouter-for-7-5b%2Fstory"
+    },
     "3f6ec4ad110f16d8ac8974231e108516eacbed37001fdb50729090a33e40be68": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "official",
@@ -348,6 +576,12 @@
       "topic": "New AI models and tools",
       "url": "https://github.com/inflectionalmorphologykhmer964/arch-ai-tools-service-hub"
     },
+    "413a07be3318dd9392b99e03af5c5f6ab1001d1c8a0471f27bfe14ca4773f711": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "official",
+      "topic": "xAI",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBKY2hySk4xZGJBZkdDaDNhbDB4ZFI5Ykc5OTBrSGcxWFF2YTdwS2ZHNGpzU1l6OHBuTkp0SEtpWndGVVkteThXck1qd0duRVNy?oc=5"
+    },
     "41df82bc07921e3c7667642356293f05bd50beeacf8bfbfbb48135b2ce23dd64": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "news",
@@ -365,6 +599,12 @@
       "platform": "github",
       "topic": "New AI models and tools",
       "url": "https://github.com/Unintelligent-effluvium615/pocket-browser-ai"
+    },
+    "44a283b345fee2752fccd3cf2b3f08aa5861bab67aa07f19d2ed890c7e478553": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "New AI models and tools",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1rRzA5Q0pXanRIWGNkMXFiRTZzTzZROVp6TVJyQlk3aGlJNWdJSE9CUXh1Mnh0VWFxaGUzQUFqMTd2N0pIYkV2VklMclhLaENueFhmVWh1Rkg5bkx6ZU9ZdA?oc=5"
     },
     "454ba878ad3786c2e859f87598c2b88daa17e0e2a304d16b50d56e17201fda7f": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -396,11 +636,23 @@
       "topic": "AI agents and coding",
       "url": "http://bing.com/news/apiclick.aspx?aid=&c=2107430087822201734&mkt=en-us&tid=6a86d98adc5743bd97c20b7cfaa494dd&url=https%3A%2F%2Fwww.channelweb.co.uk%2Fnews%2F2026%2Fzero-networks-targets-ai-agent-risk-with-expanded-palo-alto-tie-up"
     },
+    "48b827130787a1ef600ef6e4f84d23d490adc6eb14f410ded159738a521d80ad": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "instagram",
+      "topic": "New AI companies",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBRUXVIaUtZVldhYUVja3B5WXhyenpvbGxrWFRwR3RtVC1YUTE2ejdqOC1pam83Q0QzVGUtcXdhN0J5dXlhNUo1Z3Z6ZFg0bkRIcDRuaU5R?oc=5"
+    },
     "49487ca61e26e52e8bbf05cdefcdd096923b85995a92647d97ce8e881f9ba2b1": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "hackernews",
       "topic": "New AI models and tools",
       "url": "https://news.ycombinator.com/item?id=49363057"
+    },
+    "4999cd8adec8e3e4d1ea4d101a4aa1ecbf344d89bc83311ddc283397ae66120e": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "AI agents and coding",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1uY1hvajlOeFB2cWF6cnpweDMzM3dzS0pxdUY2N09XLWd1XzRPbWVLaTZ0a0JkMHFLUU5kWlBQYnZ1c1Y1aWEwRE1tcVpRWDV2dmJ2M3lEQV96MGF0Q3c?oc=5"
     },
     "4a13a32bb6277c648e2ee07ab189040df0c699efc018f03145ce591b87e1ccee": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -420,6 +672,12 @@
       "topic": "New AI models and tools",
       "url": "https://github.com/RachitDH10/Plant-Disease-Detection-Model"
     },
+    "4d183c2ed7f937754811b0ad5910a00d0d8241afdd2f734ba0ebb612b85c6f3d": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "mastodon",
+      "topic": "Top AI news",
+      "url": "https://fastcompany.com/91592012/the-case-for-chatgpt-for-seniors"
+    },
     "4d770b1cdbf945333e374603bbf09ec20a80b3147e4b609c07a3dfb88090f4d1": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "github",
@@ -438,11 +696,23 @@
       "topic": "New AI innovations and research",
       "url": "https://github.com/Mohamed-Chebbo/AI-Out-of-School-Syrian-Refugee-Children-Lebanon"
     },
+    "4ee886d69f0278f86fc51127bb4133918116aae3a879b2d4496e1702d5332cef": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "AI agents and coding",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE10bnExdDJPQkxwRE10R2RSRG1pZ1d1R1MtV2VaWS1XUzlXUXFtWU1La2RaUmZwSDh4RW5DcnYxZTk2LVY5OXJfTjFadUppNUdxd2RTaGwwTUFSMjQ3?oc=5"
+    },
     "4f1a6219688a601ca1cdb214b3c1ff2e3e422b52987dbea0e57d4d1fb6c341f0": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "github",
       "topic": "New AI innovations and research",
       "url": "https://github.com/Aldavero/TFM-Tasador-Inmobiliario"
+    },
+    "4f86a2df7eef0fdbd206d465ba8e8620155f7cc2d50d687e7e8f6038f8305704": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "mastodon",
+      "topic": "Top AI news",
+      "url": "https://mastodon.uno/@linuxeasy/117127404821204205"
     },
     "4fb7239e5478e42b4567542c941cf4a84c393a212d18c327a4d451b65f0776c3": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -462,11 +732,35 @@
       "topic": "New AI models and tools",
       "url": "https://huggingface.co/webai-community/ai-models"
     },
+    "507f0750e68a6aa35057b7726f7d211640a8033f265c7b56faa911cee39ee5d6": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "AI agents and coding",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE14MWM3WTZ3ZjJkZy13eW9fMGlncFByNjBDVkxPbkdndTl4bTExYUR2ZDdpaDNzLU9RSmdQSXdMY0s5Z3dNSDlYM0cxTHBIM2lsZ1dCMkluZzVxOUZRWkE?oc=5"
+    },
     "5375b762d0ebac7eee331b7666314efdff0aaa916bc2968fcb02a42f3d9dd1db": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "github",
       "topic": "New AI models and tools",
       "url": "https://github.com/Noncellular-dumpiness647/pc-screen-control"
+    },
+    "53a27aaa5c188a7d416665f36b72aaa6fce9ee3c889f082b7be4f612453c792b": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "AI agents and coding",
+      "url": "https://github.com/MacTechIN/SAT_Open_Turtor"
+    },
+    "5421ccb8096424906bfca75fa4004cb6d41a9ca3f281496bd0834273699b6b22": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "New AI innovations and research",
+      "url": "https://github.com/thameemdev/Examination-Notifier"
+    },
+    "54945899238bafeb5416c27d4376d430647c5bfc9b269a697e7e595a3f8ff235": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "AI agents and coding",
+      "url": "https://github.com/linny006/agent-eval-harness"
     },
     "5496be4e42c9cd9fb17153459c8b9421484fe0353c9d205ad93a7245f2d116c4": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -486,17 +780,41 @@
       "topic": "New AI innovations and research",
       "url": "http://bing.com/news/apiclick.aspx?aid=&c=2351478082015710824&mkt=en-us&tid=6a86d989798144eca4d72cf430033707&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fnews%2Ftechnology%2Fnew-framework-cuts-errors-by-80-helps-scientists-predict-fusion-machine-s-hardware-changes%2Far-AA2af79w"
     },
+    "557f5c92f32ac02f2bdc0ff8fa0f3eb3b4286271c92a2c0e6dcac07af6d2d10c": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "AI agents and coding",
+      "url": "https://github.com/yadavdheeraj133/AI-Career-Agent"
+    },
+    "563e37eb70fc56ef5fcdf566567b632b577dafe67eeeabcab5ad442c33e198e7": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "New AI models and tools",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1Cel9TRGp0NmhGa0g0MHFLU0FDQ1lPb1VLNjkxZ3ZQdXQtelE3SmhzZS0xc0RvMHBDUnpOWFp3VGhsWDFLSFdOeEk4aFNuTUJzZzR6MlJKN2lJX0tMUEZxXw?oc=5"
+    },
     "57a5fa47a75a68821bca55f74831dc9739ffe42197738b0f539d134e6edf0a99": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "official",
       "topic": "Google AI",
       "url": "https://blog.google/products-and-platforms/products/search/back-to-school-study-tools"
     },
+    "57ae990b1d31804865f6abbb258a94b1bb3e49d372dd29567e047f8471d38063": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "AI policy, safety and funding",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1wNVYwbnZON2Fkb0FTallWM1dPRFF5SEZpaF84WEtiUFFncTdkaWcxRl9LcE9SQVgycUhYMjdFZ1BUZ2JWaVZSLVVjVnFKb2Y5b0h6VHRCSGRIc2hkR0pIQVhjRUlDc2M?oc=5"
+    },
     "58513493589fd35edcaf974a61478cc8b815b0e4de978f1724ff9c943eed7fb2": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "huggingface",
       "topic": "New AI models and tools",
       "url": "https://huggingface.co/Flowerng/snapget-ai-model"
+    },
+    "588f511a1504e4f34e2ab620e87c1463e0bdb9a8d4bb6b66e74b943214c932f4": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "AI agents and coding",
+      "url": "https://github.com/frisky1985/yuleOSH"
     },
     "598707c23b0859c420e8e5503e1176f22ccbe0eb060810298821209416abb19f": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -515,6 +833,12 @@
       "platform": "official",
       "topic": "AWS Machine Learning",
       "url": "https://aws.amazon.com/blogs/machine-learning/improve-contract-search-accuracy-with-auto-generated-filters-in-amazon-bedrock"
+    },
+    "5afa0f25662fbe1241a144c4fdfb0d70a369874d699c7ffe1df08400210ad5aa": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "AI agents and coding",
+      "url": "https://github.com/vaaraio/vaara"
     },
     "5bcd4f28e540bd0502ed6d31449dabf4436bd0c4e5d6d7569c079ae9cc748ccc": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -545,6 +869,18 @@
       "platform": "official",
       "topic": "Hugging Face Blog",
       "url": "https://huggingface.co/blog/ibm-research/altk-evolve-hmm"
+    },
+    "5e27606a0c5b54a0b5b79c2f35193dce6882b7d7adcd322e96a102be25cacd63": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "Top AI news",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5PRFVvUTltcG4zWEhTd1NIaUIzeUdaU1h1Z0tlZGFUSFI0WVhudWZyb1IxS05rWkhjRWlXSFQtWGRGajk3ekRXMVUwUl9sUHVRLWtZSmNyaWxRUQ?oc=5"
+    },
+    "5e7f2e317be2fbe4c137a8f370753ee7a2780624c06bc7b90cb21c6dc9a73925": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "news",
+      "topic": "Top AI news",
+      "url": "http://bing.com/news/apiclick.aspx?aid=&c=8686525195292828666&mkt=en-us&tid=6a86dcc0184f4c76912e4dfb14206ea2&url=https%3A%2F%2Ffinance.yahoo.com%2Ftechnology%2Fai%2Farticles%2Fchinese-tech-giants-pivot-away-200712895.html"
     },
     "5ecd9e657e1a3cc0aefa463cbb87fc20e3863948a2dd93f4875363674525ac2e": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -594,11 +930,35 @@
       "topic": "New AI repositories",
       "url": "https://github.com/bawadou/ai-data-extractor"
     },
+    "641099825c73fc1708689b4234a53b6dec60d865331c8c66baab06b34e7fbc3e": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "news",
+      "topic": "New AI companies",
+      "url": "http://bing.com/news/apiclick.aspx?aid=&c=15035839460707812583&mkt=en-us&tid=6a86dcc37107440fbaf5bff20ce55b7f&url=https%3A%2F%2Fdecrypt.co%2F375952%2Fcoinbase-base-ai-agents-startup-accelerator"
+    },
+    "645507f152282f2b8048719c2b29e8586d08b251b1d84e81e9c62af79caeabd7": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "New AI models and tools",
+      "url": "https://github.com/antono4/ai-content-generator"
+    },
     "64c098d4eb880a7d1973fca487b3ef0c094ece74090ab8bbfea009093203de20": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "github",
       "topic": "New AI innovations and research",
       "url": "https://github.com/Hunter-harbor377734/ml-forecasting-bot"
+    },
+    "65a9df98643ce1de28f4b237fefec06bcb93dcfaa35f5fdd54e9340d545fa5db": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "news",
+      "topic": "AI agents and coding",
+      "url": "http://bing.com/news/apiclick.aspx?aid=&c=18430595178141090212&mkt=en-us&tid=6a86dccf769b448abd1fe326e3b073df&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fmoney%2Fsavingandinvesting%2Fan-ai-agent-token-once-worth-24-billion-is-now-worth-almost-nothing-this-is-what-you-need-to-know-about-investing-in-ai-cryptos%2Far-AA2ay0MV"
+    },
+    "66345f17f55314bed2d58cc627aa146844c6d6ff6f63cbaf987ccad72a4db286": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "New AI models and tools",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE8xQU4zblBPaC1xNXFXVW5TYnExM2szTGdObGhKbnB2UUJqVjZiTkNYS3J2eFR6TnJaNG5HcFNRNmxTMHdqQmtfdVZZd21JSFYzTTV6blh5bE56Mkw3?oc=5"
     },
     "678ea9b0a71a23e1fd6c87cd24dcd922ac287c64773f5bc4c74c1b1dd61442bc": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -606,11 +966,23 @@
       "topic": "Top AI news",
       "url": "https://news.ycombinator.com/item?id=49348627"
     },
+    "685bf7c870503da2194b1ac6c5c34f47d0cb606e61d46225cd2fef456f2b6e17": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "mastodon",
+      "topic": "Top AI news",
+      "url": "https://mastodon.social/@3c4ai/117127443636684253"
+    },
     "690b676d7c715498a77614e0f08dccaa7cf099f2c049ca366dd0272a8c5587c8": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "hackernews",
       "topic": "Top AI news",
       "url": "https://news.ycombinator.com/item?id=49336926"
+    },
+    "6ac5fedb94cd2f37344473db32a4a0460a5c8e2bca42a9f9c6c5965787dbf9ca": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "news",
+      "topic": "AI agents and coding",
+      "url": "http://bing.com/news/apiclick.aspx?aid=&c=3263345574588322227&mkt=en-us&tid=6a86dccf769b448abd1fe326e3b073df&url=https%3A%2F%2Fsiliconangle.com%2F2026%2F08%2F19%2Fcloudera-anywhere-cloud-gives-ai-agents-safe-secure-access-sensitive-data-wherever-lives%2F"
     },
     "6ad62721b7a47b7266bac3d35cc4f75db2e5ec87ec94ca324c5db76d2f232edf": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -642,6 +1014,18 @@
       "topic": "New AI models and tools",
       "url": "https://huggingface.co/Chazzo2008/chatback-ai-models"
     },
+    "6f332e476bc858ef8829f66896c5e794ea25a499b2a7b1ecdea4a86d4354a955": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "New AI innovations and research",
+      "url": "https://github.com/asad673-creator/Machine-Learning-Projects"
+    },
+    "6f5e97192c3b92baf188a529b8aeecb66ffd94315c6fde30829e601715a94091": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "AI agents and coding",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE43bHFEUFlIUlJzUG81WHNuc2E5UEJqVkROaVRWTDJZaTdiME1hOHdORTZheFVrcjVwWVExQW1xZ1NucVk2SUZJM0JJcWtyajlNeFQtZFlDMnFBd1FxSWc?oc=5"
+    },
     "6fccedd3d16e681623e9dc2ffa311f267dbe3a88575abdd6c199fff26aceed4a": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "news",
@@ -659,6 +1043,12 @@
       "platform": "github",
       "topic": "AI agents and coding",
       "url": "https://github.com/Dream-Pixels-Forge/loopy-agent"
+    },
+    "7766d67601e6c810b31e762f1c037c72d0e36581cf73036acdc39c8d1822d389": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "official",
+      "topic": "Anthropic",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBaMW9CZHNKUG5GQXRVaXN5NFVwbXBVbXluUDAzcjJjZnNSVlJraXY4UVdhUlYxS2V2Slp4cExzcFl4WmFLTjdmVXFleWhtc1pqT1BkOG9kTXZRUm9oVk5zTFBMV2U2d3kzSHlSWldSd3JhZWQ4elZVb3ViV2F6aE0?oc=5"
     },
     "7af86bc7f10c34e684f3d689f2a3936f9931b595905f7e56c3edad1bd04be370": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -683,6 +1073,12 @@
       "platform": "news",
       "topic": "AI agents and coding",
       "url": "http://bing.com/news/apiclick.aspx?aid=&c=4519330189615050767&mkt=en-us&tid=6a86d98adc5743bd97c20b7cfaa494dd&url=https%3A%2F%2Fwww.ciodive.com%2Fnews%2Fsalesforce-ai-agents-triple-headcount-across-organizations%2F828200%2F"
+    },
+    "7de15844232aa4f504fd4ef50968ea9176294f890fb51312c95d9eff5c3c8897": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "New AI models and tools",
+      "url": "https://github.com/lyracode-app/Lyra-Code"
     },
     "7ed251092b0809cb3754d3a08b31866ec27b4fae5b030b3c030589c5aeaf67e3": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -720,6 +1116,24 @@
       "topic": "Top AI news",
       "url": "https://news.ycombinator.com/item?id=49347840"
     },
+    "85526c7359e3ead879b29f8c1967409590b4df9ac17aca73013458ccf71ebb6d": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "New AI innovations and research",
+      "url": "https://github.com/Rinshidha143/customer-churn-prediction"
+    },
+    "86ed453aa6fe5b6523f9296b23339d10bbfbcd2d0eca5e94808cc0bb2150e12b": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "AI agents and coding",
+      "url": "https://github.com/martin2844/slab-email"
+    },
+    "86f817344884c735245ced4a441dc81e0fe2126dd7e044f8fbe44499137e9718": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "New AI models and tools",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBKUW5PTWtabGhxcXRjeUZhUUtnWDlOS1ZvaHlUVGdxMERPZ0NicEk2R290Zjg4c0ZCMmM2dWRLUFBsaGN4M3VCQ0o3T0p2NmtDLU01NmZ2UTU?oc=5"
+    },
     "87287f110368f9ca19e21a6da75558756d12b2459bbf1b8f54566eb74815113c": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "news",
@@ -750,6 +1164,12 @@
       "topic": "AI agents and coding",
       "url": "https://news.ycombinator.com/item?id=49371813"
     },
+    "8900c0341ea6bc361468b653cfda9a31bcbaca47c8617ebd530122f8d79ae42c": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "AI agents and coding",
+      "url": "https://github.com/wadelab/safe-tre-agent"
+    },
     "89088c4c46d7aa30791b51b35ace14023757e40e1db49ebc32c36cbe3ddc26c5": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "official",
@@ -761,6 +1181,30 @@
       "platform": "official",
       "topic": "AWS Machine Learning",
       "url": "https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-agentcore-payments-is-now-generally-available-enabling-agents-to-transact-safely-and-autonomously-at-scale"
+    },
+    "8a094785fae978f282b079ac4d4c388eb8e12ca4c72f8f4a68e513c859e5d916": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "official",
+      "topic": "xAI",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1QTmxWMTBnM015a1RPY25GeUVaY0dkQ3BudkZQVEltMEJqTUZrYzlHR2VYNkVoTFhsTmZ1RjBvMXRZa3p1QnpNTDd3eVk1VW93aW1J?oc=5"
+    },
+    "8afba75356c614c5bb36ac9a27bff666aa8f49ad365ccd029dd33215fd58fa24": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "New AI models and tools",
+      "url": "https://github.com/ghulammdraja/predictive-maintenance"
+    },
+    "8b7490a33eaec379ac1d013a4442dc1ec7b4f1f7a8183d9b31401c69d00d05e3": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "New AI models and tools",
+      "url": "https://github.com/Bike4Mind/bike4mind"
+    },
+    "8bf4894d7ac67b183f7d9ac45c56f96ab5639d942109f16c41153192ed5aba89": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "official",
+      "topic": "xAI",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFB3cC1tWldMMkhweUFFM1A3LU1jUHJXdnJubkJRWm5rWURHSmpxc1paSEdyMV9KaWM4T0tHQTB6ZkNicGs5WGhXQ091QWZ6MUlRaTdV?oc=5"
     },
     "8c1e30c28e04925d2d6ee133ccbb850f100ed8a67e89eaad243c593218c38d0e": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -792,11 +1236,23 @@
       "topic": "Trending AI repositories",
       "url": "https://github.com/Shubhamsaboo/awesome-llm-apps"
     },
+    "8e6ec305e3d10a68d4b2428c15be375c89c75bbfe87c2dfcf7bfb55214614796": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "mastodon",
+      "topic": "Top AI news",
+      "url": "https://flipboard.com/@econopass/flipboard-exchange-feed-%F0%9F%97%9E%EF%B8%8F-a2ri49sqz/-/a-2mktMBYsSWuQXtIOXu-hag%3Aa%3A4091604380-%2F0"
+    },
     "8e91b760fa12534495c515f0954176a174023396c24be1a50ff327cf099caf1d": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "hackernews",
       "topic": "Top AI news",
       "url": "https://news.ycombinator.com/item?id=49360734"
+    },
+    "8e921b0e3196ffab52a59ccecde655e1fc0f049a9d6323a8270c145610da6f16": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "news",
+      "topic": "New AI companies",
+      "url": "http://bing.com/news/apiclick.aspx?aid=&c=9529429819113243106&mkt=en-us&tid=6a86dcc37107440fbaf5bff20ce55b7f&url=https%3A%2F%2Fwww.newsbytesapp.com%2Fnews%2Fbusiness%2Fspacex-didn-t-try-to-acquire-ai-start-up-cognition%2Fstory"
     },
     "900df6181bc67a8fecb7df4a8f21dc7dbf44dc36c5c6061d3c5a04da81ac309f": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -816,11 +1272,29 @@
       "topic": "AI agents and coding",
       "url": "https://github.com/shrou5144/call-of-duty-apk-script-hub"
     },
+    "90d49d46d9a5a084d58169915f570e4000b71fed774dbcad169d5f7d14a7644e": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "AI agents and coding",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1nR1lpdzJhVzVqbUNNYmdoMnR5aXA3aFdhcGJLcm0tM1otZERpOWpLRWZfZUVPYWN2S2NscFhRZ1JOWlFQa0c2amgtNWJSM0ptelFMQ3NBY3pfOGs?oc=5"
+    },
+    "91b074163a6710b543b8f3b287a9ee323bdb6ca43b9cf072a68bb05a49c580c5": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "Top AI news",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9kRHBYRVdjYmgwM3ZaLUNvc0VoX19rdFM4WHkxVWVabFd3RFl5ZDFzSmRtTGk2NVZKNV8wU2htR3ZfSGhpX0pSMWdCcEJzazNrMDJNa3gwQjJvd2VBQ2JFY3liZ2tpdw?oc=5"
+    },
     "920cf100082da96122118d4e0b897bbdae9655b44cf758d9884f328488eccfa0": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "hackernews",
       "topic": "Top AI news",
       "url": "https://news.ycombinator.com/item?id=49338480"
+    },
+    "922ccf57a5a4b6d3529b1bdee7e659f9fcf5b60abba80b9c11aa1f7cbccb2efa": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "news",
+      "topic": "AI agents and coding",
+      "url": "http://bing.com/news/apiclick.aspx?aid=&c=6966729307431312853&mkt=en-us&tid=6a86dccf769b448abd1fe326e3b073df&url=https%3A%2F%2Fwww.aol.com%2Farticles%2Fbinance-introduces-agent-os-connect-100000000.html"
     },
     "9238dbd85dd380d74e0ebab3226ba319e11d2d65b4287cff46622dcf6b5cacca": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -852,6 +1326,18 @@
       "topic": "OpenAI News",
       "url": "https://openai.com/index/pacing-model-development-cyber-capabilities"
     },
+    "972971fdd941a86ada2b1c4bc3e9b50436c2d56b1bd382e881de2c4d6af36e57": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "official",
+      "topic": "xAI",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPQXRVaDJjZTVobk1xdEEybmk0YndoMHVYTGJEbUVsZmhVVy1idHo4anhDYUdPeVQ3MVlDRGVMeVlGVThUZ1p1R1RXVHg0WE4tZ2FUUXRHT0x5TjE1aWhyUUhtSm03RDFnQ25XNlBrdk9HUXIyZUFSRU85OGNjb1dsSnNWeTk0RnRzX2JyejVPZw?oc=5"
+    },
+    "97debdd384b96dfe7d6823d1c231c9968c98325b1bc0a438309c0588c270069d": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "New AI innovations and research",
+      "url": "https://github.com/Qile-J/sciml-daily"
+    },
     "981019a64448c7af95d87ce8486c5fa61e9902d3cf59685e536762bfe93254ef": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "mastodon",
@@ -876,11 +1362,23 @@
       "topic": "OpenAI News",
       "url": "https://openai.com/index/chatgpt-for-teens"
     },
+    "9c6050212388eab010ed28f3ec544ad13fad69f1cbf10b3981f6cdd2952e2ddf": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "New AI models and tools",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE84czZXZGpXTWZxNko1aHdzaXFya0lkYUxHM2xYYlhzZXhmaWFHMHFBU2lXWTB3NFVESm5CMDFJTWZQdEMzRXV3X1pOWE1MQkJtNmlEdGVEVGp5am1ibUduWg?oc=5"
+    },
     "9cf3a340a98cbb061b7df7374682d171487456c9012bcf1ae2c0375fe54c424f": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "github",
       "topic": "New AI models and tools",
       "url": "https://github.com/padlockczech724/secondwind"
+    },
+    "9d217054d88d13c58af7fb92294b93f73d9709c8c19f54e52d46a9c129e33cff": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "instagram",
+      "topic": "New AI companies",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5hX003YTNjS2g2MmNla0VwTUYyemx1OUJrdG10QkJhRlJMTXljMWdOQ19DVTRSdC1rLVdPaWR3VmpTMm1GSmJ1U0tvZk9NeXQ1RE9CeTVn?oc=5"
     },
     "9d6ca221e369efd15492f32bd2beb6ccd16d1c5d4b4da13d1d4bc30808e862e0": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -894,11 +1392,35 @@
       "topic": "New AI models and tools",
       "url": "https://news.ycombinator.com/item?id=49362461"
     },
+    "9d9a8a7d7bab5eb0bb5ee658f3c1d39842effae1f281e161260c574f7c36abd8": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "news",
+      "topic": "AI agents and coding",
+      "url": "http://bing.com/news/apiclick.aspx?aid=&c=13552318986502158538&mkt=en-us&tid=6a86dccf769b448abd1fe326e3b073df&url=https%3A%2F%2Fwww.forbes.com%2Fcouncils%2Fforbestechcouncil%2F2026%2F08%2F20%2Fai-agents-are-turning-ctos-into-city-planners%2F"
+    },
+    "9e0450920cfe10091352b26f67ab44130e4052593169c33d20766d402b71be9c": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "news",
+      "topic": "New AI innovations and research",
+      "url": "http://bing.com/news/apiclick.aspx?aid=&c=14677203793475039369&mkt=en-us&tid=6a86dccdd50b41bc94c39494bf99da30&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Ftechnology%2Fartificial-intelligence%2Fhow-machine-learning-is-making-airports-safer-and-more-efficient%2Far-AA2avYrw"
+    },
     "9e70717946395557d81fca93b502854ae4d82f715aabceaf955a8146aa323cfb": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "official",
       "topic": "OpenAI News",
       "url": "https://openai.com/index/partnering-with-codeai"
+    },
+    "9eac90e6194e5e7a3325490bebcdae04d42ab4a2d63070c50792c6c66d36b15a": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "news",
+      "topic": "New AI models and tools",
+      "url": "http://bing.com/news/apiclick.aspx?aid=&c=13808280293640343420&mkt=en-us&tid=6a86dcc9c6cb4a48a046e884b13799ac&url=https%3A%2F%2Fwww.wired.com%2Fstory%2Fzai-open-weight-ai-models-release-cybersecurity-hacking%2F"
+    },
+    "9f693923dbbb0cc39e67a626c44a865ca952fa70ef0170314a70caad25d7ce13": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "New AI models and tools",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBycGxiSXN5cmJ2VUdJUk5vSG1YTGNUbHk2eWlrZFhGMzNMSndHWkhGSU1UM29KZi1PQlUzM0JiZlV2SWtLaUU3UGdzYk83bVBiNUNvOEFXQTNNUkdi?oc=5"
     },
     "a01cdbcd7ed91e057a831eb536d83e85a32a5165563116d68025747bb179e740": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -911,6 +1433,12 @@
       "platform": "arxiv",
       "topic": "New AI innovations and research",
       "url": "https://arxiv.org/abs/2608.19140v1"
+    },
+    "a181bd0b7b3425f2f127144f74e7503558786b76e0ef9a14d03a9796fc0aef75": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "mastodon",
+      "topic": "Top AI news",
+      "url": "https://igeek.gamer-geek-news.com/@feed/statuses/01M0FCP1ZV1SJ48EFBCAA80AJ7"
     },
     "a217a077e090813ae19df6e895fab8f60fe6958302170b7e56aa42961f6dab62": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -930,11 +1458,41 @@
       "topic": "AI agents and coding",
       "url": "https://github.com/Gald3r-Labs/gald3r"
     },
+    "a4cc5f30a560adb35e0bc9e699b7ae22ee7cbf0f50b077a43ef89715fc5a4e91": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "AI agents and coding",
+      "url": "https://github.com/tvrcgo/agent"
+    },
     "a538ac7ff41d7f3321b152e1ade4c479308eccfed401047e5466386a9118c363": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "github_trending",
       "topic": "Trending AI repositories",
       "url": "https://github.com/NousResearch/hermes-agent"
+    },
+    "a546cd9659ec5eefa55b9390238202d66268a2ffc64c020044548b90b706eb01": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "official",
+      "topic": "xAI",
+      "url": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE9TUTByWWFSbHJPbTBkVk1Ic2dKLXE4SXhqYTdWb1hKZDhDU0pXN3hQSlZfcE5DUUIyb3Jrem5IZ1J4UQ?oc=5"
+    },
+    "a69d2349f6830eaaae82337460d9b38617b290000164ff847866ad095b6a28e9": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "mastodon",
+      "topic": "Top AI news",
+      "url": "https://fastcompany.com/91592394/generation-most-comfortable-with-ai-gen-x-millennials-boomers-pew-research"
+    },
+    "a72531acf0795cb68087621576d87566f993a3112ec254c9cfcb46f44c6f514b": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "AI agents and coding",
+      "url": "https://github.com/resq-software/pypi"
+    },
+    "a74c0bcdfe2519fadf8c3499348e7aa21b795bae1167f7a5af86589eb686cd8d": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "AI policy, safety and funding",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE0xMl9qcmNmYkhwZFhLbThRdi1tdnU2QmpnVDlKTGlmMk9JSGw5b1NFMUZzZDc3QTJ2T041enpiU2xyRkRaMkZyMzh5QmU4NFZtdHhVUHNtaEJ6ZDFXd2c?oc=5"
     },
     "a7f39f0c3bf52cf7acbd2ea9f74d4a80436c22281e30ee86e568ee104265b70d": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -972,6 +1530,12 @@
       "topic": "Trending AI repositories",
       "url": "https://github.com/Significant-Gravitas/AutoGPT"
     },
+    "abbc586f877825c3a3678681d4f9830c877d3e8824c33a508a648d854a9ec4cd": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "New AI companies",
+      "url": "https://news.google.com/rss/articles/CBMiNEFVX3lxTE9PdGZ5Yzk2alNTWE5lcnJYMXBUYjJXdVJnaVVmc1NGNkVmMHQ2dW94NmloT3g?oc=5"
+    },
     "abc359b8104e0ed9e59403e61f8e4dd4b8b4458db50dc8c7a8c7a42902e69192": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "mastodon",
@@ -989,6 +1553,12 @@
       "platform": "hackernews",
       "topic": "New AI models and tools",
       "url": "https://news.ycombinator.com/item?id=49358385"
+    },
+    "ad7dc052575f0af1abe42719845efaa46d18cc925f1c389976f707b35ff418be": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "Top AI news",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1WTDhMWTBYNlU2R2xlNjV2N3BITVBBblRBazBDSTBoTmdsX3BkX2VwVHJnX1h5QnpoV1o1bmM3LWlMNkx3bzNrbHMzQl9JR2IwbUtwd2RDczlfYjR5emFpZUVyeF8xVW8?oc=5"
     },
     "ade119b2f0c16ece6051f8b75b4a716a75987ad57d569a3a59eafb0d2d829e9d": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -1032,6 +1602,12 @@
       "topic": "Hugging Face Blog",
       "url": "https://huggingface.co/blog/Dharma-AI/gpu-management-pt2"
     },
+    "b3d6c025d6fa6c357273f8276717f8c318f8328c63a4a688563a9d7d240507e0": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "New AI models and tools",
+      "url": "https://github.com/yukihamada/nanobot"
+    },
     "b49a5900b28b640aa40e9688274e6d937223f61eec516ecc94dce1734dfbdec0": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "mastodon",
@@ -1068,11 +1644,53 @@
       "topic": "New AI models and tools",
       "url": "https://aol.com/articles/ant-international-falcontst-model-2-015500000.html"
     },
+    "bdc8f475b1b90683e603c1b3363ba224aff8d20adfc8f972222a712b5ca1c08a": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "New AI models and tools",
+      "url": "https://github.com/UA-Dissertation-Project-107449/FairXAI"
+    },
+    "be9940355dc49c7739369bf326d8c77bd43ddcbc28c4b5163e0002c986dcbde6": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "official",
+      "topic": "xAI",
+      "url": "https://news.google.com/rss/articles/CBMiMkFVX3lxTE9KUlpuaWtVOGw0VTlVRGlxYVdJZUZRQ3BPakJPYVQ5UjNyaGQyVHk3RWdn?oc=5"
+    },
+    "bfa4528ede96d55d1c17b5e3875d81e4aa3fc87fe0be0f474709c77262be6e35": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "official",
+      "topic": "xAI",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBtWUR2dXhYRTRHY05GOU0wTlhrRlRBVTE3RUtSSFhFTllMQkYxTDVxMF9ldTd1WW13WXdjNGVJV1U1blVkZUpLU194dmc3Y3BCWVR3ZmdzeXY?oc=5"
+    },
     "c07ccbb4489adaa6870b870ef4290527d5af776c73dd1578f2c3c9a1a08a1405": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "official",
       "topic": "Google AI",
       "url": "https://blog.google/products-and-platforms/products/workspace/sheets-canvas-for-google-sheets-spreadsheets"
+    },
+    "c111b78df60fad577b8030c590d91a9e5799493cf04ce94311c1621c4ee96382": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "news",
+      "topic": "AI agents and coding",
+      "url": "http://bing.com/news/apiclick.aspx?aid=&c=7772551995990986634&mkt=en-us&tid=6a86dccf769b448abd1fe326e3b073df&url=https%3A%2F%2Fwww.newsbytesapp.com%2Fnews%2Fscience%2Fbinance-launches-agent-os-to-enable-ai-crypto-market-trading%2Ftldr"
+    },
+    "c1b25c818494b253ee0d1a6cceba5418d5a0789223dd78c492938a9ad69b3642": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "AI agents and coding",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9ueTExU2NBSTV4WFdoYTN2SEtRcDlXcGxYSS1KeWREaVBFa0N3ZERGLW1IVnRjNmx5MlNmSEh4ZGdGUmJBMm5DNUc3UGZfR092VnZTNFBLRzVsLTlnc0JV?oc=5"
+    },
+    "c23d8668419b41cfe41576146e5f2bb4b61e28edb490aa5cfa16579b84ef4d95": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "news",
+      "topic": "New AI innovations and research",
+      "url": "http://bing.com/news/apiclick.aspx?aid=&c=2273201554870024206&mkt=en-us&tid=6a86dccdd50b41bc94c39494bf99da30&url=https%3A%2F%2Fwww.fool.com%2Finvesting%2Fstock-market%2Fmarket-sectors%2Finformation-technology%2Fai-stocks%2Fmachine-learning-stocks%2F"
+    },
+    "c29544a49d7ecd9daebc984d645c8337b52bd7d4dfa6dbc4ca622b3a6864ec02": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "instagram",
+      "topic": "New AI companies",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE02aUpJLTdWbXZmd3dPZTBGaU1oWjNTZ3RkREZySUZQZXNLSmF0djJmT2xVYUVsblJ1R1ZYaVBfMnd1WHUxZ1dtVVdoUTFNc1djZXltQ3FB?oc=5"
     },
     "c2f807791c0378c5e274ab766cc83bd8fa3d4d96fcbec600c31b39e03ec57739": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -1116,11 +1734,29 @@
       "topic": "Google DeepMind",
       "url": "https://deepmind.google/blog/introducing-gemini-3-7-flash"
     },
+    "c69cb392500cc5723100604fb963c7b27a7a80fa6a7b2eee40979a00f3ac37b2": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "New AI models and tools",
+      "url": "https://github.com/serhohro/vireo-ai-communicator-api"
+    },
     "c6cfdc6d515e9191947ec3e96cdb64598e1369d5b911b237f18cef275be7bfd6": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "official",
       "topic": "AWS Machine Learning",
       "url": "https://aws.amazon.com/blogs/machine-learning/asynchronous-patterns-for-calling-amazon-bedrock-agentcore-agents-in-serverless-pipelines"
+    },
+    "c728af92d443f1d1df4ab6fa981604dd0bcf134dbee90c573a6f27e52f6f6a87": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "Top AI news",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFB5eGdGZUpSbHl4U2RBT0ttWUk2Zk1HdEJaNG96a080NlI2eWh6Qk5Ic3d4M3FSMllidTllbEJmVWkwMW1kdjY3OE5rYkNNMzBfMXBsWjFsMEFLbzBqVTJBYnhNQkp0dw?oc=5"
+    },
+    "c7507a4f662760d31e6b89c0bb6b1f98411ad21f961ceccf20cbbef8459da8c6": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "New AI models and tools",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1YeER5Szk2ZldJRDJ1azJRVzdqT2J5VVhtZ0YtcHVha19QU0Z4SnRBeVZyaU1OVXpiaElRRzRxNkd0YnFaTzhIN2x4cTJkT0NRQnBNMWtaMGgtVWlMXzBBdXRFZXdweXM?oc=5"
     },
     "c757b438f83c1c92b23521984eb0dc4611edf62e2d6270001a63e3a3eeb30640": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -1158,11 +1794,23 @@
       "topic": "OpenAI News",
       "url": "https://openai.com/index/new-policy-ideas-for-the-intelligence-age"
     },
+    "c96bd9b2731fb305473aa873ab6443463fd0e66b7ccaec1fa24123fa15579f21": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "New AI innovations and research",
+      "url": "https://github.com/zapplyjobs/New-Grad-Data-Science-Jobs-2027"
+    },
     "caa4d37429a2394595a5477266a05a659191d96ae95f0315d39d377d2c4628de": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "news",
       "topic": "New AI innovations and research",
       "url": "http://bing.com/news/apiclick.aspx?aid=&c=2273201554870024206&mkt=en-us&tid=6a86d989798144eca4d72cf430033707&url=https%3A%2F%2Fwww.fool.com%2Finvesting%2Fstock-market%2Fmarket-sectors%2Finformation-technology%2Fai-stocks%2Fmachine-learning-stocks%2F"
+    },
+    "cb2a21c18c38de9ea0144ad661e61077ad5d5980a68b7a407be92b223d54fe55": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "New AI companies",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBSSG1BdEw4UTBGbU9DaVNyZ2VleXZEMlpSQnhaZmxaOVZteHluV095NmFhcjVpcXY3MjNoek9MX0R2QUFBc3U3aUV0eEU5aUhON3JiZ3hqUDJqeGxRTkFF?oc=5"
     },
     "cba616bf36c50b7efd33a5d81232c08365b94fca98cce19f09b497f9a53f391e": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -1170,11 +1818,35 @@
       "topic": "New AI models and tools",
       "url": "https://news.ycombinator.com/item?id=49359125"
     },
+    "cc5b073809e7b7ba311e3082c3495fb4d18ba581e7f5360cf746ba8435a530d2": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "mastodon",
+      "topic": "Top AI news",
+      "url": "https://mastodon.social/@idesk360/117127406008410443"
+    },
     "cca51d4642c0dec2ce916f84f3c1696f0cf5576dfcf1e2d2d7b87a493c732f61": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "hackernews",
       "topic": "New AI models and tools",
       "url": "https://news.ycombinator.com/item?id=49369578"
+    },
+    "cd935b69a2666a49f0329e27bd109b5c9da3c8b830b980a5d91e64e371fa96e8": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "New AI companies",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE51dkhaUWxXVkN0SG9tMlNobEdRYnFxRHh5ZURIUHppd1lsR0hJVEJ4cnJpTXBPOV9NZ0YwN2p4U2EwNDRSZTFmZHlwMld6TDZMUHFTT3dMTWlvbkE?oc=5"
+    },
+    "ce6003247a305ef11811f44f3cca024f72e240df845b5b6287f32989b087d226": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "news",
+      "topic": "Top AI news",
+      "url": "http://bing.com/news/apiclick.aspx?aid=&c=4861871323570747053&mkt=en-us&tid=6a86dcc0184f4c76912e4dfb14206ea2&url=https%3A%2F%2Fseekingalpha.com%2Farticle%2F4938335-tcw-artificial-intelligence-etf-q2-2026-commentary"
+    },
+    "cec442430ca89e29f5574535dea46b3f71d98faf6e20da3773d25202dca1156e": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "New AI innovations and research",
+      "url": "https://github.com/madhupulugu36-glitch/python-ml-practice"
     },
     "d07353642e62dc28c79768c5e19b1047dd4c61b61cf077dac8d562f625344c2c": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -1182,17 +1854,41 @@
       "topic": "AWS Machine Learning",
       "url": "https://aws.amazon.com/blogs/machine-learning/implement-vector-prompt-document-classification-using-amazon-bedrock"
     },
+    "d162cfb1ed87e6a2448f09950e270dcdfd825eeb154cecb3555a01f2de2c1e63": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "mastodon",
+      "topic": "Top AI news",
+      "url": "https://caneandable.social/@WeirdWriter/117127393408675017"
+    },
+    "d17b7f273f870486c94bc7db5a52771a94a252fb6e6e45dc867b2de1d83dc4ec": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "Top AI news",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9aY1pOci1GejNRZVBzZGpib1NoWVFOZ1dFNnUxYnE3dDBDenhpLVlKUWw5eVhnLVZpelBoUmJhVk5JbU5mc1hPNldkTzdzOFdKcFlNQVhXX1BaajM1bVJIdDVoNGN4enBKYlE?oc=5"
+    },
     "d1842963a252b15e0f4081130bb660551e343fe7fe12c08a3e24773de6b0e92b": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "github_new",
       "topic": "New AI repositories",
       "url": "https://github.com/soumatheusgomes/vibe-coding-toolkit"
     },
+    "d2f4d04df8c0853c907ed936ca4a650576876d0fdb95860317d90c993af0ac95": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "New AI models and tools",
+      "url": "https://github.com/unslothai/unsloth"
+    },
     "d418fb8a1e90a173e6ef99244fbd3d4aa9659511d70a1c4cadc8f497040cd3c0": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "mastodon",
       "topic": "Top AI news",
       "url": "https://cloudflare.com/learning/ai/what-is-artificial-intelligence"
+    },
+    "d44bda095af8026d06f75ab09b9a380a5489cb5ad08bb4af40f748bb7e144f20": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "AI agents and coding",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE90RnRUTUF0VjdpZV9ZT0N3aFpGbzBjazBjSG5OcWdPUkN2YWkyeHplQy1uOF9vb2RGYlVrd2U0X3NfTjRmR2JHOHJvLW1fb2ZYamlLMlNBYV9IVkpXR3V0MHUxVzhNd00?oc=5"
     },
     "d4869ec2210219886b8ee544bbf793a82559dd59965818705838aa850c3d45bc": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -1212,11 +1908,35 @@
       "topic": "New AI innovations and research",
       "url": "https://arxiv.org/abs/2608.19121v1"
     },
+    "d65c86dab4ce700fd866f6048b492e71cd02eec5e7772d2be528d785f5629bed": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "New AI companies",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE56WVgwZXBZWS0zb2RSUzh3XzJuN1VlVjVwLWh0dTVKQ1lHaUtod3h4MnpXTHZiZFNRcnJ6ZHlHVzBSeXA3bUc2dkpuTlZYV2dhM1NUOGx2akI4d1dpZGc?oc=5"
+    },
+    "d8b92873efa0b8a4944ab2c0fb776b87b6de2fa69a490924e948e0395d7ecdaf": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "mastodon",
+      "topic": "Top AI news",
+      "url": "https://igeek.gamer-geek-news.com/@feed/statuses/01M0FCA16QGVNJ2Z2RQEF8RVDR"
+    },
+    "d8c53b72e27ade7a78ca2deee1180bebec569f522425e6e67ab9ffbb4b882ef4": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "x",
+      "topic": "AI agents and coding",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9ucUItem4xNXdRdXJkaUk3a1NpX3dkdEppSTRmYnhrUzZoRnFhcm1iZWIyZXVQN1BJR3NjYUxabElqdnN0U3B1YkFZYlR4UzJRZmtjYkx0b0gwSExsN0x0bE1R?oc=5"
+    },
     "d92cd781fcf641a84b468ee72a9a3b8284cdececbe993fd7783fb85a90d1239b": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "hackernews",
       "topic": "New AI innovations and research",
       "url": "https://news.ycombinator.com/item?id=49313175"
+    },
+    "d94ad83de629312d9e8e64c2abccd15f7ab54e83056a64c4edca72cebf819a42": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "mastodon",
+      "topic": "Top AI news",
+      "url": "https://mas.to/@wav3ydave/117127415244454626"
     },
     "d9b38ee93213939d771dd2f90e8b6f8e93729e5456ba86904ded4f2b0b88b82b": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -1248,17 +1968,41 @@
       "topic": "AI agents and coding",
       "url": "http://bing.com/news/apiclick.aspx?aid=&c=7772551995990986634&mkt=en-us&tid=6a86d98adc5743bd97c20b7cfaa494dd&url=https%3A%2F%2Fwww.newsbytesapp.com%2Fnews%2Fscience%2Fbinance-launches-agent-os-to-enable-ai-crypto-market-trading%2Ftldr"
     },
+    "dd6de7115dbe48e19146f7be071da09e281ef7ae46ce8eea72eb74f8b8c81b6f": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "news",
+      "topic": "New AI innovations and research",
+      "url": "http://bing.com/news/apiclick.aspx?aid=&c=14758185662863012538&mkt=en-us&tid=6a86dccdd50b41bc94c39494bf99da30&url=https%3A%2F%2Fhackaday.com%2F2026%2F08%2F15%2Fmachine-learning-coffies-hears-sunspots-before-we-can-see-them%2F"
+    },
     "df59db04dfdb79cac79c971359f68a9a9f554627decbb22f3527bfa9d6b102b6": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "hackernews",
       "topic": "New AI models and tools",
       "url": "https://news.ycombinator.com/item?id=49372258"
     },
+    "dfa18679080f6c7a145f3db2d2ea1c39773ff09bdcd57c7ef971e58c33102707": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "instagram",
+      "topic": "New AI companies",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5rYkNJY0w1aklDTjFEQl9NbDJndE54MXNMcmhiY05SdEZ2Rm1YR0dpd0xoSFVZSUoxdDJYMFA5RzNuTEdvSVBWNU84bVZsemNzN2ZNU3JR?oc=5"
+    },
     "e09e3349b7bbabf63255446bc2d26d0ae54e20633320a5ca30323fbd6583d01b": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "arxiv",
       "topic": "New AI innovations and research",
       "url": "https://arxiv.org/abs/2608.19181v1"
+    },
+    "e0c7b5a83c2b234c799ad1501d1a52e5e71be748ad499da1d07a92946ca67587": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "AI agents and coding",
+      "url": "https://github.com/vstorm-co/agenticos"
+    },
+    "e1367e218d94999faeea628b723e0bb1ed3102fa3de5eb33eb6e62f5e781ec5b": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "instagram",
+      "topic": "New AI companies",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5wNklZcFduZmhtMTdldW5wRUxLUGZ6TVRkTWZKZXQxNHNSbkRxNFlVNVdIMTNOY20tdW1uS1lRQnBWSGZxSGN1a2l1STVPWkY4eEk2Z3R3?oc=5"
     },
     "e3ab6a852afd3049417e557518842ef49c5105e741f123ddeb85ba9baf6316cd": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -1283,6 +2027,12 @@
       "platform": "huggingface",
       "topic": "New AI models and tools",
       "url": "https://huggingface.co/kanithisurya/ai-realestate-house-price-model"
+    },
+    "e633239b779d38bd9328956abef5dad2b4b020048960cef132dbdb47eacf0505": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "news",
+      "topic": "AI agents and coding",
+      "url": "http://bing.com/news/apiclick.aspx?aid=&c=15242257395214077809&mkt=en-us&tid=6a86dccf769b448abd1fe326e3b073df&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fnews%2Ftechnology%2Fbinance-now-lets-ai-agents-trade-but-keeping-them-in-check-is-largely-up-to-users%2Far-AA2ays69"
     },
     "e6c18c0e6ac9e44d403f894e4ff8d863a83e8440f737d19c45cf995b6b7cbbb3": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -1332,11 +2082,23 @@
       "topic": "Top AI news",
       "url": "https://news.ycombinator.com/item?id=49363173"
     },
+    "ec57c03d86da3389c6eb391d863342c84232ad0801dedd391c0e3b9a394b98e3": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "New AI models and tools",
+      "url": "https://github.com/dp-web4/Synchronism"
+    },
     "ecc3010d384151582fd896000bf6fce04eb42057b74e0c2ecc8e42e8fcb5a56a": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "github",
       "topic": "AI agents and coding",
       "url": "https://github.com/Yashaswini-S1/AI-Resume-Screening-Agent-"
+    },
+    "ee6937bfbb521d567f971492ccc9ab566814efa1e9ee35fb360c15a2a493ed99": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "New AI innovations and research",
+      "url": "https://github.com/mwakidenis/smart-farmer"
     },
     "ee7b71a0945c711e0d5f7994224ac552ac4d5d1497a5e76c31dce634908fe8bd": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -1368,11 +2130,35 @@
       "topic": "AWS Machine Learning",
       "url": "https://aws.amazon.com/blogs/machine-learning/build-openclaw-agents-that-transact-with-amazon-bedrock-agentcore-payments"
     },
+    "f4577715b02f107ea1294a647753b2c4da8bbae8b11144f08a9d64e8aad7ce21": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "news",
+      "topic": "Top AI news",
+      "url": "http://bing.com/news/apiclick.aspx?aid=&c=8962356668342773960&mkt=en-us&tid=6a86dcc0184f4c76912e4dfb14206ea2&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fmoney%2Fsavingandinvesting%2Fbillionaire-ray-dalio-says-todays-artificial-intelligence-ai-market-echoes-1929-and-2000-history-says-investors-should-watch-valuations-closely%2Far-AA2ak9DG"
+    },
     "f5626dfa434142d768686698a353783b62d718327b156a2c031d754d2d63fc29": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "mastodon",
       "topic": "Top AI news",
       "url": "https://en.wikipedia.org/wiki/Artificial_intelligence"
+    },
+    "f694fed76c0e0849e9a239376d78869db418486b6f30c5be38decab29580a948": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "news",
+      "topic": "AI agents and coding",
+      "url": "http://bing.com/news/apiclick.aspx?aid=&c=9215770201728231866&mkt=en-us&tid=6a86dccf769b448abd1fe326e3b073df&url=https%3A%2F%2Ffinance.yahoo.com%2Ftechnology%2Fai%2Farticles%2Fwriter-named-market-shaper-july-143000994.html"
+    },
+    "f778eab793e0452e8e24c410af5a6b4dca72c0dfd3217ab163c96f2627c8c7d4": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "New AI innovations and research",
+      "url": "https://github.com/PyGhosh/Grp_CH4124"
+    },
+    "f89b82226e8ae61b3c813faf5ea490adfd6e91b25b4d780bbe10e3e61e282051": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "github",
+      "topic": "New AI innovations and research",
+      "url": "https://github.com/galihru/facemind"
     },
     "f9ed6675e2920c58ae4a753c33a0a6082b49612b288c04c4d5d6ad8bd9536d14": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
@@ -1434,11 +2220,23 @@
       "topic": "AI agents and coding",
       "url": "http://bing.com/news/apiclick.aspx?aid=&c=7153584818649222616&mkt=en-us&tid=6a86d98adc5743bd97c20b7cfaa494dd&url=https%3A%2F%2Fwww.msn.com%2Fen-us%2Fmoney%2Fgeneral%2Fbinance-now-lets-ai-agents-trade-but-keeping-them-in-check-is-largely-up-to-users%2Far-AA2ays69"
     },
+    "fd65c6ca33b11fe8c26adecfa328cfd9baeb2a656059fce1be5c660a409d6af8": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "news",
+      "topic": "Top AI news",
+      "url": "http://bing.com/news/apiclick.aspx?aid=&c=14549904996533236510&mkt=en-us&tid=6a86dcc0184f4c76912e4dfb14206ea2&url=https%3A%2F%2Fwww.stuff.tv%2Ffeatures%2Fwhat-is-agi-the-path-to-human-like-artificial-general-intelligence-and-what-it-means-for-society%2F"
+    },
     "fdf207b68f3034a6c6d7d07bcf0e143bc7ae8116651763202409b7bb7f0a0adf": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
       "platform": "huggingface",
       "topic": "New AI innovations and research",
       "url": "https://huggingface.co/SupraTix-Machine-Learning/seed-speckle-foundation"
+    },
+    "fdf8def240e10b4a9a4dedf22ef286ed73475d277fc04d6e3429e5a30748e408": {
+      "first_seen": "2026-08-20T10:53:29.660761+00:00",
+      "platform": "mastodon",
+      "topic": "Top AI news",
+      "url": "https://igeek.gamer-geek-news.com/@feed/statuses/01M0FCNH1XGN26QD0SF5DGK7W3"
     },
     "fe213db2b202d3f46d44e23002ea3d43df6d7b2dc958637fe1012b74904bad48": {
       "first_seen": "2026-08-20T10:39:47.564182+00:00",
