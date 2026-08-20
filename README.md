@@ -16,6 +16,7 @@ The second half is a native ChatGPT scheduled task. GitHub Actions performs netw
 - License: Apache License 2.0
 - Default collection schedule: Monday at `05:00 UTC`
 - ChatGPT briefing schedule: Monday at `06:00 Europe/London`
+- Approved X publication schedule: Monday at `17:00 UTC` (17:00 GMT / 18:00 BST)
 
 The collector uses only Python's standard library. This keeps runs inexpensive, auditable, and resistant to dependency abandonment.
 
@@ -47,7 +48,13 @@ Commit generated files to main
         |
         v
 Native ChatGPT scheduled task reads reports/latest.md
-and displays a digest in the ChatGPT/Codex app
+and displays a digest plus one long-form X draft
+        |
+        v
+Explicit approval queues immutable copy in data/x_queue.json
+        |
+        v
+Monday 17:00 UTC Action publishes through the X API
 ```
 
 ### Why it is split in two
@@ -180,6 +187,91 @@ from collection failure.
 ```
 
 Schedule it for Monday at `06:00 Europe/London`. The native task and GitHub cron are independent; if you change one, review the other.
+
+Append these instructions to make the task prepare the weekly X draft:
+
+```text
+Also write one long-form X post covering the developments from the previous
+seven days that genuinely mattered in AI. Select roughly five to eight items
+by lasting significance, technical importance and novelty rather than social
+engagement. If fewer items truly mattered, include fewer.
+
+Open with one sentence capturing the week's central theme. For every selected
+development, state what happened, why it matters and what could follow. Join
+related developments into a coherent narrative rather than a headline list.
+Prefer primary sources, distinguish fact from interpretation, and omit rumours,
+routine product tweaks, repetitive funding coverage, weak repositories, hype,
+engagement bait, hashtag clutter and generic commentary. End with a short
+assessment of what the week collectively indicates about the direction of AI.
+
+Produce one recommended draft for review, followed by a compact source list and
+a short note naming material stories you deliberately omitted. Never publish,
+schedule or describe the post as approved unless I explicitly reply APPROVE.
+When I request a revision, return the complete revised draft. After approval,
+preserve the approved wording exactly.
+```
+
+## Approved X publishing
+
+Publishing is deliberately separated from drafting. ChatGPT proposes the copy;
+the repository records explicit approval and GitHub Actions owns credentials,
+timing, retry behaviour and duplicate prevention.
+
+### Configure X
+
+In the X developer portal, give the app permission to read and write Posts and
+generate user-context credentials for the account that will publish. In GitHub,
+create an environment named `x-production` and add either:
+
+- `X_USER_ACCESS_TOKEN` for an OAuth 2.0 user access token; or
+- all four long-lived OAuth 1.0a secrets: `X_CONSUMER_KEY`,
+  `X_CONSUMER_SECRET`, `X_ACCESS_TOKEN`, and `X_ACCESS_TOKEN_SECRET`.
+
+Do not use an app-only bearer token: creating a Post requires user context. The
+publisher calls `POST https://api.x.com/2/tweets` and sends only the approved
+text. X account subscription and X API access are separate; the developer app
+must have working write access.
+
+Keep the environment variable `X_PUBLISHING_ENABLED` absent or set to `false`
+while testing. Set it to `true` only after a successful manual dry run. Optional
+environment protection rules can require approval before GitHub releases the
+production secrets.
+
+### Approve and queue a draft
+
+After replying `APPROVE` in ChatGPT, open **Actions → Queue approved X post →
+Run workflow** on `main` and enter:
+
+- a unique ID such as `2026-W34`;
+- the following Monday at `17:00:00Z` (for example
+  `2026-08-24T17:00:00Z`); and
+- the exact approved text.
+
+The workflow tests the code and writes an immutable, hashed approval record to
+`data/x_queue.json`. This repository is public, so queued copy is publicly
+visible before publication. Move the queue to private storage before using it
+for embargoed material.
+
+The same ID cannot be reused or edited. If approved copy needs to change, queue
+a new ID and remove or cancel the old entry through a reviewed repository
+change. Silence and draft generation never count as approval.
+
+### Dry run and enable publication
+
+Open **Actions → Publish approved X post → Run workflow**, leave `live` off, and
+inspect the log. A due item is reported as `DRY RUN`; no network request is made
+and its status remains `approved`.
+
+For the first real test, run the workflow manually with `live` enabled. After a
+successful response, the workflow stores the X Post ID and URL and marks the
+entry `published`. Published entries are ignored on every later run, preventing
+duplicate Posts. Once verified, set the `x-production` environment variable
+`X_PUBLISHING_ENABLED=true`; scheduled Monday runs will then publish due copy.
+
+The schedule is `17:00 UTC`, which is 17:00 in the UK during GMT and 18:00
+during BST. GitHub scheduled jobs may start late. A failed API request records a
+bounded error message and leaves the entry approved so it can be retried; it
+never substitutes or regenerates text.
 
 ## Schedule and time zones
 

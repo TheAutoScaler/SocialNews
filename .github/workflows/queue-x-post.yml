@@ -1,0 +1,54 @@
+name: Queue approved X post
+
+on:
+  workflow_dispatch:
+    inputs:
+      post_id:
+        description: "Unique ID, for example 2026-W34"
+        required: true
+        type: string
+      publish_at:
+        description: "UTC ISO-8601 time, for example 2026-08-24T17:00:00Z"
+        required: true
+        type: string
+      approved_text:
+        description: "Paste the exact approved X post"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: x-publishing-queue
+  cancel-in-progress: false
+
+jobs:
+  queue:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: "3.12"
+      - name: Run tests
+        run: python -m unittest discover -s tests -v
+      - name: Queue immutable approved copy
+        env:
+          POST_ID: ${{ inputs.post_id }}
+          PUBLISH_AT: ${{ inputs.publish_at }}
+          APPROVED_TEXT: ${{ inputs.approved_text }}
+        run: python src/x_publish.py queue --id "$POST_ID" --publish-at "$PUBLISH_AT" --text "$APPROVED_TEXT"
+      - name: Commit approved queue entry
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/x_queue.json
+          git commit -m "chore(x): queue approved post ${{ inputs.post_id }} [skip ci]"
+          git push
